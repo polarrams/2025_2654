@@ -4,7 +4,7 @@
 
 package frc.robot.subsystems;
 
-import com.kauailabs.navx.frc.AHRS;
+import com.studica.frc.AHRS;
 import com.team2052.swervemodule.*;
 
 import com.ctre.phoenix6.hardware.Pigeon2;

@@ -20,6 +20,7 @@ import edu.wpi.first.wpilibj2.command.button.CommandJoystick;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
+import frc.robot.subsystems.Pigeon;
 
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
@@ -29,12 +30,12 @@ import edu.wpi.first.wpilibj2.command.button.Trigger;
  */
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
-  private final ExampleSubsystem m_exampleSubsystem = new ExampleSubsystem();
-  private final IntakeSubsystem m_IntakeMotor = new IntakeSubsystem();
   private final DrivetrainSubsystem drivetrain = new DrivetrainSubsystem();
-  private final SendableChooser<Command> autoChooser = new SendableChooser<>();
   private final Joystick driveJoystick;
+  private final ExampleSubsystem m_ExampleSubsystem = new ExampleSubsystem();
   private boolean fieldCentric;
+  private final Pigeon m_Pigeon = new Pigeon();
+
   // Replace with CommandPS4Controller or CommandJoystick if needed
   private final CommandXboxController m_driverController =
       new CommandXboxController(OperatorConstants.kDriverControllerPort);
@@ -42,7 +43,7 @@ public class RobotContainer {
       new CommandJoystick(OperatorConstants.mDriverControllerPort);
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
-    
+    driveJoystick = new Joystick(0);
     // Configure the trigger bindings
     configureBindings();
  // Subsystem defined here
@@ -91,10 +92,8 @@ public class RobotContainer {
   }
 
 private void configureAutochooser() {
-  Command DefaultAuto = Autos.exampleAuto(m_exampleSubsystem);
+  Command DefaultAuto = Autos.exampleAuto(m_ExampleSubsystem);
   Command autoCommand1 = Autos.auto1(drivetrain, () -> fieldCentric);
-
-  autoChooser.setDefaultOption("Default Auto Mode", DefaultAuto);
 
   }
   
@@ -115,6 +114,6 @@ private void configureAutochooser() {
    */
   public Command getAutonomousCommand() {
     // An example command will be run in autonomous
-    return Autos.exampleAuto(m_exampleSubsystem);
+    return Autos.exampleAuto(m_ExampleSubsystem);
   }
 }
