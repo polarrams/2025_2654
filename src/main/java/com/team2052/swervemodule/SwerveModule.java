@@ -7,6 +7,7 @@ import com.ctre.phoenix6.signals.SensorDirectionValue;
 import com.revrobotics.spark.SparkMax;
 import com.revrobotics.REVLibError;
 import com.revrobotics.RelativeEncoder;
+import com.revrobotics.spark.SparkBase;
 import com.revrobotics.spark.SparkClosedLoopController;
 import com.revrobotics.spark.SparkLowLevel.MotorType;
 import com.revrobotics.spark.SparkLowLevel.PeriodicFrame;
@@ -15,11 +16,16 @@ import edu.wpi.first.math.geometry.Rotation2d;
 import edu.wpi.first.math.kinematics.SwerveModulePosition;
 import edu.wpi.first.math.kinematics.SwerveModuleState;
 import edu.wpi.first.wpilibj.DriverStation;
+import edu.wpi.first.wpilibj.motorcontrol.MotorController;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import com.ctre.phoenix6.configs.MagnetSensorConfigs;
+import com.revrobotics.spark.config.SparkBaseConfig;
+import com.revrobotics.spark.config.SparkBaseConfigAccessor;
+import com.revrobotics.spark.config.SparkMaxConfig;
 
 public class SwerveModule {
-   private final SparkMax driveMotor;
-   private final SparkMax steerMotor;
+   private final SparkBaseConfig driveMotor;
+   private final SparkBase steerMotor;
    private final CANcoder canCoder;
    private String debugName;
 
@@ -57,7 +63,7 @@ public class SwerveModule {
      * Drive Motor Initialization
      */
 
-    driveMotor = new SparkMax(driveMotorChannel, MotorType.kBrushless);
+    driveMotor = new SparkBaseConfig(driveMotorChannel, MotorType.kBrushless);
     checkError("Failed to restore drive motor factory defaults", driveMotor.restoreFactoryDefaults());
 
     checkError(
@@ -66,17 +72,17 @@ public class SwerveModule {
         driveMotor.setPeriodicFramePeriod(PeriodicFrame.kStatus1, 20),
         driveMotor.setPeriodicFramePeriod(PeriodicFrame.kStatus2, 20)
     );
-
+ 
     checkError(
         "Failed to set drive motor idle mode",
-        driveMotor.setIdleMode(SparkMax.IdleMode.kBrake)
+        driveMotor.idleMode(SparkBaseConfig.IdleMode.kBrake)
     );
 
-    driveMotor.setInverted(SwerveConstants.SwerveModule.DRIVE_INVERTED);
+    driveMotor.inverted(SwerveConstants.SwerveModule.DRIVE_INVERTED);
 
     checkError(
         "Failed to enable drive motor voltage compensation",
-        driveMotor.enableVoltageCompensation(SwerveConstants.MAX_VOLTAGE_VOLTS)
+        driveMotor.voltageCompensation(SwerveConstants.MAX_VOLTAGE_VOLTS)
     );
 
     checkError(
@@ -97,9 +103,9 @@ public class SwerveModule {
     checkError(
         "Failed to set drive motor encoder conversion factors",
         // Set the position conversion factor so the encoder will automatically convert ticks to meters
-        driveEncoder.PositionConversionFactor(drivePositionConversionFactor),
+        driveEncoder.setPositionConversionFactor(drivePositionConversionFactor),
         // Velocity of the encoder in meters per second
-        driveEncoder.VelocityConversionFactor(drivePositionConversionFactor / 60.0)
+        driveEncoder.setVelocityConversionFactor(drivePositionConversionFactor / 60.0)
     );
 
     /*
@@ -118,19 +124,19 @@ public class SwerveModule {
 
     checkError(
         "Failed to set drive motor idle mode",
-        steerMotor.setIdleMode(CANSparkMax.IdleMode.kBrake)
+        steerMotor.idleMode(SparkBaseConfig.IdleMode.kBrake)
     );
 
-    steerMotor.setInverted(SwerveConstants.SwerveModule.STEER_INVERTED);
+    steerMotor.inverted(SwerveConstants.SwerveModule.STEER_INVERTED);
 
     checkError(
         "Failed to enable steer motor voltage compensation",
-        steerMotor.enableVoltageCompensation(SwerveConstants.MAX_VOLTAGE_VOLTS)
+        steerMotor.voltageCompensation(SwerveConstants.MAX_VOLTAGE_VOLTS)
     );
 
     checkError(
         "Failed to set steer motor current limit",
-        steerMotor.setSmartCurrentLimit((int) SwerveConstants.STEER_CURRENT_LIMIT_AMPS)
+        steerMotor.smartCurrentLimit((int) SwerveConstants.STEER_CURRENT_LIMIT_AMPS)
     );
 
     // Drive Motor encoder initialization
@@ -152,7 +158,7 @@ public class SwerveModule {
         steerEncoder.setPosition(canCoder.getAbsolutePosition().getValueAsDouble() * (2 * Math.PI))
     );
 
-    SparkPIDController steerController = steerMotor.getPIDController();
+    SparkClosedLoopController steerController = steerMotor.getClosedLoopController();
     checkError(
         "Failed to configure steer motor PID",
         steerController.setP(SwerveConstants.SwerveModule.STEER_MOTOR_P),
@@ -167,7 +173,7 @@ public class SwerveModule {
         "Failed to set steer motor PID feedback device",
         steerController.setFeedbackDevice(steerEncoder)
     );
-   }
+}
 
     public SwerveModuleState getState() {
         // Both encoder values are automatically in units of meters per second and
@@ -189,12 +195,12 @@ public class SwerveModule {
         );
 
         // Set the motor to our desired velocity as a percentage of our max velocity
-        driveMotor.set(
+        ((SparkBaseConfig) driveMotor).set(
             desiredState.speedMetersPerSecond / getMaxVelocityMetersPerSecond()
         );
 
-        steerMotor.getPIDController().setReference(
-            desiredState.angle.getRadians(), CANSparkMax.ControlType.kPosition
+        steerMotor.getClosedLoopController().setReference(
+            desiredState.angle.getRadians(), SparkMax.ControlType.kPosition
         );
 
         SmartDashboard.putNumber(debugName + ": Desired Rotation", steerAngle.getDegrees());

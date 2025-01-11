@@ -7,19 +7,16 @@ package frc.robot;
 import frc.robot.Constants.OperatorConstants;
 import frc.robot.commands.Autos;
 import frc.robot.commands.DriveCommand;
-import frc.robot.commands.ExampleCommand;
 import frc.robot.subsystems.DrivetrainSubsystem;
 import frc.robot.subsystems.ExampleSubsystem;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
-import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.InstantCommand;
 import edu.wpi.first.wpilibj2.command.ParallelCommandGroup;
 import edu.wpi.first.wpilibj2.command.button.CommandJoystick;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
-import edu.wpi.first.wpilibj2.command.button.Trigger;
 import frc.robot.subsystems.Pigeon;
 
 /**
@@ -33,7 +30,7 @@ public class RobotContainer {
   private final DrivetrainSubsystem drivetrain = new DrivetrainSubsystem();
   private final Joystick driveJoystick;
   private final ExampleSubsystem m_ExampleSubsystem = new ExampleSubsystem();
-  private boolean fieldCentric;
+  private boolean fieldCentric = false;
   private final Pigeon m_Pigeon = new Pigeon();
 
   // Replace with CommandPS4Controller or CommandJoystick if needed
@@ -47,10 +44,8 @@ public class RobotContainer {
     // Configure the trigger bindings
     configureBindings();
  // Subsystem defined here
-    final DrivetrainSubsystem drivetrain = new DrivetrainSubsystem();
     final Joystick driveJoystick;
       //private final Joystick steerJoystick;
-      boolean fieldCentric;
 //Controller Call
     final CommandJoystick m_driverController =
       new CommandJoystick(OperatorConstants.kDriverControllerPort);
