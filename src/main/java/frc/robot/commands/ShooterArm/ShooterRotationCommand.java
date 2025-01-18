@@ -21,21 +21,21 @@ public class ShooterRotationCommand extends Command{
 
     
 
-@Override
-public void execute() {
-    m_ShooterRotation.run(speed);
+//@Override
+//public void execute() {
+//    m_ShooterRotation.run(speed);
 
-}
-/* @Override
+
+ @Override
   public void execute() {
-    double current_pos = m_ArmSubsystem.getPos();
+    double current_pos = m_ShooterRotation.getPos();
     if (current_pos < 45 && speed>0){
-        m_ArmSubsystem.p2(speed);
+        m_ShooterRotation.p2(speed);
         
     } else if(current_pos > -10 && speed<0){
-    m_ArmSubsystem.p2(speed);
+    m_ShooterRotation.p2(speed);
     }
-    else{m_ArmSubsystem.p2(0);}
-}*/
+    else{m_ShooterRotation.p2(0);}
+}
 }
 

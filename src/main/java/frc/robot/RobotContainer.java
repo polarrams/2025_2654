@@ -33,10 +33,13 @@ public class RobotContainer {
   private final ShooterSubsystem m_ShooterSubsystem = new ShooterSubsystem();
 
 
-
+//Set Default Commands
   public RobotContainer() {
     configureBindings();
     drivebase.setDefaultCommand(driveFieldOrientedAngularVelocity);
+
+    m_ShooterIntakeSubsystem.setDefaultCommand(new ShooterIntakeCommand(m_ShooterIntakeSubsystem,0));
+    m_ShooterSubsystem.setDefaultCommand(new ShooterCommand(m_ShooterSubsystem,0));
   }
 
 
@@ -63,11 +66,11 @@ public class RobotContainer {
 
     //Button Commands Go Here
     c_driverController.button(1).whileTrue(new ShooterRotationCommand(m_ShooterRotation, .1));
-    c_driverController.button(2).whileTrue(new ShooterIntakeCommand(m_ShooterIntakeSubsystem, 0.1));
-    c_driverController.button(3).whileTrue(new ShooterIntakeCommand(m_ShooterIntakeSubsystem, -0.1));
-    c_driverController.button(4).whileTrue(new ShooterCommand(m_ShooterSubsystem, 0.1));
-    c_driverController.button(5).whileTrue(new ShooterCommand(m_ShooterSubsystem, -0.1));
-
+    //c_driverController.button(2).whileTrue(new ShooterIntakeCommand(m_ShooterIntakeSubsystem, 0.1));
+    //c_driverController.button(3).whileTrue(new ShooterIntakeCommand(m_ShooterIntakeSubsystem, -0.1));
+    //c_driverController.button(4).whileTrue(new ShooterCommand(m_ShooterSubsystem, 0.1));
+    //c_driverController.button(5).whileTrue(new ShooterCommand(m_ShooterSubsystem, -0.1));
+//
   }
 
 
