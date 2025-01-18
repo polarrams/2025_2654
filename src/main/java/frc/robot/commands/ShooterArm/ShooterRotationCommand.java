@@ -1,7 +1,7 @@
-package frc.robot.commands;
+package frc.robot.commands.ShooterArm;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
-import frc.robot.subsystems.ShooterRotation;
+import frc.robot.subsystems.ShooterArm.ShooterRotation;
 
 
 public class ShooterRotationCommand extends Command{

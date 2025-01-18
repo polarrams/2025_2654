@@ -1,4 +1,4 @@
-package frc.robot.subsystems;
+package frc.robot.subsystems.ShooterArm;
 
 
 import com.revrobotics.spark.SparkLowLevel.MotorType;
@@ -18,8 +18,8 @@ public class ShooterRotation extends SubsystemBase{
     private RelativeEncoder m_Rotation = motor1.getEncoder();
 
 
-    public void run(double speed){
-        motor1.set(speed);
+public void run(double speed){
+    motor1.set(speed);
     
     }
 
