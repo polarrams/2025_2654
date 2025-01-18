@@ -33,9 +33,9 @@ public class SwerveSubsystem extends SubsystemBase {
       try
     {
       swerveDrive = new SwerveParser(directory).createSwerveDrive(Constants.maxSpeed,
-                                                                  new Pose2d(new Translation2d(Meter.of(1),
-                                                                                               Meter.of(4)),
-                                                                             Rotation2d.fromDegrees(0)));
+        new Pose2d(new Translation2d(Meter.of(1),
+           Meter.of(4)),
+        Rotation2d.fromDegrees(0)));
       // Alternative method if you don't want to supply the conversion factor via JSON files.
       // swerveDrive = new SwerveParser(directory).createSwerveDrive(maximumSpeed, angleConversionFactor, driveConversionFactor);
     } catch (Exception e)
@@ -59,11 +59,7 @@ public class SwerveSubsystem extends SubsystemBase {
         });
   }
 
-  /**
-   * An example method querying a boolean state of the subsystem (for example, a digital sensor).
-   *
-   * @return value of some boolean subsystem state, such as a digital sensor.
-   */
+
   public boolean exampleCondition() {
     // Query some boolean state, such as a digital sensor.
     return false;
