@@ -1,19 +1,16 @@
-package frc.robot.subsystems.ShooterArm;
+package frc.robot.subsystems.Elevator;
 
-
+import com.revrobotics.RelativeEncoder;
 import com.revrobotics.spark.SparkLowLevel.MotorType;
-
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-//import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import com.revrobotics.spark.SparkMax;
 import com.revrobotics.spark.config.SparkBaseConfig.IdleMode;
 import com.revrobotics.spark.config.SparkMaxConfig;
-import com.revrobotics.RelativeEncoder;
 
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
-public class ShooterRotation extends SubsystemBase{
-    private SparkMax motor1 = new SparkMax(14,MotorType.kBrushless);
+public class ElevatorArmSubsystem extends SubsystemBase{
+    private SparkMax motor1 = new SparkMax(21,MotorType.kBrushless);
     private SparkMaxConfig config = new SparkMaxConfig();
     private RelativeEncoder m_Rotation = motor1.getEncoder();
 
@@ -73,6 +70,4 @@ public void run(double speed){
         motor1.set(n);
 
     }
- 
 }
-
