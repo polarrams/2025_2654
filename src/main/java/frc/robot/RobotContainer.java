@@ -94,16 +94,17 @@ public class RobotContainer {
   private void configureBindings() {
 
     //Button Commands Go Here
-    m_driverController.button(1).whileTrue(new ShooterRotationCommand(m_ShooterRotation, 0.1));
-    m_driverController.button(2).whileTrue(new ShooterRotationCommand(m_ShooterRotation, -0.1));
-    c_driverController.button(2).whileTrue(new ShooterIntakeCommand(m_ShooterIntakeSubsystem, 0.1));
-    c_driverController.button(3).whileTrue(new ShooterIntakeCommand(m_ShooterIntakeSubsystem, -0.1));
-    c_driverController.button(4).whileTrue(new ShooterCommand(m_ShooterSubsystem, 0.1));
-    c_driverController.button(5).whileTrue(new ShooterCommand(m_ShooterSubsystem, -0.1));
-    c_driverController.button(6).whileTrue(new ElevatorCommand(m_ElevatorSubsystem, 0));
-    c_driverController.button(7).whileTrue(new ElevatorArmCommand(m_ElevatorArmSubsystem, 0));
-    c_driverController.button(8).whileTrue(new ElevatorWheelsCommand(m_ElevatorWheelsSubsystem, 0));
-// Call Sam to make button for Auto Limelight Targeting. Has to be on Driver Controller
+    c_driverController.button(1).whileTrue(new ShooterRotationCommand(m_ShooterRotation, 0.1));
+    c_driverController.button(2).whileTrue(new ShooterRotationCommand(m_ShooterRotation, -0.1));
+  //c_driverController.button(4).whileTrue(new LimeLightAuto(m_LimeLightAuto, -0.1)); 
+    m_driverController.button(1).whileTrue(new ShooterIntakeCommand(m_ShooterIntakeSubsystem, 0.1));
+    m_driverController.button(2).whileTrue(new ShooterIntakeCommand(m_ShooterIntakeSubsystem, -0.1));
+    m_driverController.button(3).whileTrue(new ShooterCommand(m_ShooterSubsystem, 0.1));
+    m_driverController.button(4).whileTrue(new ShooterCommand(m_ShooterSubsystem, -0.1));
+    m_driverController.button(5).whileTrue(new ElevatorCommand(m_ElevatorSubsystem, 0));
+    m_driverController.button(6).whileTrue(new ElevatorArmCommand(m_ElevatorArmSubsystem, 0));
+    m_driverController.button(7).whileTrue(new ElevatorWheelsCommand(m_ElevatorWheelsSubsystem, 0));
+  // Call Sam to make button for Auto Limelight Targeting. Has to be on Driver Controller
   // Only Shooter up and down, And Limelight auto target to be on the Driver Controller
   }
 
