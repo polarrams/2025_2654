@@ -43,18 +43,18 @@ public class RobotContainer {
 
   //Controller 2/Button Box
   private final CommandJoystick m_driverController =
-  new CommandJoystick(OperatorConstants.kDriverControllerPort);
+  new CommandJoystick(OperatorConstants.mDriverControllerPort);
 
 //ShooterSubsystems Defined here.
   private final ShooterRotation m_ShooterRotation = new ShooterRotation();
   private final ShooterIntakeSubsystem m_ShooterIntakeSubsystem = new ShooterIntakeSubsystem();
   private final ShooterSubsystem m_ShooterSubsystem = new ShooterSubsystem();
-  private final ShooterRotation m_ShooterRotation2 = new ShooterRotation();
+  //private final ShooterRotation m_ShooterRotation2 = new ShooterRotation();
 // Elevator Subsystems defined here
   private final ElevatorArmSubsystem m_ElevatorArmSubsystem = new ElevatorArmSubsystem();
   private final ElevatorSubsystem m_ElevatorSubsystem = new ElevatorSubsystem();
   private final ElevatorWheelsSubsystem m_ElevatorWheelsSubsystem = new ElevatorWheelsSubsystem();
-  private final ElevatorArmSubsystem m_ElevatorArmSubsystem2 = new ElevatorArmSubsystem();
+  //private final ElevatorArmSubsystem m_ElevatorArmSubsystem2 = new ElevatorArmSubsystem();
 
 
 //Set Default Commands
@@ -64,9 +64,9 @@ public class RobotContainer {
 //Shooter Default Commands
     m_ShooterIntakeSubsystem.setDefaultCommand(new ShooterIntakeCommand(m_ShooterIntakeSubsystem,0));
     m_ShooterSubsystem.setDefaultCommand(new ShooterCommand(m_ShooterSubsystem,0));
-    m_ShooterRotation2.setDefaultCommand(new ShooterRotationCommand2(m_ShooterRotation2,0));
+   // m_ShooterRotation2.setDefaultCommand(new ShooterRotationCommand2(m_ShooterRotation2,0));
 //Elevator Default Commands
-    m_ElevatorArmSubsystem2.setDefaultCommand(new ElevatorArmCommand2(m_ElevatorArmSubsystem2,0));
+   // m_ElevatorArmSubsystem2.setDefaultCommand(new ElevatorArmCommand2(m_ElevatorArmSubsystem2,0));
     m_ElevatorSubsystem.setDefaultCommand(new ElevatorCommand(m_ElevatorSubsystem,0));
     m_ElevatorWheelsSubsystem.setDefaultCommand(new ElevatorWheelsCommand(m_ElevatorWheelsSubsystem,0));
   }
@@ -97,10 +97,10 @@ public class RobotContainer {
     c_driverController.button(1).whileTrue(new ShooterRotationCommand(m_ShooterRotation, 0.1));
     c_driverController.button(2).whileTrue(new ShooterRotationCommand(m_ShooterRotation, -0.1));
   //c_driverController.button(4).whileTrue(new LimeLightAuto(m_LimeLightAuto, -0.1)); 
-    m_driverController.button(1).whileTrue(new ShooterIntakeCommand(m_ShooterIntakeSubsystem, 0.1));
-    m_driverController.button(2).whileTrue(new ShooterIntakeCommand(m_ShooterIntakeSubsystem, -0.1));
-    m_driverController.button(3).whileTrue(new ShooterCommand(m_ShooterSubsystem, 0.1));
-    m_driverController.button(4).whileTrue(new ShooterCommand(m_ShooterSubsystem, -0.1));
+    m_driverController.button(1).whileTrue(new ShooterIntakeCommand(m_ShooterIntakeSubsystem, 0.6));
+    m_driverController.button(2).whileTrue(new ShooterIntakeCommand(m_ShooterIntakeSubsystem, -0.6));
+    m_driverController.button(3).whileTrue(new ShooterCommand(m_ShooterSubsystem, 0.6));
+    m_driverController.button(4).whileTrue(new ShooterCommand(m_ShooterSubsystem, -0.6));
     m_driverController.button(5).whileTrue(new ElevatorCommand(m_ElevatorSubsystem, 0));
     m_driverController.button(6).whileTrue(new ElevatorArmCommand(m_ElevatorArmSubsystem, 0));
     m_driverController.button(7).whileTrue(new ElevatorWheelsCommand(m_ElevatorWheelsSubsystem, 0));
