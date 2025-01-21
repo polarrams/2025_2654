@@ -1,0 +1,17 @@
+package frc.robot.commands;
+
+import edu.wpi.first.wpilibj2.command.Command;
+import frc.robot.subsystems.LimelightSub;
+import frc.robot.subsystems.Limelight2Sub;
+
+public class LimeLight2Command extends Command{
+    private final Limelight2Subsytem m_Limelight2Subsystem;
+    public LimeLight2Command(Limelight2Subsystem c_Limelight2Subsystem) {
+        this.m_Limelight2Subsystem = c_Limelight2Subsystem;
+    addRequirements(m_Limelight2Subsystem);
+}
+@Override
+  public void execute() {
+    m_Limelight2Subsystem.limelight();
+}
+}
