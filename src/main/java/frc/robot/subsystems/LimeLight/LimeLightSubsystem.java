@@ -1,4 +1,4 @@
-package frc.robot.subsystems.LimeLight2;
+package frc.robot.subsystems.LimeLight;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -6,7 +6,7 @@ import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.networktables.NetworkTableEntry;
 import edu.wpi.first.networktables.NetworkTableInstance;
 
-public class LimeLight2Subsystem extends SubsystemBase {
+public class LimeLightSubsystem extends SubsystemBase {
     public double[] limelight() {
         NetworkTable table = NetworkTableInstance.getDefault().getTable("limelight-two");
         NetworkTableEntry tx = table.getEntry("tx");
