@@ -104,6 +104,7 @@ public class RobotContainer {
     m_driverController.button(5).whileTrue(new ElevatorCommand(m_ElevatorSubsystem, 0));
     m_driverController.button(6).whileTrue(new ElevatorArmCommand(m_ElevatorArmSubsystem, 0));
     m_driverController.button(7).whileTrue(new ElevatorWheelsCommand(m_ElevatorWheelsSubsystem, 0));
+    m_driverController.button(9).whileTrue(new ShooterCommand(m_ShooterSubsystem, 0));
   // Call Sam to make button for Auto Limelight Targeting. Has to be on Driver Controller
   // Only Shooter up and down, And Limelight auto target to be on the Driver Controller
   }
