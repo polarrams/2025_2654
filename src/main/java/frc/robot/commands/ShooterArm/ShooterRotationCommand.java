@@ -22,11 +22,11 @@ public class ShooterRotationCommand extends Command{
 @Override
   public void execute() {
     double current_pos = m_ArmSubsystem.getPos();
-    if (current_pos < 5 && speed>0){
+    if (current_pos > -5 && speed < 0){
         m_ArmSubsystem.p2(speed);
         
-    } else if(current_pos > 0 && speed<0){
-    m_ArmSubsystem.p2(speed);
+    } else if(current_pos < 15 && speed > 0){
+        m_ArmSubsystem.p2(speed);
     }
     else{m_ArmSubsystem.p2(0);}
 }

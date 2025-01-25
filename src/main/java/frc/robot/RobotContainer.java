@@ -14,11 +14,11 @@ import frc.robot.Constants.OperatorConstants;
 import frc.robot.commands.ShooterArm.ShooterCommand;
 import frc.robot.commands.ShooterArm.ShooterIntakeCommand;
 import frc.robot.commands.ShooterArm.ShooterRotationCommand;
-import frc.robot.commands.ShooterArm.ShooterRotationCommand2;
 import frc.robot.commands.Elevator.ElevatorArmCommand;
 import frc.robot.commands.Elevator.ElevatorArmCommand2;
 import frc.robot.commands.Elevator.ElevatorCommand;
 import frc.robot.commands.Elevator.ElevatorWheelsCommand;
+import frc.robot.commands.ParkCommand;
 //Subsystems Imported Here
 import frc.robot.subsystems.SwerveSubsystem;
 import frc.robot.subsystems.Elevator.ElevatorArmSubsystem;
@@ -27,6 +27,7 @@ import frc.robot.subsystems.Elevator.ElevatorWheelsSubsystem;
 import frc.robot.subsystems.ShooterArm.ShooterIntakeSubsystem;
 import frc.robot.subsystems.ShooterArm.ShooterRotation;
 import frc.robot.subsystems.ShooterArm.ShooterSubsystem;
+import frc.robot.subsystems.ParkSub;
 
 
 
@@ -55,6 +56,8 @@ public class RobotContainer {
   private final ElevatorSubsystem m_ElevatorSubsystem = new ElevatorSubsystem();
   private final ElevatorWheelsSubsystem m_ElevatorWheelsSubsystem = new ElevatorWheelsSubsystem();
   //private final ElevatorArmSubsystem m_ElevatorArmSubsystem2 = new ElevatorArmSubsystem();
+//Park
+  private final ParkSub m_ParkSub = new ParkSub();
 
 
 //Set Default Commands
@@ -64,7 +67,7 @@ public class RobotContainer {
 //Shooter Default Commands
     m_ShooterIntakeSubsystem.setDefaultCommand(new ShooterIntakeCommand(m_ShooterIntakeSubsystem,0));
     m_ShooterSubsystem.setDefaultCommand(new ShooterCommand(m_ShooterSubsystem,0));
-   // m_ShooterRotation2.setDefaultCommand(new ShooterRotationCommand2(m_ShooterRotation2,0));
+    m_ShooterRotation.setDefaultCommand(new ShooterRotationCommand(m_ShooterRotation,0));
 //Elevator Default Commands
    // m_ElevatorArmSubsystem2.setDefaultCommand(new ElevatorArmCommand2(m_ElevatorArmSubsystem2,0));
     m_ElevatorSubsystem.setDefaultCommand(new ElevatorCommand(m_ElevatorSubsystem,0));
@@ -96,11 +99,12 @@ public class RobotContainer {
     //Button Commands Go Here
     c_driverController.button(1).whileTrue(new ShooterRotationCommand(m_ShooterRotation, 0.1));
     c_driverController.button(2).whileTrue(new ShooterRotationCommand(m_ShooterRotation, -0.1));
+    c_driverController.button(3).whileTrue(new ParkCommand(m_ParkSub, 0.1, 45));
   //c_driverController.button(4).whileTrue(new LimeLightAuto(m_LimeLightAuto, -0.1)); 
-    m_driverController.button(1).whileTrue(new ShooterIntakeCommand(m_ShooterIntakeSubsystem, 0.6));
+    m_driverController.button(1).whileTrue(new ShooterIntakeCommand(m_ShooterIntakeSubsystem, 0.3));
     m_driverController.button(2).whileTrue(new ShooterIntakeCommand(m_ShooterIntakeSubsystem, -0.6));
-    m_driverController.button(3).whileTrue(new ShooterCommand(m_ShooterSubsystem, 0.6));
-    m_driverController.button(4).whileTrue(new ShooterCommand(m_ShooterSubsystem, -0.6));
+    m_driverController.button(3).whileTrue(new ShooterCommand(m_ShooterSubsystem, 0.3));
+    m_driverController.button(4).whileTrue(new ShooterCommand(m_ShooterSubsystem, -0.8));
     m_driverController.button(5).whileTrue(new ElevatorCommand(m_ElevatorSubsystem, 0));
     m_driverController.button(6).whileTrue(new ElevatorArmCommand(m_ElevatorArmSubsystem, 0));
     m_driverController.button(7).whileTrue(new ElevatorWheelsCommand(m_ElevatorWheelsSubsystem, 0));

@@ -1,4 +1,4 @@
-package frc.robot.commands.ShooterArm;
+package frc.robot.commands.Limelight;
 
 import edu.wpi.first.wpilibj2.command.Command;
 
@@ -64,12 +64,16 @@ public void initialize(){
     if (ally.isPresent()){
             if(ally.get() == Alliance.Red){
                 if(Tid == 5 ||Tid == 15){
-
+                    double angle = Math.asin((96.04*(y*y -2.26*2.26)+44.296)/(2*9.8*Math.sqrt(y*y-2.26*2.26)*speed));//in radians?
+                    m_ShooterRotation.drive_to_pos(angle,0.1);
+                    
+                    //return angle;
                 }
             }
             else if(ally.get() == Alliance.Blue){
                 if(Tid == 4||Tid == 14){
-
+                    double angle = Math.asin((96.04*(y*y -2.26*2.26)+44.296)/(2*9.8*Math.sqrt(y*y-2.26*2.26)*speed));
+                    m_ShooterRotation.drive_to_pos(angle,0.1);
                 }
             }
      }

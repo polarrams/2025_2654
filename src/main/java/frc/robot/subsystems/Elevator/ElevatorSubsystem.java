@@ -20,7 +20,7 @@ public void setzero() {
         c_up.setPosition(0);
     }
     public void getPos() {
-      SmartDashboard.putNumber("Hook1 Degrees", c_up.getPosition());
+      SmartDashboard.putNumber("Elevator Degrees", c_up.getPosition());
 
       
     

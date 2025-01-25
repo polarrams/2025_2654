@@ -22,10 +22,10 @@ public class LimeLightSubsystem extends SubsystemBase {
         double Tid = tid.getDouble(0.0);
         
         //post to smart dashboard periodically
-        SmartDashboard.putNumber("Limelight2X", x);
-        SmartDashboard.putNumber("Limelight2Y", y);
-        SmartDashboard.putNumber("Limelight2Area", Area);
-        SmartDashboard.putNumber("Limelight2Tid", Tid);
+        SmartDashboard.putNumber("LimelightX", x);
+        SmartDashboard.putNumber("LimelightY", y);
+        SmartDashboard.putNumber("LimelightArea", Area);
+        SmartDashboard.putNumber("LimelightTid", Tid);
         
         double[] ans = new double[4];
         ans[0] = x;
