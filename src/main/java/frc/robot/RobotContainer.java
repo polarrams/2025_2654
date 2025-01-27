@@ -40,7 +40,7 @@ import frc.robot.subsystems.LifterSubsystem;
 
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
-  private final SwerveSubsystem drivebase = new SwerveSubsystem();
+  // private final SwerveSubsystem drivebase = new SwerveSubsystem();
   private final CommandXboxController m_XboxController =
 //Drive controller
   new CommandXboxController(OperatorConstants.kDriverControllerPort);
@@ -66,7 +66,10 @@ public class RobotContainer {
   //private final ParkSub m_ParkSub = new ParkSub();
 //Lifter
   private final LifterSubsystem m_LifterSubsystem = new LifterSubsystem();
-
+  final CommandXboxController driverXbox = new CommandXboxController(0);
+  // The robot's subsystems and commands are defined here...
+  private final SwerveSubsystem drivebase = new SwerveSubsystem(new File(Filesystem.getDeployDirectory(),
+                                                                         "swerve/neo"));
 //Set Default Commands
   public RobotContainer() {
     configureBindings();
@@ -81,7 +84,14 @@ public class RobotContainer {
     m_ElevatorWheelsSubsystem.setDefaultCommand(new ElevatorWheelsCommand(m_ElevatorWheelsSubsystem,0));
 //Lifter Defaults
     m_LifterSubsystem.setDefaultCommand(new LifterCommand(m_LifterSubsystem, 0));
+    Command driveFieldOrientedDirectAngleSim = drivebase.simDriveCommand(
+      () -> MathUtil.applyDeadband(driverXbox.getLeftY(), OperatorConstants.LEFT_Y_DEADBAND),
+      () -> MathUtil.applyDeadband(driverXbox.getLeftX(), OperatorConstants.LEFT_X_DEADBAND),
+      () -> driverXbox.getRawAxis(2));
+
+  drivebase.setDefaultCommand(driveFieldOrientedDirectAngleSim);
   }
+
 
 
 
@@ -108,7 +118,7 @@ public class RobotContainer {
     //Button Commands Go Here
     c_driverController.button(1).whileTrue(new ShooterRotationCommand(m_ShooterRotation, 0.1));
     c_driverController.button(2).whileTrue(new ShooterRotationCommand(m_ShooterRotation, -0.1));
-    c_driverController.button(3).whileTrue(new LifterCommand(m_LifterSubsystem, 0));
+    c_driverController.button(3).whileTrue(new LifterCommand(m_LifterSubsystem, 0.1));
     //c_driverController.button(3).whileTrue(new ParkCommand(m_ParkSub, 0.1, 45));
   //c_driverController.button(4).whileTrue(new LimeLightAuto(m_LimeLightAuto, -0.1)); 
     m_driverController.button(1).whileTrue(new ShooterIntakeCommand(m_ShooterIntakeSubsystem, 0.3));
@@ -120,51 +130,9 @@ public class RobotContainer {
     m_driverController.button(7).whileTrue(new ElevatorWheelsCommand(m_ElevatorWheelsSubsystem, 0));
   // Call Sam to make button for Auto Limelight Targeting. Has to be on Driver Controller
   // Only Shooter up and down, And Limelight auto target to be on the Driver Controller
-  }
- public class RobotContainer
- 
-{
-
-  // Replace with CommandPS4Controller or CommandJoystick if needed
-  final CommandXboxController driverXbox = new CommandXboxController(0);
-  // The robot's subsystems and commands are defined here...
-  private final SwerveSubsystem drivebase = new SwerveSubsystem(new File(Filesystem.getDeployDirectory(),
-                                                                         "swerve/neo"));
-
-  /**
-   * The container for the robot. Contains subsystems, OI devices, and commands.
-   */
-  public RobotContainer()
-  {
-    // Configure the trigger bindings
-    configureBindings();
-
-    Command driveFieldOrientedDirectAngleSim = drivebase.simDriveCommand(
-        () -> MathUtil.applyDeadband(driverXbox.getLeftY(), OperatorConstants.LEFT_Y_DEADBAND),
-        () -> MathUtil.applyDeadband(driverXbox.getLeftX(), OperatorConstants.LEFT_X_DEADBAND),
-        () -> driverXbox.getRawAxis(2));
-
-    drivebase.setDefaultCommand(driveFieldOrientedDirectAngleSim);
-  }
-
-  /**
-   * Use this method to define your trigger->command mappings. Triggers can be created via the
-   * {@link Trigger#Trigger(java.util.function.BooleanSupplier)} constructor with an arbitrary predicate, or via the
-   * named factories in {@link edu.wpi.first.wpilibj2.command.button.CommandGenericHID}'s subclasses for
-   * {@link CommandXboxController Xbox}/{@link edu.wpi.first.wpilibj2.command.button.CommandPS4Controller PS4}
-   * controllers or {@link edu.wpi.first.wpilibj2.command.button.CommandJoystick Flight joysticks}.
-   */
-  private void configureBindings()
-  {
-    driverXbox.x().whileTrue(Commands.runOnce(drivebase::lock, drivebase).repeatedly());
-  }
-
-  /**
-   * Use this to pass the autonomous command to the main {@link Robot} class.
-   *
-   * @return the command to run in autonomous
-   */
-  public Command getAutonomousCommand()
+  driverXbox.x().whileTrue(Commands.runOnce(drivebase::lock, drivebase).repeatedly());
+}
+public Command getAutonomousCommand()
   {
     // An example command will be run in autonomous
     return drivebase.getAutonomousCommand("New Auto");
@@ -179,7 +147,7 @@ public class RobotContainer {
   {
     drivebase.setMotorBrake(brake);
   }
-}
+
 
 
 
