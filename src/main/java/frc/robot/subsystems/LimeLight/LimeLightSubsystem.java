@@ -2,6 +2,7 @@ package frc.robot.subsystems.LimeLight;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import frc.robot.LimelightHelpers;
 import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.networktables.NetworkTableEntry;
 import edu.wpi.first.networktables.NetworkTableInstance;
@@ -26,6 +27,12 @@ public class LimeLightSubsystem extends SubsystemBase {
         SmartDashboard.putNumber("Limelight2Y", y);
         SmartDashboard.putNumber("Limelight2Area", Area);
         SmartDashboard.putNumber("Limelight2Tid", Tid);
+
+        //limelight pipelines
+        LimelightHelpers.setPipelineIndex("limelight-one", 0);
+        LimelightHelpers.setPipelineIndex("limelight-one", 1);
+        LimelightHelpers.setPipelineIndex("limelight-two", 0);
+        LimelightHelpers.setPipelineIndex("limelight-two", 1);
         
         double[] ans = new double[4];
         ans[0] = x;
