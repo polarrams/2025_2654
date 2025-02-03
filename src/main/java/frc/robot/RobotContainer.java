@@ -108,6 +108,11 @@ public class RobotContainer {
   // Call Sam to make button for Auto Limelight Targeting. Has to be on Driver Controller
   // Only Shooter up and down, And Limelight auto target to be on the Driver Controller
   }
+  //configureAutochooser 2: hellectric boogaloo
+  //used to select an auto mode during autonomous phase
+  private void configureAutochooser() {
+    
+  }
 
 
 

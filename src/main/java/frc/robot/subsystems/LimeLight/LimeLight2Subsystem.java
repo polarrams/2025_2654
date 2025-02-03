@@ -7,9 +7,9 @@ import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.networktables.NetworkTableEntry;
 import edu.wpi.first.networktables.NetworkTableInstance;
 
-public class LimeLightSubsystem extends SubsystemBase {
+public class LimeLight2Subsystem extends SubsystemBase {
     public double[] limelight() {
-        NetworkTable table = NetworkTableInstance.getDefault().getTable("limelight-one");
+        NetworkTable table = NetworkTableInstance.getDefault().getTable("limelight-two");
         NetworkTableEntry tx = table.getEntry("tx");
         NetworkTableEntry ty = table.getEntry("ty");
         NetworkTableEntry ta = table.getEntry("ta");
@@ -23,14 +23,14 @@ public class LimeLightSubsystem extends SubsystemBase {
         double Tid = tid.getDouble(0.0);
         
         //post to smart dashboard periodically
-        SmartDashboard.putNumber("LimelightX", x);
-        SmartDashboard.putNumber("LimelightY", y);
-        SmartDashboard.putNumber("LimelightArea", Area);
-        SmartDashboard.putNumber("LimelightTid", Tid);
+        SmartDashboard.putNumber("Limelight2X", x);
+        SmartDashboard.putNumber("Limelight2Y", y);
+        SmartDashboard.putNumber("Limelight2Area", Area);
+        SmartDashboard.putNumber("Limelight2Tid", Tid);
 
         //limelight pipelines
-        LimelightHelpers.setPipelineIndex("limelight-one", 0);
-        LimelightHelpers.setPipelineIndex("limelight-one", 1);
+        LimelightHelpers.setPipelineIndex("limelight-two", 0);
+        LimelightHelpers.setPipelineIndex("limelight-two", 1);
         
         double[] ans = new double[4];
         ans[0] = x;
