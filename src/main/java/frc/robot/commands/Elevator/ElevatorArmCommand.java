@@ -20,10 +20,10 @@ public class ElevatorArmCommand extends Command{
 @Override
   public void execute() {
     double current_pos = m_ElevatorArmSubsystem.getPos();
-    if (current_pos > -10 && speed < 0){
+    if (current_pos > -1.7 && speed < 0){
         m_ElevatorArmSubsystem.p2(speed);
         
-    } else if(current_pos < 10 && speed > 0){
+    } else if(current_pos < 18 && speed > 0){
         m_ElevatorArmSubsystem.p2(speed);
     }
     else{m_ElevatorArmSubsystem.p2(0);}

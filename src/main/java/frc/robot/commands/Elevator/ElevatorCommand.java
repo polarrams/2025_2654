@@ -30,17 +30,17 @@ public class ElevatorCommand extends Command{
     //m_Elevator.run(m_speed1);
     m_ElevatorSubsystem.getPos();
     double Elevator_pos = SmartDashboard.getNumber("Elevator Degrees",0);
-    if (Elevator_pos <=0 && Elevator_pos >= -257){
+    if (Elevator_pos <=0 && Elevator_pos >= -268){
         m_ElevatorSubsystem.run1(m_speed1);
     }
-    else if (Elevator_pos >=0 && Elevator_pos >= -257){
+    else if (Elevator_pos >=0 && Elevator_pos >= -268){
         if (m_speed1 < 0){
         m_ElevatorSubsystem.run1(m_speed1);
         }
         else{m_ElevatorSubsystem.run1(0);
         }
     }
-    else if (Elevator_pos <=0 && Elevator_pos <= -257){
+    else if (Elevator_pos <=0 && Elevator_pos <= -268){
         if (m_speed1 > 0){
         m_ElevatorSubsystem.run1(m_speed1);
         }

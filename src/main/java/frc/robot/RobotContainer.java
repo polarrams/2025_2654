@@ -129,15 +129,15 @@ private final SendableChooser<Command> autoChooser;
   private void configureBindings() {
 
     //Button Commands Go Here
-    c_driverController.button(1).whileTrue(new ShooterRotationCommand(m_ShooterRotation, 0.1));
-    c_driverController.button(2).whileTrue(new ShooterRotationCommand(m_ShooterRotation, -0.1));
+    c_driverController.button(1).whileTrue(new ShooterRotationCommand(m_ShooterRotation, 0.25));
+    c_driverController.button(2).whileTrue(new ShooterRotationCommand(m_ShooterRotation, -0.25));
     c_driverController.button(6).whileTrue(new AprilTagCmd(m_ShooterRotation, 0, 0, false, m_LimeLight));
     //c_driverController.button(3).whileTrue(new ParkCommand(m_ParkSub, 0.1, 45));
     //c_driverController.button(4).whileTrue(new LimeLightAuto(m_LimeLightAuto, -0.1)); 
-    m_driverController.button(1).whileTrue(new ShooterIntakeCommand(m_ShooterIntakeSubsystem, 0.7));//Shooter Intake
-    m_driverController.button(2).whileTrue(new ShooterCommand(m_ShooterSubsystem, 1));//Intake in
-    m_driverController.button(3).whileTrue(new ShooterIntakeCommand(m_ShooterIntakeSubsystem, -0.7));//Intake Shoot
-    m_driverController.button(4).whileTrue(new ShooterCommand(m_ShooterSubsystem, -1));//Shoot Out
+    m_driverController.button(1).whileTrue(new ShooterIntakeCommand(m_ShooterIntakeSubsystem, 0.4));//Shooter Intake
+    m_driverController.button(2).whileTrue(new ShooterCommand(m_ShooterSubsystem, .7));//Intake in
+    m_driverController.button(3).whileTrue(new ShooterIntakeCommand(m_ShooterIntakeSubsystem, -0.9));//Intake Shoot
+    m_driverController.button(4).whileTrue(new ShooterCommand(m_ShooterSubsystem, -0.8));//Shoot Out
     m_driverController.button(5).whileTrue(new ElevatorCommand(m_ElevatorSubsystem,0.25));//Elevator Up
     m_driverController.button(6).whileTrue(new ElevatorCommand(m_ElevatorSubsystem,-0.25));//Elevator Down
     m_driverController.button(9).whileTrue(new ElevatorArmCommand(m_ElevatorArmSubsystem, 0.10));//Elevator Arm Up

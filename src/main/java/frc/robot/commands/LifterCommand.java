@@ -24,17 +24,17 @@ public class LifterCommand extends Command{
     //m_LifterSubsystem.run(m_speed1);
     m_LifterSubsystem.getPos();
     double Lifter_pos = SmartDashboard.getNumber("Lifter Degrees",0);
-    if (Lifter_pos <=120 && Lifter_pos >= -60){
+    if (Lifter_pos <=275 && Lifter_pos >= -25){
         m_LifterSubsystem.run1(m_speed1);
     }
-    else if (Lifter_pos >=120 && Lifter_pos >= -60){
+    else if (Lifter_pos >=275 && Lifter_pos >= -25){
         if (m_speed1 < 0){
         m_LifterSubsystem.run1(m_speed1);
         }
         else{m_LifterSubsystem.run1(0);
         }
     }
-    else if (Lifter_pos <=120 && Lifter_pos <= -60){
+    else if (Lifter_pos <=275 && Lifter_pos <= -25){
         if (m_speed1 > 0){
         m_LifterSubsystem.run1(m_speed1);
         }
