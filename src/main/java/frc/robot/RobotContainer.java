@@ -24,6 +24,7 @@ import frc.robot.subsystems.SwerveSubsystem;
 import frc.robot.subsystems.Elevator.ElevatorArmSubsystem;
 import frc.robot.subsystems.Elevator.ElevatorSubsystem;
 import frc.robot.subsystems.Elevator.ElevatorWheelsSubsystem;
+import frc.robot.subsystems.LEDs.LEDSubsystem;
 import frc.robot.subsystems.ShooterArm.ShooterIntakeSubsystem;
 import frc.robot.subsystems.ShooterArm.ShooterRotation;
 import frc.robot.subsystems.ShooterArm.ShooterSubsystem;
@@ -55,8 +56,8 @@ public class RobotContainer {
   private final ElevatorSubsystem m_ElevatorSubsystem = new ElevatorSubsystem();
   private final ElevatorWheelsSubsystem m_ElevatorWheelsSubsystem = new ElevatorWheelsSubsystem();
   //private final ElevatorArmSubsystem m_ElevatorArmSubsystem2 = new ElevatorArmSubsystem();
-
-
+//LED subsystem defined here
+private final LEDSubsystem m_leds = new LEDSubsystem();
 //Set Default Commands
   public RobotContainer() {
     configureBindings();
