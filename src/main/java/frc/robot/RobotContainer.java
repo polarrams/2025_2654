@@ -19,6 +19,7 @@ import frc.robot.commands.Elevator.ElevatorArmCommand;
 import frc.robot.commands.Elevator.ElevatorArmCommand2;
 import frc.robot.commands.Elevator.ElevatorCommand;
 import frc.robot.commands.Elevator.ElevatorWheelsCommand;
+import frc.robot.commands.LEDs.LEDCommand;
 //Subsystems Imported Here
 import frc.robot.subsystems.SwerveSubsystem;
 import frc.robot.subsystems.Elevator.ElevatorArmSubsystem;
@@ -70,6 +71,8 @@ private final LEDSubsystem m_leds = new LEDSubsystem();
    // m_ElevatorArmSubsystem2.setDefaultCommand(new ElevatorArmCommand2(m_ElevatorArmSubsystem2,0));
     m_ElevatorSubsystem.setDefaultCommand(new ElevatorCommand(m_ElevatorSubsystem,0));
     m_ElevatorWheelsSubsystem.setDefaultCommand(new ElevatorWheelsCommand(m_ElevatorWheelsSubsystem,0));
+    //led default command
+    m_leds.setDefaultCommand(new LEDCommand(m_leds));
   }
 
 
