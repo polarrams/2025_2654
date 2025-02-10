@@ -20,6 +20,7 @@ import frc.robot.commands.Elevator.ElevatorArmCommand2;
 import frc.robot.commands.Elevator.ElevatorCommand;
 import frc.robot.commands.Elevator.ElevatorWheelsCommand;
 import frc.robot.commands.LEDs.LEDCommand;
+import frc.robot.commands.LEDs.ReefLEDCommand;
 //Subsystems Imported Here
 import frc.robot.subsystems.SwerveSubsystem;
 import frc.robot.subsystems.Elevator.ElevatorArmSubsystem;
@@ -73,6 +74,7 @@ private final LEDSubsystem m_leds = new LEDSubsystem();
     m_ElevatorWheelsSubsystem.setDefaultCommand(new ElevatorWheelsCommand(m_ElevatorWheelsSubsystem,0));
     //led default command
     m_leds.setDefaultCommand(new LEDCommand(m_leds));
+ 
   }
 
 
@@ -109,6 +111,8 @@ private final LEDSubsystem m_leds = new LEDSubsystem();
     m_driverController.button(6).whileTrue(new ElevatorArmCommand(m_ElevatorArmSubsystem, 0));
     m_driverController.button(7).whileTrue(new ElevatorWheelsCommand(m_ElevatorWheelsSubsystem, 0));
     m_driverController.button(9).whileTrue(new ShooterCommand(m_ShooterSubsystem, 0));
+    m_driverController.button(10).whileTrue(new ReefLEDCommand(m_leds));
+    
   // Call Sam to make button for Auto Limelight Targeting. Has to be on Driver Controller
   // Only Shooter up and down, And Limelight auto target to be on the Driver Controller
   }

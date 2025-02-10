@@ -10,14 +10,48 @@ import edu.wpi.first.wpilibj.DriverStation.Alliance;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class LEDSubsystem extends SubsystemBase {
-    AddressableLED m_leds = new AddressableLED(0);
-    AddressableLEDBuffer m_ledBuffer = new AddressableLEDBuffer(69);
+    AddressableLED m_leds = new AddressableLED(1);
+    AddressableLEDBuffer m_ledBuffer = new AddressableLEDBuffer(211);
     public void led_init() {
-        m_leds.setLength(69);
+        m_leds.setLength(211);
         for (var i = 0; i < m_ledBuffer.getLength(); i++) {
             //Sets LED rgb values for red
             m_ledBuffer.setRGB(i, 255, 0, 0);
         }
+    }
+    public void reefHeight() {
+        switch ((int) SmartDashboard.getNumber("reefheight", 0)) {
+            case 1:
+                for (var i = 0; i < m_ledBuffer.getLength(); i++) {
+                    //Sets LED rgb values for red
+                    m_ledBuffer.setRGB(i, 0, 255, 255);
+                }
+                SmartDashboard.putNumber("reefdebug", 1);
+                break;
+            case 2:
+                for (var i = 0; i < m_ledBuffer.getLength(); i++) {
+                    //Sets LED rgb values for red
+                    m_ledBuffer.setRGB(i, 0, 255, 0);
+                }
+                SmartDashboard.putNumber("reefdebug", 2);
+            break;
+            case 3:
+                for (var i = 0; i < m_ledBuffer.getLength(); i++) {
+                    //Sets LED rgb values for red
+                    m_ledBuffer.setRGB(i, 255, 255, 0);
+                }
+                SmartDashboard.putNumber("reefdebug", 3);
+            break;
+        
+            default:
+                for (var i = 0; i < m_ledBuffer.getLength(); i++) {
+                    //Sets LED rgb values for red
+                    m_ledBuffer.setRGB(i, 255, 0, 255);
+                }
+                SmartDashboard.putNumber("reefdebug", 0);
+            break;
+        }
+        m_leds.setData(m_ledBuffer);
     }
     public void leds() {
         Optional<Alliance> ally = DriverStation.getAlliance();
