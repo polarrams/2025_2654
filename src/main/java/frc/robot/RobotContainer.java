@@ -21,6 +21,7 @@ import frc.robot.commands.Elevator.ElevatorCommand;
 import frc.robot.commands.Elevator.ElevatorWheelsCommand;
 import frc.robot.commands.Limelight.AprilTagCmd;
 import frc.robot.subsystems.LimeLight.LimeLightSubsystem;
+import frc.robot.commands.Elevator.ElevatorDTP;
 //import frc.robot.commands.ParkCommand;
 import frc.robot.commands.LifterCommand;
 //Subsystems Imported Here
@@ -32,7 +33,6 @@ import frc.robot.subsystems.ShooterArm.ShooterIntakeSubsystem;
 import frc.robot.subsystems.ShooterArm.ShooterRotation;
 import frc.robot.subsystems.ShooterArm.ShooterSubsystem;
 import frc.robot.commands.Limelight.LimeLightCommand;
-//import frc.robot.subsystems.ParkSub;
 import frc.robot.subsystems.LifterSubsystem;
 
 import com.pathplanner.lib.commands.PathPlannerAuto;
@@ -67,14 +67,12 @@ public class RobotContainer {
   private final ShooterIntakeSubsystem m_ShooterIntakeSubsystem = new ShooterIntakeSubsystem();
   private final ShooterSubsystem m_ShooterSubsystem = new ShooterSubsystem();
   private final LimeLightSubsystem m_LimeLight = new LimeLightSubsystem();
-  //private final ShooterRotation m_ShooterRotation2 = new ShooterRotation();
+
 // Elevator Subsystems defined here
   private final ElevatorArmSubsystem m_ElevatorArmSubsystem = new ElevatorArmSubsystem();
   private final ElevatorSubsystem m_ElevatorSubsystem = new ElevatorSubsystem();
   private final ElevatorWheelsSubsystem m_ElevatorWheelsSubsystem = new ElevatorWheelsSubsystem();
-  //private final ElevatorArmSubsystem m_ElevatorArmSubsystem2 = new ElevatorArmSubsystem();
-//Park
-  //private final ParkSub m_ParkSub = new ParkSub();
+
 //Lifter
   private final LifterSubsystem m_LifterSubsystem = new LifterSubsystem();
 //Autos defined here
@@ -96,10 +94,11 @@ private final SendableChooser<Command> autoChooser;
     m_ShooterRotation.setDefaultCommand(new ShooterRotationCommand(m_ShooterRotation,0));
     m_LimeLight.setDefaultCommand(new LimeLightCommand(m_LimeLight));
 //Elevator Default Commands
-   // m_ElevatorArmSubsystem2.setDefaultCommand(new ElevatorArmCommand2(m_ElevatorArmSubsystem2,0));
-    m_ElevatorSubsystem.setDefaultCommand(new ElevatorCommand(m_ElevatorSubsystem,0));
+    m_ElevatorSubsystem.setDefaultCommand(new ElevatorCommand(m_ElevatorSubsystem,0,0));
     m_ElevatorWheelsSubsystem.setDefaultCommand(new ElevatorWheelsCommand(m_ElevatorWheelsSubsystem,0));
-    m_ElevatorArmSubsystem.setDefaultCommand(new ElevatorArmCommand(m_ElevatorArmSubsystem,0));
+    m_ElevatorArmSubsystem.setDefaultCommand(new ElevatorArmCommand(m_ElevatorArmSubsystem,0
+    ));
+
 //Lifter Defaults
     m_LifterSubsystem.setDefaultCommand(new LifterCommand(m_LifterSubsystem, 0));
     CameraServer.startAutomaticCapture();
@@ -131,21 +130,24 @@ private final SendableChooser<Command> autoChooser;
     //Button Commands Go Here
     c_driverController.button(1).whileTrue(new ShooterRotationCommand(m_ShooterRotation, 0.25));
     c_driverController.button(2).whileTrue(new ShooterRotationCommand(m_ShooterRotation, -0.25));
-    c_driverController.button(6).whileTrue(new AprilTagCmd(m_ShooterRotation, 0, 0, false, m_LimeLight));
+    c_driverController.button(6).whileTrue(new AprilTagCmd(m_ShooterRotation, 0, 0.4, false, m_LimeLight, m_ShooterSubsystem));
     //c_driverController.button(3).whileTrue(new ParkCommand(m_ParkSub, 0.1, 45));
     //c_driverController.button(4).whileTrue(new LimeLightAuto(m_LimeLightAuto, -0.1)); 
     m_driverController.button(1).whileTrue(new ShooterIntakeCommand(m_ShooterIntakeSubsystem, 0.4));//Shooter Intake
     m_driverController.button(2).whileTrue(new ShooterCommand(m_ShooterSubsystem, .7));//Intake in
     m_driverController.button(3).whileTrue(new ShooterIntakeCommand(m_ShooterIntakeSubsystem, -0.9));//Intake Shoot
-    m_driverController.button(4).whileTrue(new ShooterCommand(m_ShooterSubsystem, -0.8));//Shoot Out
-    m_driverController.button(5).whileTrue(new ElevatorCommand(m_ElevatorSubsystem,0.25));//Elevator Up
-    m_driverController.button(6).whileTrue(new ElevatorCommand(m_ElevatorSubsystem,-0.25));//Elevator Down
-    m_driverController.button(9).whileTrue(new ElevatorArmCommand(m_ElevatorArmSubsystem, 0.10));//Elevator Arm Up
-    m_driverController.button(10).whileTrue(new ElevatorArmCommand(m_ElevatorArmSubsystem, -0.10));//Elevator Arm Down
-    m_driverController.povUp().whileTrue(new ElevatorWheelsCommand(m_ElevatorWheelsSubsystem,0.75));//Wheels in 
-    m_driverController.povDown().whileTrue(new ElevatorWheelsCommand(m_ElevatorWheelsSubsystem,-0.75));//wheels out
-    m_driverController.povLeft().whileTrue(new LifterCommand(m_LifterSubsystem, 0.2));//Lifter down
-    m_driverController.povRight().whileTrue(new LifterCommand(m_LifterSubsystem, -0.2));//Lifter up
+    //m_driverController.button(4).whileTrue(new ShooterCommand(m_ShooterSubsystem, -0.2));//Intake out
+    m_driverController.button(4).whileTrue(new ElevatorDTP(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -49.190144, 0.4,7,0.1));
+    //m_driverController.button(4).whileTrue(new ElevatorDTP(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -15, 0.4,14,0.1));//Bottom Coral
+    m_driverController.button(5).whileTrue(new ElevatorDTP(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -105, 0.4,27,0.1));//Bottom Coral
+    m_driverController.button(6).whileTrue(new ElevatorDTP(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null,-170,0.4, 27, 0.1));//Middle Coral
+    m_driverController.povLeft().whileTrue(new ElevatorDTP(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -270,0.4, 22, 0.1));//Top COral
+    m_driverController.button(9).whileTrue(new ElevatorArmCommand(m_ElevatorArmSubsystem, -0.10));//Elevator Arm Up
+    //m_driverController.button(10).whileTrue(new ElevatorArmCommand(m_ElevatorArmSubsystem, -0.10));//Elevator Arm Down
+    m_driverController.button(10).whileTrue(new ElevatorWheelsCommand(m_ElevatorWheelsSubsystem,1));//Wheels out 
+    m_driverController.povUp().whileTrue(new ElevatorWheelsCommand(m_ElevatorWheelsSubsystem,-0.75));//wheels in
+    m_driverController.povDown().whileTrue(new LifterCommand(m_LifterSubsystem, 0.4));//Lifter down
+    m_driverController.povRight().whileTrue(new LifterCommand(m_LifterSubsystem, -0.4));//Lifter up
     // Only Shooter up and down, And Limelight auto target to be on the Driver Controller
   }{
 
@@ -157,7 +159,7 @@ private final SendableChooser<Command> autoChooser;
       ? stream.filter(auto -> auto.getName().startsWith("comp"))
       : stream
   );
-
+    //autoChooser.addOption("auto1",command);
   SmartDashboard.putData("Auto Chooser", autoChooser);
   }
 

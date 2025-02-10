@@ -8,13 +8,16 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 public class ElevatorCommand extends Command{
     private final ElevatorSubsystem m_ElevatorSubsystem;
     private double m_speed1 = 0;
+    private double pos;
     public ElevatorCommand(
         ElevatorSubsystem c_ElevatorSubsystem,
-        double c_speed1
+        double c_speed1,
+        double pos
         )
     {
         this.m_ElevatorSubsystem = c_ElevatorSubsystem;
         this.m_speed1 = c_speed1;
+        this.pos = pos;
         addRequirements(m_ElevatorSubsystem);
     }
     
@@ -48,9 +51,7 @@ public class ElevatorCommand extends Command{
         }
     }
     else{m_ElevatorSubsystem.run1(0);}
+       
+    } 
 
-
-
-        
-} 
 }

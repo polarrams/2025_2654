@@ -13,6 +13,7 @@ import frc.robot.subsystems.ShooterArm.ShooterRotation;
 import frc.robot.subsystems.LimeLight.LimeLightSubsystem;
 import java.lang.Math;
 import edu.wpi.first.wpilibj.DriverStation;
+import frc.robot.subsystems.ShooterArm.ShooterSubsystem;
 
 
 
@@ -23,20 +24,24 @@ public class AprilTagCmd extends Command {
     private final double speed;
     private final boolean reset;
     private final LimeLightSubsystem m_LimeLight;
+    private final ShooterSubsystem m_ShooterSubsystem;
 
     public AprilTagCmd(
     ShooterRotation c_ShooterRotation,
     double pos,
     double speed,
     boolean reset,
-    LimeLightSubsystem c_LimeLight) {
+    LimeLightSubsystem c_LimeLight,
+    ShooterSubsystem c_ShooterSubsystem
+    ) {
 
     this.m_ShooterRotation = c_ShooterRotation;
     this.pos = pos;
     this.speed = speed;
     this.reset = reset;   
     this.m_LimeLight = c_LimeLight;
-    addRequirements(m_ShooterRotation,m_LimeLight);
+    this.m_ShooterSubsystem = c_ShooterSubsystem;
+    addRequirements(m_ShooterRotation,m_LimeLight,m_ShooterSubsystem);
     }
   
    // set zero when robot starts 
@@ -53,30 +58,45 @@ public void initialize(){
     SmartDashboard.putNumber("truepos", m_ShooterRotation.getPos());
     m_ShooterRotation.drive_to_pos(pos, speed);
    
+   
     double[] SpeakerAprilTag = m_LimeLight.limelight();
     //double x = SpeakerAprilTag[0];
     double y = SpeakerAprilTag[1];
     double Area = SpeakerAprilTag[2];
     double Tid = SpeakerAprilTag[3];
     double DPOS = 0;
+    // Optional<Alliance> ally = DriverStation.getAlliance();
+    // if (ally.isPresent()){
+            // if(ally.get() == Alliance.Red){
+                SmartDashboard.putNumber("TID", Tid);
+                if(Tid == 5 ||Tid == 15 || Tid == 4||Tid == 14){
+                  if (y >= 16){
+                    double denominator = (2*9.8*Math.sqrt(y*y-(2.26*2.26))*2);
+                    double top = (96.04*(y*y -(2.26*2.26))+44.296);
 
-    Optional<Alliance> ally = DriverStation.getAlliance();
-    if (ally.isPresent()){
-            if(ally.get() == Alliance.Red){
-                if(Tid == 5 ||Tid == 15){
-                    double angle = Math.asin((96.04*(y*y -2.26*2.26)+44.296)/(2*9.8*Math.sqrt(y*y-2.26*2.26)*speed));//in radians?
-                    m_ShooterRotation.drive_to_pos(angle,0.1);
-                    
-                    //return angle;
+
+                    //double angle = (Math.abs(10 - Math.asin((  top    /    denominator  -10 )/10)*-6.5));//in radians?
+                    double angle = (Math.abs(24 - Math.asin((  y  -24 )/24)*15.3));
+                    m_ShooterRotation.drive_to_pos(angle,speed);
+                    SmartDashboard.putNumber("y", y);
+                    SmartDashboard.putNumber("top", top);
+                    SmartDashboard.putNumber("denominator",2*9.8*Math.sqrt(y*y-(2.26*2.26))*2);
+                    SmartDashboard.putNumber("Shooter Arm Angle Equation", angle);
+                    m_ShooterSubsystem.run(-0.6);
+                  }
+                  else if (y < 16){double angle = (Math.abs(22 - Math.asin((  y  -22 )/22)*13.9));
+                    m_ShooterRotation.drive_to_pos(angle,speed);
+                   
+                    m_ShooterSubsystem.run(-0.75);}
                 }
-            }
-            else if(ally.get() == Alliance.Blue){
-                if(Tid == 4||Tid == 14){
-                    double angle = Math.asin((96.04*(y*y -2.26*2.26)+44.296)/(2*9.8*Math.sqrt(y*y-2.26*2.26)*speed));
-                    m_ShooterRotation.drive_to_pos(angle,0.1);
-                }
-            }
-     }
+             
+            // else if(ally.get() == Alliance.Blue){
+               // if(Tid == 4||Tid == 14){
+               //     double angle = Math.asin((96.04*(y*y -2.26*2.26)+44.296)/(2*9.8*Math.sqrt(y*y-2.26*2.26)*speed));
+               //     m_ShooterRotation.drive_to_pos(angle,0.1);
+               // }
+            //}
+     
 
    // if(Tid == 8 ||Tid == 4 || Tid == 7){
    //     SmartDashboard.putNumber("Shooter Rotation Value",m_ShooterRotation.getPos());
@@ -88,17 +108,17 @@ public void initialize(){
    //         
    //     
    // }
-    else{ 
-        double current_pos = m_ShooterRotation.getPos();
-        if (current_pos < -10 && speed>0){
-            m_ShooterRotation.p2(speed);
-            
-        } else if(current_pos > 43.2 && speed<0){
-        m_ShooterRotation.p2(speed);
-        }
-        else {m_ShooterRotation.drive_to_pos(SmartDashboard.getNumber("Shooter Rotation Value",-60)*1.4976, speed);}
-       
-        }
+     else{ m_ShooterRotation.p2(0);
+   //     double current_pos = m_ShooterRotation.getPos();
+   // if (current_pos > 0 && speed < 0){
+   //     m_ShooterRotation.p2(speed);
+   //     
+   // } else if(current_pos < 150 && speed > 0){
+   //     m_ShooterRotation.p2(speed);
+   // }
+   // else{m_ShooterRotation.p2(0);}
+   //     }
+     }
     }
 }
 

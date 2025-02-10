@@ -7,27 +7,27 @@ import frc.robot.subsystems.ShooterArm.ShooterRotation;
 
 
 public class ShooterRotationCommand extends Command{
-    private final ShooterRotation m_ArmSubsystem;
+    private final ShooterRotation m_ShooterRotation;
     private final double speed;
 
     public ShooterRotationCommand(
-    ShooterRotation c_ArmSubsystem,
+    ShooterRotation c_ShooterRotation,
     double speed
     
     ){
         this.speed = speed;
-        this.m_ArmSubsystem = c_ArmSubsystem;
-        addRequirements(c_ArmSubsystem);
+        this.m_ShooterRotation = c_ShooterRotation;
+        addRequirements(c_ShooterRotation);
     }
 @Override
   public void execute() {
-    double current_pos = m_ArmSubsystem.getPos();
-    if (current_pos > 0 && speed < 0){
-        m_ArmSubsystem.p2(speed);
+    double current_pos = m_ShooterRotation.getPos();
+    if (current_pos > 15 && speed < 0){
+        m_ShooterRotation.p2(speed);
         
-    } else if(current_pos < 150 && speed > 0){
-        m_ArmSubsystem.p2(speed);
+    } else if(current_pos < 40 && speed > 0){
+        m_ShooterRotation.p2(speed);
     }
-    else{m_ArmSubsystem.p2(0);}
+    else{m_ShooterRotation.p2(0);}
 }
 }
