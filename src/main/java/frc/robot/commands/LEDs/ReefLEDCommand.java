@@ -13,10 +13,6 @@ public class ReefLEDCommand extends Command {
         addRequirements(m_reefled);
     }
     @Override
-    public void initialize() {
-        m_reefled.led_init();
-    }
-    @Override
     public void execute() {
         m_reefled.reefHeight();
     }
