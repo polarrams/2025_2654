@@ -11,7 +11,9 @@ public class LEDCommand extends Command {
     {
         this.m_leds = m_leds;
         addRequirements(m_leds);
+        
     }
+
     @Override
     public void initialize() {
         m_leds.led_init();
