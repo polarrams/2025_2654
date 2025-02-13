@@ -131,28 +131,26 @@ private final SendableChooser<Command> autoChooser;
 
   private void configureBindings() {
 
-    //Button Commands Go Here
+    //Driver Button Commands Go Here
     c_driverController.button(1).whileTrue(new ShooterRotationCommand(m_ShooterRotation, 0.25));
     c_driverController.button(2).whileTrue(new ShooterRotationCommand(m_ShooterRotation, -0.25));
     c_driverController.button(6).whileTrue(new AprilTagCmd(m_ShooterRotation, 0, 0.4, false, m_LimeLight, m_ShooterSubsystem));
-    c_driverController.button(3).whileTrue(new LockPoseCommand(drivebase));
-    //c_driverController.button(3).whileTrue(new ParkCommand(m_ParkSub, 0.1, 45));
-    //c_driverController.button(4).whileTrue(new LimeLightAuto(m_LimeLightAuto, -0.1)); 
+    c_driverController.button(5).whileTrue(new LockPoseCommand(drivebase));
+    c_driverController.button(4).whileTrue(new ElevatorArmCommand(m_ElevatorArmSubsystem, 0.10));//Elevator Arm Up
+    c_driverController.button(3).whileTrue(new ElevatorArmCommand(m_ElevatorArmSubsystem, -0.10));//Elevator Arm Down
+    //Button Box buttons go here
     m_driverController.button(1).whileTrue(new ShooterIntakeCommand(m_ShooterIntakeSubsystem, 0.4));//Shooter Intake
     m_driverController.button(2).whileTrue(new ShooterCommand(m_ShooterSubsystem, .7));//Intake in
     m_driverController.button(3).whileTrue(new ShooterIntakeCommand(m_ShooterIntakeSubsystem, -0.9));//Intake Shoot
-    //m_driverController.button(4).whileTrue(new ShooterCommand(m_ShooterSubsystem, -0.2));//Intake out
-    m_driverController.button(4).whileTrue(new ElevatorDTP(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -49.190144, 0.4,7,0.1));
-    //m_driverController.button(4).whileTrue(new ElevatorDTP(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -15, 0.4,14,0.1));//Bottom Coral
-    m_driverController.button(5).whileTrue(new ElevatorDTP(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -105, 0.4,27,0.1));//Bottom Coral
-    m_driverController.button(6).whileTrue(new ElevatorDTP(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null,-170,0.4, 27, 0.1));//Middle Coral
-    m_driverController.povLeft().whileTrue(new ElevatorDTP(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -270,0.4, 22, 0.1));//Top COral
-    m_driverController.button(9).whileTrue(new ElevatorArmCommand(m_ElevatorArmSubsystem, -0.10));//Elevator Arm Up
-    //m_driverController.button(10).whileTrue(new ElevatorArmCommand(m_ElevatorArmSubsystem, -0.10));//Elevator Arm Down
-    m_driverController.button(10).whileTrue(new ElevatorWheelsCommand(m_ElevatorWheelsSubsystem,1));//Wheels out 
-    m_driverController.povUp().whileTrue(new ElevatorWheelsCommand(m_ElevatorWheelsSubsystem,-0.75));//wheels in
-    m_driverController.povDown().whileTrue(new LifterCommand(m_LifterSubsystem, 0.4));//Lifter down
-    m_driverController.povRight().whileTrue(new LifterCommand(m_LifterSubsystem, -0.4));//Lifter up
+    m_driverController.button(4).whileTrue(new ElevatorDTP(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -49.190144, 0.4,7,0.1));//Coral Station setpoint
+    m_driverController.button(5).whileTrue(new ElevatorDTP(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -15, 0.4,14,0.1));//Bottom Trough Coral
+    m_driverController.button(6).whileTrue(new ElevatorDTP(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -105, 0.4,27,0.1));//First Pipe Coral
+    m_driverController.button(9).whileTrue(new ElevatorDTP(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null,-170,0.4, 27, 0.1));//Second Pipe Coral
+    m_driverController.button(10).whileTrue(new ElevatorDTP(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -270,0.4, 22, 0.1));//Top Pipe COral
+    m_driverController.povRight().whileTrue(new ElevatorWheelsCommand(m_ElevatorWheelsSubsystem,1));//Wheels out 
+    m_driverController.povDown().whileTrue(new ElevatorWheelsCommand(m_ElevatorWheelsSubsystem,-0.75));//wheels in
+    m_driverController.povUp().whileTrue(new LifterCommand(m_LifterSubsystem, 0.4));//Lifter down
+    m_driverController.povLeft().whileTrue(new LifterCommand(m_LifterSubsystem, -0.4));//Lifter up
     // Only Shooter up and down, And Limelight auto target to be on the Driver Controller
   }{
 
@@ -161,7 +159,7 @@ private final SendableChooser<Command> autoChooser;
 
   autoChooser = AutoBuilder.buildAutoChooserWithOptionsModifier(
     (stream) -> isCompetition
-      ? stream.filter(auto -> auto.getName().startsWith("comp"))
+      ? stream.filter(auto -> auto.getName().startsWith("test"))
       : stream
   );
     //autoChooser.addOption("auto1",command);
@@ -169,7 +167,7 @@ private final SendableChooser<Command> autoChooser;
   }
 
   public Command getAutonomousCommand() {
-    return autoChooser.getSelected();
+    return drivebase.getAutonomousCommand("New Auto");
   }
 }
 
