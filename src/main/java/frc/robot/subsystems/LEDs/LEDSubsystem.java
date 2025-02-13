@@ -23,8 +23,9 @@ public class LEDSubsystem extends SubsystemBase {
     }
     public void leds() {
         Optional<Alliance> ally = DriverStation.getAlliance();
-        if (SmartDashboard.getBoolean("a1", false)) {
+        //if (SmartDashboard.getBoolean("a1", false)) {
         if (ally.isPresent()){
+            SmartDashboard.putBoolean("ally present", true);
             if(ally.get() == Alliance.Red){
                 for (var i = 0; i < m_ledBuffer.getLength(); i++) {
                 // Sets the specified LED to the RGB values for red
@@ -45,7 +46,7 @@ public class LEDSubsystem extends SubsystemBase {
 
             }    
         }
-    }
+    //}
     /*else{ 
         for (var i = 0; i < m_ledBuffer.getLength(); i++) {
         // Sets the specified LED to the RGB values for red
