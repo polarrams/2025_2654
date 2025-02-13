@@ -22,6 +22,8 @@ import frc.robot.commands.Elevator.ElevatorWheelsCommand;
 import frc.robot.commands.Limelight.AprilTagCmd;
 import frc.robot.subsystems.LimeLight.LimeLightSubsystem;
 import frc.robot.commands.Elevator.ElevatorDTP;
+import frc.robot.commands.LEDs.LEDCommand;
+import frc.robot.commands.LEDs.ReefLEDCommand;
 //Subsystems Imported Here
 import frc.robot.subsystems.SwerveSubsystem;
 import frc.robot.subsystems.Elevator.ElevatorArmSubsystem;
@@ -34,12 +36,14 @@ import frc.robot.commands.Limelight.LimeLightCommand;
 import frc.robot.commands.Miselaneous.LifterCommand;
 import frc.robot.commands.Miselaneous.LockPoseCommand;
 import frc.robot.subsystems.LifterSubsystem;
+import frc.robot.subsystems.LEDs.LEDSubsystem;
 
 import com.pathplanner.lib.commands.PathPlannerAuto;
 import com.pathplanner.lib.auto.NamedCommands;
 
 import java.util.concurrent.locks.Lock;
 
+import com.ctre.phoenix6.signals.Led1OffColorValue;
 import com.pathplanner.lib.auto.AutoBuilder;
 
 
@@ -80,6 +84,8 @@ public class RobotContainer {
   private final LifterSubsystem m_LifterSubsystem = new LifterSubsystem();
 //Autos defined here
 
+private final LEDSubsystem m_leds = new LEDSubsystem();
+
 // Autonomous chooser
 private final SendableChooser<Command> autoChooser;
   
@@ -105,6 +111,7 @@ private final SendableChooser<Command> autoChooser;
 
 //Lifter Defaults
     m_LifterSubsystem.setDefaultCommand(new LifterCommand(m_LifterSubsystem, 0));
+    m_leds.setDefaultCommand(new LEDCommand(m_leds));
     CameraServer.startAutomaticCapture();
   }
 
