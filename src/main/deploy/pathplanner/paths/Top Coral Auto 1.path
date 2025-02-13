@@ -3,35 +3,42 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 5.776578282828283,
-        "y": 4.00342213114754
+        "x": 5.796906565656566,
+        "y": 4.167297979797979
       },
       "prevControl": null,
       "nextControl": {
-        "x": 6.769398700651276,
-        "y": 4.01021737939646
+        "x": 6.044436727267171,
+        "y": 4.202352495812718
       },
-      "isLocked": false,
+      "isLocked": true,
       "linkedName": null
     },
     {
       "anchor": {
-        "x": 6.998422131147541,
-        "y": 4.00342213114754
+        "x": 2.026010101010101,
+        "y": 5.844381313131313
       },
       "prevControl": {
-        "x": 6.279478711536997,
-        "y": 4.000716328514868
+        "x": 1.8030289097285275,
+        "y": 5.731335356394019
       },
       "nextControl": null,
-      "isLocked": false,
+      "isLocked": true,
       "linkedName": null
     }
   ],
   "rotationTargets": [],
   "constraintZones": [],
   "pointTowardsZones": [],
-  "eventMarkers": [],
+  "eventMarkers": [
+    {
+      "name": "Coral Top",
+      "waypointRelativePos": 0.0,
+      "endWaypointRelativePos": null,
+      "command": null
+    }
+  ],
   "globalConstraints": {
     "maxVelocity": 4.0,
     "maxAcceleration": 3.0,
@@ -42,7 +49,7 @@
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": 0.0
+    "rotation": 180.0
   },
   "reversed": false,
   "folder": null,

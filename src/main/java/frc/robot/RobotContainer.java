@@ -167,7 +167,7 @@ private final SendableChooser<Command> autoChooser;
   }
 
   public Command getAutonomousCommand() {
-    return drivebase.getAutonomousCommand("New Auto");
+    return drivebase.getAutonomousCommand("tests");
   }
 }
 
