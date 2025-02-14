@@ -57,7 +57,7 @@ public class LEDSubsystem extends SubsystemBase {
     }*/
     m_leds.setData(m_ledBuffer);
     }
-    public void reefHeight() {
+    public void change_colors() {
         if(SmartDashboard.getBoolean("ReefReached", true)) {
             switch ((String) SmartDashboard.getString("ReefColor", "purple")) {
                 case "Teal":
@@ -81,7 +81,35 @@ public class LEDSubsystem extends SubsystemBase {
                     }
                     SmartDashboard.putNumber("reefdebug", 3);
                 break;
-        
+                case "purple":
+                    for (var i = 0; i < m_ledBuffer.getLength(); i++) {
+                        //Sets LED rgb values for red
+                        m_ledBuffer.setRGB(i, 255, 0, 255);
+                    }
+                break;
+                case "pink":
+                for (var i = 0; i < m_ledBuffer.getLength(); i++) {
+                    //Sets LED rgb values for red
+                    m_ledBuffer.setRGB(i, 252, 7, 236);
+                    }
+                break;
+                case "orange": 
+                for (var i = 0; i < m_ledBuffer.getLength(); i++) {
+                    //Sets LED rgb values for red
+                    m_ledBuffer.setRGB(i, 239, 83, 4);
+                    }
+                break;
+                case "white":
+                for (var i = 0; i < m_ledBuffer.getLength(); i++) {
+                    //Sets LED rgb values for red
+                    m_ledBuffer.setRGB(i, 255, 255, 255);
+                    }
+                break;
+                case "lime":
+                for (var i = 0; i < m_ledBuffer.getLength(); i++) {
+                    //Sets LED rgb values for red
+                    m_ledBuffer.setRGB(i, 201, 237, 0);
+                    }
                 default:
                     for (var i = 0; i < m_ledBuffer.getLength(); i++) {
                         //Sets LED rgb values for red

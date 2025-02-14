@@ -30,6 +30,12 @@ public void run(double speed){
         SmartDashboard.putNumber("difference", difference);
         double truespeed = speed*difference*.5;
         SmartDashboard.putNumber("truespeed", truespeed);
+        if(Math.abs(current-desired_pos)< 2.5){
+            SmartDashboard.putString("setcolor","green");
+    }   else {
+        SmartDashboard.putString("setcolor","purple");
+
+    }
         if (truespeed > speed){
             truespeed = speed;
         }
