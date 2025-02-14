@@ -140,7 +140,7 @@ private final SendableChooser<Command> autoChooser;
     //Driver Button Commands Go Here
     c_driverController.button(1).whileTrue(new ShooterRotationCommand(m_ShooterRotation, 0.25));
     c_driverController.button(2).whileTrue(new ShooterRotationCommand(m_ShooterRotation, -0.25));
-    c_driverController.button(6).whileTrue(new AprilTagCmd(m_ShooterRotation, 0, 0.4, false, m_LimeLight, m_ShooterSubsystem));
+    c_driverController.button(6).whileTrue(new AprilTagCmd(m_ShooterRotation, 0, 0.6, false, m_LimeLight, m_ShooterSubsystem));
     c_driverController.button(5).whileTrue(new LockPoseCommand(drivebase));
     c_driverController.button(4).whileTrue(new ElevatorArmCommand(m_ElevatorArmSubsystem, 0.10));//Elevator Arm Up
     c_driverController.button(3).whileTrue(new ElevatorArmCommand(m_ElevatorArmSubsystem, -0.10));//Elevator Arm Down
@@ -170,7 +170,7 @@ private final SendableChooser<Command> autoChooser;
 
   autoChooser = AutoBuilder.buildAutoChooserWithOptionsModifier(
     (stream) -> isCompetition
-      ? stream.filter(auto -> auto.getName().startsWith("test"))
+      ? stream.filter(auto -> auto.getName().startsWith("Test"))
       : stream
   );
     //autoChooser.addOption("auto1",command);
@@ -178,7 +178,7 @@ private final SendableChooser<Command> autoChooser;
   }
 
   public Command getAutonomousCommand() {
-    return drivebase.getAutonomousCommand("tests");
+    return drivebase.getAutonomousCommand("Test rotation");
   }
 }
 

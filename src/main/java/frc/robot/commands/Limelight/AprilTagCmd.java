@@ -82,12 +82,12 @@ public void initialize(){
                     SmartDashboard.putNumber("top", top);
                     SmartDashboard.putNumber("denominator",2*9.8*Math.sqrt(y*y-(2.26*2.26))*2);
                     SmartDashboard.putNumber("Shooter Arm Angle Equation", angle);
-                    m_ShooterSubsystem.run(-0.6);
+                    m_ShooterSubsystem.run(-0.83);
                   }
                   else if (y < 16){double angle = (Math.abs(22 - Math.asin((  y  -22 )/22)*13.9));
                     m_ShooterRotation.drive_to_pos(angle,speed);
                    
-                    m_ShooterSubsystem.run(-0.75);}
+                    m_ShooterSubsystem.run(-0.9);}
                 }
              
             // else if(ally.get() == Alliance.Blue){
