@@ -148,7 +148,7 @@ private final SendableChooser<Command> autoChooser;
     m_driverController.button(1).whileTrue(new ShooterIntakeCommand(m_ShooterIntakeSubsystem, 0.4));//Shooter Intake
     m_driverController.button(2).whileTrue(new ShooterCommand(m_ShooterSubsystem, .7));//Intake in
     m_driverController.button(3).whileTrue(new ShooterIntakeCommand(m_ShooterIntakeSubsystem, -0.9));//Intake Shoot
-    m_driverController.button(4).whileTrue(new ElevatorDTP(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -49.190144, 0.4,7,0.1, "Purple"));//Coral Station setpoint
+    m_driverController.button(4).whileTrue(new ElevatorDTP(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -70, 0.4,7,0.1, "Purple"));//Coral Station setpoint
     m_driverController.button(5).whileTrue(new ElevatorDTP(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -15, 0.4,14,0.1, "Purple"));//Bottom Trough Coral
     m_driverController.button(6).whileTrue(new ElevatorDTP(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -105, 0.4,27,0.1, "Teal"));//First Pipe Coral
     m_driverController.button(9).whileTrue(new ElevatorDTP(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null,-170,0.4, 27, 0.1, "Green"));//Second Pipe Coral
