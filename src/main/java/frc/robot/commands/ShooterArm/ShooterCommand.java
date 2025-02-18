@@ -1,5 +1,6 @@
 package frc.robot.commands.ShooterArm;
 
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.subsystems.ShooterArm.ShooterSubsystem;
 
@@ -20,6 +21,8 @@ public class ShooterCommand extends Command{
     @Override
     public void execute() {
         m_ShooterSubsystem.run(m_speed1);
+        SmartDashboard.putNumber("Test1", m_speed1);
+        SmartDashboard.putBoolean("Test", true);
         
     }
 }

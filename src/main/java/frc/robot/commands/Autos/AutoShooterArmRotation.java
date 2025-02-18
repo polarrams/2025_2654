@@ -22,7 +22,7 @@ public class AutoShooterArmRotation extends Command {
     }
     @Override
     public void execute() {
-        m_ShooterRotation.drive_to_pos(pos*1.4976, speed);
+        m_ShooterRotation.drive_to_pos(pos, speed);
     }
     @Override
     public boolean isFinished() {

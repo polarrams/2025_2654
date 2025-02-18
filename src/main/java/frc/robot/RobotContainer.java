@@ -15,6 +15,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import frc.robot.commands.ShooterArm.ShooterCommand;
 import frc.robot.commands.ShooterArm.ShooterIntakeCommand;
 import frc.robot.commands.ShooterArm.ShooterRotationCommand;
+import frc.robot.commands.Autos.ElevatorAuto;
 import frc.robot.commands.Elevator.ElevatorArmCommand;
 import frc.robot.commands.Elevator.ElevatorArmCommand2;
 import frc.robot.commands.Elevator.ElevatorCommand;
@@ -85,16 +86,21 @@ public class RobotContainer {
 
 private final LEDSubsystem m_leds = new LEDSubsystem();
 
+//Shooter defined here
+
 // Autonomous chooser
 private final SendableChooser<Command> autoChooser;
   
   
 // Register commands in the constructor
-//NamedCommands.registerCommand("autoBalance", m_ShooterRotation.drive_to_pos());
+
 
 //Set Default Commands
   public RobotContainer() {
+    NamedCommands.registerCommand("ShooterCommand",new ShooterCommand(m_ShooterSubsystem, 1));
     configureBindings();
+
+
     drivebase.setDefaultCommand(driveFieldOrientedAngularVelocity);
     // drivebase.setDefaultCommand(drivebase.lock());
 //Shooter Default Commands
@@ -134,7 +140,7 @@ private final SendableChooser<Command> autoChooser;
   Command driveFieldOrientedDirectAngle = drivebase.driveFieldOriented(driveDirectAngle);
 
   Command driveFieldOrientedAngularVelocity = drivebase.driveFieldOriented(driveAngularVelocity);
-
+  
   private void configureBindings() {
 
     //Driver Button Commands Go Here
