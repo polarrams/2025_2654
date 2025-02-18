@@ -25,6 +25,7 @@ public class AprilTagCmd extends Command {
     private final boolean reset;
     private final LimeLightSubsystem m_LimeLight;
     private final ShooterSubsystem m_ShooterSubsystem;
+    private String armColor;
 
     public AprilTagCmd(
     ShooterRotation c_ShooterRotation,
@@ -32,9 +33,10 @@ public class AprilTagCmd extends Command {
     double speed,
     boolean reset,
     LimeLightSubsystem c_LimeLight,
-    ShooterSubsystem c_ShooterSubsystem
+    ShooterSubsystem c_ShooterSubsystem,
+    String armColor
     ) {
-
+    this.armColor = armColor;
     this.m_ShooterRotation = c_ShooterRotation;
     this.pos = pos;
     this.speed = speed;
@@ -56,7 +58,7 @@ public void initialize(){
 @Override
   public void execute() {
     SmartDashboard.putNumber("truepos", m_ShooterRotation.getPos());
-    m_ShooterRotation.drive_to_pos(pos, speed);
+    m_ShooterRotation.drive_to_pos(pos, speed, armColor);
    
    
     double[] SpeakerAprilTag = m_LimeLight.limelight();
@@ -77,7 +79,7 @@ public void initialize(){
 
                     //double angle = (Math.abs(10 - Math.asin((  top    /    denominator  -10 )/10)*-6.5));//in radians?
                     double angle = (Math.abs(24 - Math.asin((  y  -24 )/24)*15.3));
-                    m_ShooterRotation.drive_to_pos(angle,speed);
+                    m_ShooterRotation.drive_to_pos(angle,speed, armColor);
                     SmartDashboard.putNumber("y", y);
                     SmartDashboard.putNumber("top", top);
                     SmartDashboard.putNumber("denominator",2*9.8*Math.sqrt(y*y-(2.26*2.26))*2);
@@ -85,11 +87,11 @@ public void initialize(){
                     m_ShooterSubsystem.run(-0.57);
                   }
                   else if (y < 16 && y > 19){double angle = (Math.abs(22 - Math.asin((  y  -22 )/22)*13.9));
-                    m_ShooterRotation.drive_to_pos(angle,speed);
+                    m_ShooterRotation.drive_to_pos(angle,speed,armColor);
                    
                     m_ShooterSubsystem.run(-0.6);}
                   else if (y < 19){double angle = (Math.abs(22 - Math.asin((  y  -22 )/22)*13.9));
-                    m_ShooterRotation.drive_to_pos(angle,speed);
+                    m_ShooterRotation.drive_to_pos(angle,speed,armColor);
                    
                     m_ShooterSubsystem.run(-0.7);}
                 }

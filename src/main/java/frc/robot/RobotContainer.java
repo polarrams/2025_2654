@@ -140,7 +140,7 @@ private final SendableChooser<Command> autoChooser;
     //Driver Button Commands Go Here
     c_driverController.button(1).whileTrue(new ShooterRotationCommand(m_ShooterRotation, 0.25, "white"));
     c_driverController.button(2).whileTrue(new ShooterRotationCommand(m_ShooterRotation, -0.25, "Lime"));
-    c_driverController.button(6).whileTrue(new AprilTagCmd(m_ShooterRotation, 0, 0.6, false, m_LimeLight, m_ShooterSubsystem));
+    c_driverController.button(6).whileTrue(new AprilTagCmd(m_ShooterRotation, 0, 0.6, false, m_LimeLight, m_ShooterSubsystem, "Lime"));
     c_driverController.button(5).whileTrue(new LockPoseCommand(drivebase));
     c_driverController.button(4).whileTrue(new ElevatorArmCommand(m_ElevatorArmSubsystem, 0.10));//Elevator Arm Up
     c_driverController.button(3).whileTrue(new ElevatorArmCommand(m_ElevatorArmSubsystem, -0.10));//Elevator Arm Down
