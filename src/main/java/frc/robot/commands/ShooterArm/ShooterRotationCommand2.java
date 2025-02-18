@@ -12,6 +12,7 @@ public class ShooterRotationCommand2 extends Command {
     private final boolean reset;
     private final DoubleSupplier m_PositionSupplier;
 
+
     //declare variables in this. format and through subsystem here.
 
     public ShooterRotationCommand2(
@@ -20,9 +21,10 @@ public class ShooterRotationCommand2 extends Command {
         double pos,
         double speed,
         boolean reset
+
     )
      {
-    
+
         this.m_ShooterRotation = c_Armsub;
         this.pos = pos;
         this.speed = speed;

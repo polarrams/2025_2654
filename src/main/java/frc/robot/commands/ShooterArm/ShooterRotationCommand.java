@@ -9,12 +9,15 @@ import frc.robot.subsystems.ShooterArm.ShooterRotation;
 public class ShooterRotationCommand extends Command{
     private final ShooterRotation m_ShooterRotation;
     private final double speed;
+    private final String armColor;
 
     public ShooterRotationCommand(
     ShooterRotation c_ShooterRotation,
-    double speed
+    double speed,
+    String armColor
     
     ){
+        this.armColor = armColor;
         this.speed = speed;
         this.m_ShooterRotation = c_ShooterRotation;
         addRequirements(c_ShooterRotation);
