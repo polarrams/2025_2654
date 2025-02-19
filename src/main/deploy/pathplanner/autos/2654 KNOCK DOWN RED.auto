@@ -13,12 +13,6 @@
                 "data": {
                   "pathName": "KNOCK DOWN RED"
                 }
-              },
-              {
-                "type": "named",
-                "data": {
-                  "name": "ShooterCommand"
-                }
               }
             ]
           }

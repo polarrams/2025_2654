@@ -54,7 +54,7 @@ m_ElevatorArmSubsystem.drive_to_pos(posA, speedA);
 
 @Override
     public boolean isFinished() {
-        return true;
+        return false;
     }
 }   
 

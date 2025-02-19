@@ -16,6 +16,7 @@ import frc.robot.commands.ShooterArm.ShooterCommand;
 import frc.robot.commands.ShooterArm.ShooterIntakeCommand;
 import frc.robot.commands.ShooterArm.ShooterRotationCommand;
 import frc.robot.commands.Autos.ElevatorAuto;
+import frc.robot.commands.Autos.ElevatorWheelsAuto;
 import frc.robot.commands.Elevator.ElevatorArmCommand;
 import frc.robot.commands.Elevator.ElevatorArmCommand2;
 import frc.robot.commands.Elevator.ElevatorCommand;
@@ -40,6 +41,7 @@ import frc.robot.subsystems.LifterSubsystem;
 import frc.robot.subsystems.LEDs.LEDSubsystem;
 
 import com.pathplanner.lib.commands.PathPlannerAuto;
+import com.pathplanner.lib.events.EventTrigger;
 import com.pathplanner.lib.auto.NamedCommands;
 
 import java.util.concurrent.locks.Lock;
@@ -97,7 +99,9 @@ private final SendableChooser<Command> autoChooser;
 
 //Set Default Commands
   public RobotContainer() {
-    NamedCommands.registerCommand("ShooterCommand",new ShooterCommand(m_ShooterSubsystem, 1));
+    NamedCommands.registerCommand("ShooterCommand", new ElevatorWheelsAuto(m_ElevatorWheelsSubsystem, 1));
+    new EventTrigger("Elevator Wheels Out").onTrue(new ElevatorWheelsCommand(m_ElevatorWheelsSubsystem, 1).withTimeout(1.5));
+    new EventTrigger("Elevator First Pipe").onTrue(new ElevatorAuto(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -102, 0.65, 29, 0.5, "Teal").withTimeout(2));
     configureBindings();
 
 

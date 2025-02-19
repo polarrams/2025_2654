@@ -82,6 +82,12 @@
   "eventMarkers": [
     {
       "name": "",
+      "waypointRelativePos": 0,
+      "endWaypointRelativePos": null,
+      "command": null
+    },
+    {
+      "name": "Elevator First Pipe",
       "waypointRelativePos": 4.0,
       "endWaypointRelativePos": null,
       "command": null
@@ -103,7 +109,7 @@
   "folder": null,
   "idealStartingState": {
     "velocity": 0,
-    "rotation": 179.99999999986318
+    "rotation": 180.0
   },
   "useDefaultConstraints": true
 }
