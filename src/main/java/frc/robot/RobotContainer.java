@@ -101,7 +101,7 @@ private final SendableChooser<Command> autoChooser;
   public RobotContainer() {
     NamedCommands.registerCommand("ShooterCommand", new ElevatorWheelsAuto(m_ElevatorWheelsSubsystem, 1));
     new EventTrigger("Elevator Wheels Out").onTrue(new ElevatorWheelsCommand(m_ElevatorWheelsSubsystem, 1).withTimeout(1.5));
-    new EventTrigger("Elevator First Pipe").onTrue(new ElevatorAuto(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -102, 0.65, 29, 0.5, "Teal").withTimeout(2));
+    new EventTrigger("Elevator First Pipe").onFalse(new ElevatorAuto(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -102, 0.65, 29, 0.5, "Teal").withTimeout(2));
     configureBindings();
 
 
