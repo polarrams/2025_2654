@@ -133,7 +133,7 @@ private final SendableChooser<Command> autoChooser;
     .withControllerRotationAxis(()-> m_XboxController.getRightX() * -1)
     .deadband(OperatorConstants.DEADBAND)
     .scaleTranslation(0.8)
-    .allianceRelativeControl(true);
+    .allianceRelativeControl(false);
 
 
 
