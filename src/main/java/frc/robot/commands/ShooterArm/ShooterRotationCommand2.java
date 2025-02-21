@@ -9,8 +9,7 @@ public class ShooterRotationCommand2 extends Command {
     private final ShooterRotation m_ShooterRotation;
     private final double pos;
     private final double speed;
-    private final boolean reset;
-    private final DoubleSupplier m_PositionSupplier;
+
     private final String armColor;
 
 
@@ -18,10 +17,8 @@ public class ShooterRotationCommand2 extends Command {
 
     public ShooterRotationCommand2(
         ShooterRotation c_Armsub,
-        DoubleSupplier c_PostionSupplier,
         double pos,
         double speed,
-        boolean reset,
         String armColor
     )
      {
@@ -29,26 +26,17 @@ public class ShooterRotationCommand2 extends Command {
         this.m_ShooterRotation = c_Armsub;
         this.pos = pos;
         this.speed = speed;
-        this.reset = reset;
-        this.m_PositionSupplier = c_PostionSupplier;
+
+   
         addRequirements(m_ShooterRotation);
      }
 
 //Sets zero when robot starts.
-@Override
-public void initialize(){
-  if(reset == true){
-  m_ShooterRotation.setzero();
-  }
-  
-}
+
 //Arm movement command.
 @Override
   public void execute() {
-    SmartDashboard.putNumber("truepos", m_ShooterRotation.getPos());
-    
-    if(m_PositionSupplier == null){m_ShooterRotation.drive_to_pos(pos, speed, armColor);}
-    else{m_ShooterRotation.drive_to_pos(m_PositionSupplier.getAsDouble() *-78+10, speed, armColor);}
+    m_ShooterRotation.drive_to_pos(pos, speed, armColor);
 }
 
 }

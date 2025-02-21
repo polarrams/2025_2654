@@ -7,6 +7,7 @@ import frc.robot.subsystems.Elevator.ElevatorArmSubsystem;
 public class ElevatorArmCommand2 extends Command{
     private final ElevatorArmSubsystem m_ElevatorArmSubsystem2;
     private final double speed;
+  
 
     public ElevatorArmCommand2(
     ElevatorArmSubsystem c_ElevatorArmSubsystem2,
