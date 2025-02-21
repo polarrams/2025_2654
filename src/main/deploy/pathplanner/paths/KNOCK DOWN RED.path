@@ -81,7 +81,7 @@
   "pointTowardsZones": [],
   "eventMarkers": [
     {
-      "name": "",
+      "name": "Elevator First Pipe",
       "waypointRelativePos": 0,
       "endWaypointRelativePos": null,
       "command": null
