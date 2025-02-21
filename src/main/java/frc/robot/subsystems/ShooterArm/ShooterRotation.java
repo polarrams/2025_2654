@@ -10,6 +10,7 @@ import com.revrobotics.spark.SparkMax;
 import com.revrobotics.spark.config.SparkBaseConfig.IdleMode;
 import com.revrobotics.spark.config.SparkMaxConfig;
 import com.revrobotics.RelativeEncoder;
+import frc.robot.commands.ShooterArm.ShooterRotationCommand;
 
 
 public class ShooterRotation extends SubsystemBase{
@@ -22,7 +23,7 @@ public void run(double speed){
     motor1.set(speed);
     
     }
-    public void drive_to_pos(double desired_pos,double speed){  //desired pos should be 1.833 times the desired angle
+    public void drive_to_pos(double desired_pos,double speed, String armColor){  //desired pos should be 1.833 times the desired angle
         desired_pos = desired_pos /1.4976;//1.92
         SmartDashboard.putNumber("desired_pos", desired_pos);
         double current = getPos();
@@ -30,6 +31,13 @@ public void run(double speed){
         SmartDashboard.putNumber("difference", difference);
         double truespeed = speed*difference*.5;
         SmartDashboard.putNumber("truespeed", truespeed);
+        SmartDashboard.putString("ReefColor", armColor);
+        if (Math.abs(desired_pos - current) < 5) {
+            SmartDashboard.putBoolean("ReefReached", true);
+        }
+        else {
+            SmartDashboard.putBoolean("ReefReached", false);
+        }
         if (truespeed > speed){
             truespeed = speed;
         }

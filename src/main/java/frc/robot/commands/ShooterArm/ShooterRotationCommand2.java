@@ -11,6 +11,8 @@ public class ShooterRotationCommand2 extends Command {
     private final double speed;
     private final boolean reset;
     private final DoubleSupplier m_PositionSupplier;
+    private final String armColor;
+
 
     //declare variables in this. format and through subsystem here.
 
@@ -19,10 +21,11 @@ public class ShooterRotationCommand2 extends Command {
         DoubleSupplier c_PostionSupplier,
         double pos,
         double speed,
-        boolean reset
+        boolean reset,
+        String armColor
     )
      {
-    
+        this.armColor = armColor;
         this.m_ShooterRotation = c_Armsub;
         this.pos = pos;
         this.speed = speed;
@@ -44,8 +47,8 @@ public void initialize(){
   public void execute() {
     SmartDashboard.putNumber("truepos", m_ShooterRotation.getPos());
     
-    if(m_PositionSupplier == null){m_ShooterRotation.drive_to_pos(pos, speed);}
-    else{m_ShooterRotation.drive_to_pos(m_PositionSupplier.getAsDouble() *-78+10, speed);}
+    if(m_PositionSupplier == null){m_ShooterRotation.drive_to_pos(pos, speed, armColor);}
+    else{m_ShooterRotation.drive_to_pos(m_PositionSupplier.getAsDouble() *-78+10, speed, armColor);}
 }
 
 }

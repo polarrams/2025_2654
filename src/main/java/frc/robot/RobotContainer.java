@@ -110,7 +110,7 @@ private final SendableChooser<Command> autoChooser;
 //Shooter Default Commands
     m_ShooterIntakeSubsystem.setDefaultCommand(new ShooterIntakeCommand(m_ShooterIntakeSubsystem,0));
     m_ShooterSubsystem.setDefaultCommand(new ShooterCommand(m_ShooterSubsystem,0));
-    m_ShooterRotation.setDefaultCommand(new ShooterRotationCommand(m_ShooterRotation,0));
+    m_ShooterRotation.setDefaultCommand(new ShooterRotationCommand(m_ShooterRotation,0, "White"));
     m_LimeLight.setDefaultCommand(new LimeLightCommand(m_LimeLight));
 //Elevator Default Commands
     m_ElevatorSubsystem.setDefaultCommand(new ElevatorCommand(m_ElevatorSubsystem,0,0));
@@ -148,9 +148,9 @@ private final SendableChooser<Command> autoChooser;
   private void configureBindings() {
 
     //Driver Button Commands Go Here
-    c_driverController.button(1).whileTrue(new ShooterRotationCommand(m_ShooterRotation, 0.25));
-    c_driverController.button(2).whileTrue(new ShooterRotationCommand(m_ShooterRotation, -0.25));
-    c_driverController.button(6).whileTrue(new AprilTagCmd(m_ShooterRotation, 0, 0.6, false, m_LimeLight, m_ShooterSubsystem));
+    c_driverController.button(1).whileTrue(new ShooterRotationCommand(m_ShooterRotation, 0.25, "white"));
+    c_driverController.button(2).whileTrue(new ShooterRotationCommand(m_ShooterRotation, -0.25, "Lime"));
+    c_driverController.button(6).whileTrue(new AprilTagCmd(m_ShooterRotation, 0, 0.6, false, m_LimeLight, m_ShooterSubsystem, "Lime"));
     c_driverController.button(5).whileTrue(new LockPoseCommand(drivebase));
     c_driverController.button(4).whileTrue(new ElevatorArmCommand(m_ElevatorArmSubsystem, 0.10));//Elevator Arm Up
     c_driverController.button(3).whileTrue(new ElevatorArmCommand(m_ElevatorArmSubsystem, -0.10));//Elevator Arm Down
@@ -159,16 +159,20 @@ private final SendableChooser<Command> autoChooser;
     m_driverController.button(1).whileTrue(new ShooterIntakeCommand(m_ShooterIntakeSubsystem, 0.4));//Shooter Intake
     m_driverController.button(2).whileTrue(new ShooterCommand(m_ShooterSubsystem, .7));//Intake in
     m_driverController.button(3).whileTrue(new ShooterIntakeCommand(m_ShooterIntakeSubsystem, -0.9));//Intake Shoot
-    m_driverController.button(4).whileTrue(new ElevatorDTP(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -80, 0.65,12,0.5, "Purple"));//Coral Station setpoint
-    m_driverController.button(5).whileTrue(new ElevatorDTP(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -15, 0.65,14,0.5, "Purple"));//Bottom Trough Coral
-    m_driverController.button(6).whileTrue(new ElevatorDTP(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -102, 0.65,29,0.5, "Teal"));//First Pipe Coral
-    m_driverController.button(9).whileTrue(new ElevatorDTP(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null,-170,0.65, 27, 0.5, "Green"));//Second Pipe Coral
-    m_driverController.button(10).whileTrue(new ElevatorDTP(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -270,0.65, 28, 0.5, "Yellow"));//Top Pipe COral
+    m_driverController.button(4).whileTrue(new ElevatorDTP(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -49.190144, 0.4,7,0.1, "Purple"));//Coral Station setpoint
+    m_driverController.button(5).whileTrue(new ElevatorDTP(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -15, 0.4,14,0.1, "Yellow"));//Bottom Trough Coral
+    m_driverController.button(6).whileTrue(new ElevatorDTP(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -105, 0.4,27,0.1, "Orange"));//First Pipe Coral
+    m_driverController.button(9).whileTrue(new ElevatorDTP(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null,-170,0.4, 27, 0.1, "Pink"));//Second Pipe Coral
+    m_driverController.button(10).whileTrue(new ElevatorDTP(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -270,0.4, 22, 0.1, "White"));//Top Pipe COral
     m_driverController.button(4).whileTrue(new ReefLEDCommand(m_leds));
     m_driverController.button(5).whileTrue(new ReefLEDCommand(m_leds));
     m_driverController.button(6).whileTrue(new ReefLEDCommand(m_leds));
     m_driverController.button(9).whileTrue(new ReefLEDCommand(m_leds));
     m_driverController.button(10).whileTrue(new ReefLEDCommand(m_leds));
+    c_driverController.button(6).whileTrue(new ReefLEDCommand(m_leds));
+    c_driverController.button(5).whileTrue(new ReefLEDCommand(m_leds));
+    m_driverController.button(1).whileTrue(new ReefLEDCommand(m_leds));
+    m_driverController.button(2).whileTrue(new ReefLEDCommand(m_leds));
     m_driverController.povRight().whileTrue(new ElevatorWheelsCommand(m_ElevatorWheelsSubsystem,1));//Wheels out 
     m_driverController.povDown().whileTrue(new ElevatorWheelsCommand(m_ElevatorWheelsSubsystem,-0.75));//wheels in
     m_driverController.povUp().whileTrue(new LifterCommand(m_LifterSubsystem, 0.4));//Lifter down

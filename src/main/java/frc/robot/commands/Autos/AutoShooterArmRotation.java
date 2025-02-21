@@ -8,6 +8,7 @@ public class AutoShooterArmRotation extends Command {
     private ShooterRotation m_ShooterRotation;
     private double speed;
     private double pos;
+    private String armColor;
 
     public AutoShooterArmRotation(
             ShooterRotation c_ShooterRotation,
@@ -17,12 +18,13 @@ public class AutoShooterArmRotation extends Command {
         this.m_ShooterRotation = c_ShooterRotation;
         this.speed = speed;
         this.pos = pos;
+        this.armColor = armColor;
         addRequirements(m_ShooterRotation);
         
     }
     @Override
     public void execute() {
-        m_ShooterRotation.drive_to_pos(pos, speed);
+        m_ShooterRotation.drive_to_pos(pos*1.4976, speed, armColor);
     }
     @Override
     public boolean isFinished() {

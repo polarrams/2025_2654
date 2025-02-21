@@ -1,4 +1,5 @@
 package frc.robot.commands.Miselaneous;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
 
 
@@ -15,7 +16,9 @@ public class LockPoseCommand extends Command {
     @Override
     public void execute() {
         swerveSubsystem.lock();
-        
+        SmartDashboard.putString("setcolor","lime");
+        SmartDashboard.putBoolean("ReefReached", true);
+    
     }
 }
 

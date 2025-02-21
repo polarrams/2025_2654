@@ -14,6 +14,6 @@ public class ReefLEDCommand extends Command {
     }
     @Override
     public void execute() {
-        m_reefled.reefHeight();
+        m_reefled.change_colors();
     }
 }
