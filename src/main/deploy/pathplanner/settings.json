@@ -2,9 +2,11 @@
   "robotWidth": 0.9,
   "robotLength": 0.9,
   "holonomicMode": true,
-  "pathFolders": [],
+  "pathFolders": [
+    "Blue Side Red Middle Climber Auto"
+  ],
   "autoFolders": [],
-  "defaultMaxVel": 4.0,
+  "defaultMaxVel": 4.1,
   "defaultMaxAccel": 3.0,
   "defaultMaxAngVel": 542.0,
   "defaultMaxAngAccel": 720.0,

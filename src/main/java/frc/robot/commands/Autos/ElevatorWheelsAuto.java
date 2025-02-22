@@ -16,7 +16,10 @@ public class ElevatorWheelsAuto extends Command{
         this.m_speed1 = c_speed1;
         addRequirements(m_ElevatorWheelsSubsystem);
     }
-
+    @Override
+    public void initialize() {
+        m_ElevatorWheelsSubsystem.run(0.0);
+    }
     
     @Override
     public void execute() {
@@ -24,7 +27,7 @@ public class ElevatorWheelsAuto extends Command{
     }
     @Override
     public boolean isFinished() {
-        return true;
+        return false;
     }
 
     
