@@ -55,7 +55,12 @@ public class ElevatorAuto extends Command{
     
 m_ElevatorSubsystem.drive_to_pos(pos, speed, color);
 m_ElevatorArmSubsystem.drive_to_pos(posA, speedA);
-    }
+}
+
+@Override
+  public void end(boolean interrupted) {
+    
+  }
 
 @Override
     public boolean isFinished() {

@@ -25,6 +25,12 @@ public class ElevatorWheelsAuto extends Command{
     public void execute() {
         m_ElevatorWheelsSubsystem.run(m_speed1);
     }
+
+    @Override
+  public void end(boolean interrupted) {
+
+  }
+  
     @Override
     public boolean isFinished() {
         return false;

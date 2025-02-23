@@ -25,6 +25,10 @@ import frc.robot.subsystems.Elevator.ElevatorArmSubsystem;
             m_ElevatorArmRotation.drive_to_pos(pos, speed);
         }
         @Override
+  public void end(boolean interrupted) {
+    
+  }
+        @Override
         public boolean isFinished() {
             m_ElevatorArmRotation.getPos();
             if(m_ElevatorArmRotation.getPos() - pos <= 0.5) {
