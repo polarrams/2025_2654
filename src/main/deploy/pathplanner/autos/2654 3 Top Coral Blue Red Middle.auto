@@ -13,51 +13,8 @@
                 "data": {
                   "pathName": "Blue Red 3 Middle Climber Start"
                 }
-              },
-              {
-                "type": "named",
-                "data": {
-                  "name": "Elevator Top Pipe"
-                }
-              },
-              {
-                "type": "wait",
-                "data": {
-                  "waitTime": 2.0
-                }
               }
             ]
-          }
-        },
-        {
-          "type": "parallel",
-          "data": {
-            "commands": [
-              {
-                "type": "named",
-                "data": {
-                  "name": "Elevator Top Pipe"
-                }
-              },
-              {
-                "type": "named",
-                "data": {
-                  "name": "Elevator Wheels Out"
-                }
-              },
-              {
-                "type": "wait",
-                "data": {
-                  "waitTime": 0.5
-                }
-              }
-            ]
-          }
-        },
-        {
-          "type": "named",
-          "data": {
-            "name": "Elevator Arm Up"
           }
         },
         {
@@ -68,31 +25,6 @@
                 "type": "path",
                 "data": {
                   "pathName": "Reef to Coral 1"
-                }
-              },
-              {
-                "type": "named",
-                "data": {
-                  "name": "Elevator Coral Station"
-                }
-              }
-            ]
-          }
-        },
-        {
-          "type": "parallel",
-          "data": {
-            "commands": [
-              {
-                "type": "named",
-                "data": {
-                  "name": "Elevator Wheels In"
-                }
-              },
-              {
-                "type": "wait",
-                "data": {
-                  "waitTime": 0.5
                 }
               }
             ]
@@ -107,39 +39,8 @@
                 "data": {
                   "pathName": "Coral to Reef 1"
                 }
-              },
-              {
-                "type": "named",
-                "data": {
-                  "name": "Elevator Top Pipe"
-                }
               }
             ]
-          }
-        },
-        {
-          "type": "parallel",
-          "data": {
-            "commands": [
-              {
-                "type": "named",
-                "data": {
-                  "name": "Elevator Top Pipe"
-                }
-              },
-              {
-                "type": "named",
-                "data": {
-                  "name": "Elevator Wheels Out"
-                }
-              }
-            ]
-          }
-        },
-        {
-          "type": "named",
-          "data": {
-            "name": "Elevator Arm Up"
           }
         },
         {
@@ -150,31 +51,6 @@
                 "type": "path",
                 "data": {
                   "pathName": "Reef To Coral 2"
-                }
-              },
-              {
-                "type": "named",
-                "data": {
-                  "name": "Elevator Coral Station"
-                }
-              }
-            ]
-          }
-        },
-        {
-          "type": "parallel",
-          "data": {
-            "commands": [
-              {
-                "type": "named",
-                "data": {
-                  "name": "Elevator Wheels In"
-                }
-              },
-              {
-                "type": "wait",
-                "data": {
-                  "waitTime": 0.5
                 }
               }
             ]
@@ -189,39 +65,8 @@
                 "data": {
                   "pathName": "Coral To Reef 2"
                 }
-              },
-              {
-                "type": "named",
-                "data": {
-                  "name": "Elevator Top Pipe"
-                }
               }
             ]
-          }
-        },
-        {
-          "type": "parallel",
-          "data": {
-            "commands": [
-              {
-                "type": "named",
-                "data": {
-                  "name": "Elevator Top Pipe"
-                }
-              },
-              {
-                "type": "named",
-                "data": {
-                  "name": "Elevator Wheels Out"
-                }
-              }
-            ]
-          }
-        },
-        {
-          "type": "named",
-          "data": {
-            "name": "Elevator Arm Up"
           }
         }
       ]

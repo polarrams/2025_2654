@@ -25,10 +25,10 @@ public class ShooterRotationCommand extends Command{
 @Override
   public void execute() {
     double current_pos = m_ShooterRotation.getPos();
-    if (current_pos > 0 && speed < 0){
+    if (current_pos > -30 && speed < 0){
         m_ShooterRotation.p2(speed);
         
-    } else if(current_pos < 25 && speed > 0){
+    } else if(current_pos < 0 && speed > 0){
         m_ShooterRotation.p2(speed);
     }
     else{m_ShooterRotation.p2(0);}

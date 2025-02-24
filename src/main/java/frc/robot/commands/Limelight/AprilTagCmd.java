@@ -72,23 +72,32 @@ public void initialize(){
             // if(ally.get() == Alliance.Red){
                 SmartDashboard.putNumber("TID", Tid);
                 if(Tid == 5 ||Tid == 15 || Tid == 4||Tid == 14){
-                  if (y >= 16){double angle = (Math.abs(14 - Math.asin((  y  -14 )/14)*9));
+                  if (y >= 16){double angle = (Math.abs(20 - Math.asin((  y  -20 )/20)*12.8));
                     m_ShooterRotation.drive_to_pos(angle,speed, armColor);
                     SmartDashboard.putNumber("Shooter Arm Angle Equation", angle);
-                    m_ShooterSubsystem.run(-0.57);
+                    m_ShooterSubsystem.run(0.63);
+                    if(Math.abs(angle - m_ShooterRotation.getPos()) < 2){
+                      m_ShooterSubsystem.run(0.0);
+
+                    }
                   }
-                  else if (y < 16 && y > 19){double angle = (Math.abs(12 - Math.asin((  y  -12 )/12)*7.7));
+                  else if (y < 16 && y > 20){double angle = (Math.abs(18.5 - Math.asin((  y  -18.5 )/18.5)*12));
                     m_ShooterRotation.drive_to_pos(angle,speed,armColor);
                    
-                    m_ShooterSubsystem.run(-0.6);}
-                  else if (y < 19){double angle = (Math.abs(10 - Math.asin((  y  -10 )/10)*6.4));
+                    m_ShooterSubsystem.run(0.67);
+                    if(Math.abs(angle - m_ShooterRotation.getPos()) < 2){
+                      m_ShooterSubsystem.run(0.0);}}
+                  else if (y < 20){double angle = (Math.abs(16 - Math.asin((  y  -16 )/16)*10.2));
                     m_ShooterRotation.drive_to_pos(angle,speed,armColor);
                    
-                    m_ShooterSubsystem.run(-0.7);}
+                    m_ShooterSubsystem.run(0.73);
+                    if(Math.abs(angle - m_ShooterRotation.getPos()) < 2){
+                      m_ShooterSubsystem.run(0.0);}
                 }
              
             
      }
-    }
+  }
+}
   
 

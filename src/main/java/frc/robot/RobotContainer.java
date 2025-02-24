@@ -117,6 +117,19 @@ private final SendableChooser<Command> autoChooser;
     NamedCommands.registerCommand("Elevator Arm Up", new ElevatorArmAuto(m_ElevatorArmSubsystem, 0.5, 0));
     new EventTrigger("Elevator Wheels Out").onTrue(new ElevatorWheelsAuto(m_ElevatorWheelsSubsystem, 1).withTimeout(1.5));
     new EventTrigger("Elevator First Pipe").onFalse(new ElevatorAuto(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -102, 0.65, 29, 0.5, "Teal").withTimeout(3));
+    new EventTrigger("Elevator Wheels Out").onFalse(new ElevatorWheelsAuto(m_ElevatorWheelsSubsystem, 1).withTimeout(1.5));
+    new EventTrigger("Elevator Wheels In").onFalse (new ElevatorWheelsAuto(m_ElevatorWheelsSubsystem, -1).withTimeout(1.5));
+    new EventTrigger("Elevator Trough").onFalse (new ElevatorAuto(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -15, 0.5, 14, 0.3, "Yellow").withTimeout(3));
+    new EventTrigger("Elevator Coral Station").onFalse( new ElevatorAuto(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -49.190144, 0.5, 3, 0.5, "Purple").withTimeout(3));
+    new EventTrigger("Elevator First Pipe").onFalse( new ElevatorAuto(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -102, 0.5, 29, 0.3, "Teal").withTimeout(3));
+    new EventTrigger("Elevator 2nd Pipe").onFalse( new ElevatorAuto(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -170, 0.5, 27, 0.3, "Pink").withTimeout(3));
+    new EventTrigger("Elevator Top Pipe").onFalse( new ElevatorAuto(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -255, 0.5, 22, 0.3, "White").withTimeout(3));
+    new EventTrigger("Shooter Inner Intake").onFalse(new ShooterIntakeCommand(m_ShooterIntakeSubsystem, 0.4).withTimeout(0.5));
+    new EventTrigger("Shooter Outer Intake").onFalse (new ShooterCommand(m_ShooterSubsystem, -0.7));
+    new EventTrigger("Shooter GiverBud").onFalse( new ShooterIntakeCommand(m_ShooterIntakeSubsystem, 0.9).withTimeout(0.5));
+    new EventTrigger("Auto Target Barge").onFalse( new AprilTagCmd(m_ShooterRotation, 0, 0.6, false, m_LimeLight, m_ShooterSubsystem, "Lime"));
+    new EventTrigger("Shooter Arm Pickup Point").onFalse( new ShooterRotationCommand2(m_ShooterRotation, 30, 0.5, "White"));
+    new EventTrigger("Elevator Arm Up").onFalse( new ElevatorArmAuto(m_ElevatorArmSubsystem, 0.5, 0));
 
     configureBindings();
     DriverStation.silenceJoystickConnectionWarning(true);
@@ -164,9 +177,9 @@ private final SendableChooser<Command> autoChooser;
   private void configureBindings() {
 
     //Driver Button Commands Go Here
-    c_driverController.button(1).whileTrue(new ShooterRotationCommand(m_ShooterRotation, 0.25, "white"));
-    c_driverController.button(2).whileTrue(new ShooterRotationCommand(m_ShooterRotation, -0.25, "Lime"));
-    c_driverController.button(6).whileTrue(new AprilTagCmd(m_ShooterRotation, 0, 0.6, false, m_LimeLight, m_ShooterSubsystem, "Lime"));
+    c_driverController.button(1).whileTrue(new ShooterRotationCommand(m_ShooterRotation, 0.3, "white"));
+    c_driverController.button(2).whileTrue(new ShooterRotationCommand(m_ShooterRotation, -0.3, "Lime"));
+    c_driverController.button(6).whileTrue(new AprilTagCmd(m_ShooterRotation, 0, 0.3, false, m_LimeLight, m_ShooterSubsystem, "Lime"));
     c_driverController.button(5).whileTrue(new LockPoseCommand(drivebase));
     c_driverController.button(4).whileTrue(new ElevatorArmCommand(m_ElevatorArmSubsystem, -0.10));//Elevator Arm Up
     c_driverController.button(3).whileTrue(new ElevatorArmCommand(m_ElevatorArmSubsystem, 0.10));//Elevator Arm Down
