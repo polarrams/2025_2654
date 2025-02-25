@@ -3,16 +3,16 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 7.075442477876107,
-        "y": 1.882743362831858
+        "x": 5.040044247787612,
+        "y": 2.8292035398230087
       },
       "prevControl": null,
       "nextControl": {
-        "x": 5.913519004520108,
-        "y": 1.8359900627059011
+        "x": 4.793130486393601,
+        "y": 2.868364674054047
       },
       "isLocked": false,
-      "linkedName": null
+      "linkedName": "Blue Red Middle Climber Start"
     },
     {
       "anchor": {
@@ -20,8 +20,8 @@
         "y": 2.8292035398230087
       },
       "prevControl": {
-        "x": 5.9072052977795035,
-        "y": 2.1485167811355166
+        "x": 5.316952695443206,
+        "y": 2.7853736332590233
       },
       "nextControl": null,
       "isLocked": false,
@@ -33,16 +33,22 @@
   "pointTowardsZones": [],
   "eventMarkers": [
     {
-      "name": "Elevator Top Pipe",
-      "waypointRelativePos": 0.0,
+      "name": "Elevator Wheels Out",
+      "waypointRelativePos": 0,
+      "endWaypointRelativePos": null,
+      "command": null
+    },
+    {
+      "name": "Elevator Arm Up",
+      "waypointRelativePos": 0,
       "endWaypointRelativePos": null,
       "command": null
     }
   ],
   "globalConstraints": {
-    "maxVelocity": 4.0,
-    "maxAcceleration": 1.0,
-    "maxAngularVelocity": 542.0,
+    "maxVelocity": 0.1,
+    "maxAcceleration": 3.0,
+    "maxAngularVelocity": 0.1,
     "maxAngularAcceleration": 720.0,
     "nominalVoltage": 12.0,
     "unlimited": false
@@ -55,7 +61,7 @@
   "folder": "Blue Side Red Middle Climber Auto",
   "idealStartingState": {
     "velocity": 0,
-    "rotation": 0.0
+    "rotation": -59.93141717813764
   },
   "useDefaultConstraints": false
 }

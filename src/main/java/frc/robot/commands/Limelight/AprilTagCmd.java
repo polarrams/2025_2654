@@ -67,12 +67,13 @@ public void initialize(){
     double Area = SpeakerAprilTag[2];
     double Tid = SpeakerAprilTag[3];
     double DPOS = 0;
+    double AngleOffset =30;
     // Optional<Alliance> ally = DriverStation.getAlliance();
     // if (ally.isPresent()){
             // if(ally.get() == Alliance.Red){
                 SmartDashboard.putNumber("TID", Tid);
                 if(Tid == 5 ||Tid == 15 || Tid == 4||Tid == 14){
-                  if (y >= 16){double angle = (Math.abs(20 - Math.asin((  y  -20 )/20)*12.8));
+                  if (y >= (16+AngleOffset)){double angle = (Math.abs(20 - Math.asin((  y  -20 )/20)*12.8)) + AngleOffset;//Added AngleOffset to the angle becasue the starting position was rotated AngleOffset degrees clockwise
                     m_ShooterRotation.drive_to_pos(angle,speed, armColor);
                     SmartDashboard.putNumber("Shooter Arm Angle Equation", angle);
                     m_ShooterSubsystem.run(0.63);
@@ -81,23 +82,19 @@ public void initialize(){
 
                     }
                   }
-                  else if (y < 16 && y > 20){double angle = (Math.abs(18.5 - Math.asin((  y  -18.5 )/18.5)*12));
+                  else if (y < (16+AngleOffset) && y > (20+AngleOffset)){double angle = (Math.abs(18.5 - Math.asin((  y  -18.5 )/18.5)*12)) + AngleOffset;
                     m_ShooterRotation.drive_to_pos(angle,speed,armColor);
                    
                     m_ShooterSubsystem.run(0.67);
                     if(Math.abs(angle - m_ShooterRotation.getPos()) < 2){
                       m_ShooterSubsystem.run(0.0);}}
-                  else if (y < 20){double angle = (Math.abs(16 - Math.asin((  y  -16 )/16)*10.2));
+                  else if (y < (20+AngleOffset)){double angle = (Math.abs(16 - Math.asin((  y  -16 )/16)*10.2));
                     m_ShooterRotation.drive_to_pos(angle,speed,armColor);
                    
                     m_ShooterSubsystem.run(0.73);
                     if(Math.abs(angle - m_ShooterRotation.getPos()) < 2){
                       m_ShooterSubsystem.run(0.0);}
-                }
-             
-            
+        }  
      }
   }
 }
-  
-

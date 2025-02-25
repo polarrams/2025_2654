@@ -24,6 +24,19 @@
               {
                 "type": "path",
                 "data": {
+                  "pathName": "Wait"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "parallel",
+          "data": {
+            "commands": [
+              {
+                "type": "path",
+                "data": {
                   "pathName": "Reef to Coral 1"
                 }
               }
