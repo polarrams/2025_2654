@@ -13,21 +13,26 @@
                 "data": {
                   "pathName": "Blue Red 3 Middle Climber Start"
                 }
+              },
+              {
+                "type": "named",
+                "data": {
+                  "name": "Elevator First Pipe"
+                }
               }
             ]
           }
         },
         {
-          "type": "parallel",
+          "type": "wait",
           "data": {
-            "commands": [
-              {
-                "type": "path",
-                "data": {
-                  "pathName": "Wait"
-                }
-              }
-            ]
+            "waitTime": 0.6
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "Elevator Wheels Out"
           }
         },
         {
@@ -39,8 +44,20 @@
                 "data": {
                   "pathName": "Reef to Coral 1"
                 }
+              },
+              {
+                "type": "named",
+                "data": {
+                  "name": "Elevator Coral Station"
+                }
               }
             ]
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "Elevator Wheels In"
           }
         },
         {
@@ -52,8 +69,26 @@
                 "data": {
                   "pathName": "Coral to Reef 1"
                 }
+              },
+              {
+                "type": "named",
+                "data": {
+                  "name": "Elevator First Pipe"
+                }
               }
             ]
+          }
+        },
+        {
+          "type": "wait",
+          "data": {
+            "waitTime": 0.6
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "Elevator Wheels Out"
           }
         },
         {
@@ -65,8 +100,20 @@
                 "data": {
                   "pathName": "Reef To Coral 2"
                 }
+              },
+              {
+                "type": "named",
+                "data": {
+                  "name": "Elevator Coral Station"
+                }
               }
             ]
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "Elevator Wheels In"
           }
         },
         {
@@ -78,8 +125,20 @@
                 "data": {
                   "pathName": "Coral To Reef 2"
                 }
+              },
+              {
+                "type": "named",
+                "data": {
+                  "name": "Elevator Trough"
+                }
               }
             ]
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "Elevator Wheels Out"
           }
         }
       ]

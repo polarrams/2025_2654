@@ -68,7 +68,7 @@ public void run(double speed){
     
     }
 
-    public void mbrake(){
+    public void mbrake(boolean brake){
         config.idleMode(IdleMode.kBrake);
        
     }

@@ -85,6 +85,7 @@ public void drive_to_pos(double desired_pos,double speed, String color){  //desi
     double difference =  desired_pos-current;   
     double truespeed = speed*difference*.5;
     SmartDashboard.putString("ReefColor", color);
+    SmartDashboard.putNumber("elevator difference", Math.abs(desired_pos - current));
     if (Math.abs(desired_pos - current) < 5) {
         SmartDashboard.putBoolean("ReefReached", true);
     }

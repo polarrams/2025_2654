@@ -10,18 +10,23 @@ public class ShooterRotationCommand extends Command{
     private final ShooterRotation m_ShooterRotation;
     private final double speed;
     private final String armColor;
+    private final boolean brake;
 
     public ShooterRotationCommand(
     ShooterRotation c_ShooterRotation,
     double speed,
-    String armColor
+    String armColor,
+    boolean brake
     
     ){
         this.armColor = armColor;
         this.speed = speed;
         this.m_ShooterRotation = c_ShooterRotation;
+        this.brake = brake;
         addRequirements(c_ShooterRotation);
     }
+
+    
 @Override
   public void execute() {
     double current_pos = m_ShooterRotation.getPos();
@@ -32,5 +37,6 @@ public class ShooterRotationCommand extends Command{
         m_ShooterRotation.p2(speed);
     }
     else{m_ShooterRotation.p2(0);}
+    m_ShooterRotation.mbrake(brake);
 }
 }
