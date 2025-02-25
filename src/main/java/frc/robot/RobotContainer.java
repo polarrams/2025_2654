@@ -151,6 +151,15 @@ private final SendableChooser<Command> autoChooser;
     m_LifterSubsystem.setDefaultCommand(new LifterCommand(m_LifterSubsystem, 0));
     m_leds.setDefaultCommand(new LEDCommand(m_leds));
     CameraServer.startAutomaticCapture();
+  
+  // Build an auto chooser. This will use Commands.none() as the default option.
+  boolean isCompetition = true;
+
+  autoChooser = AutoBuilder.buildAutoChooserWithOptionsModifier(
+    (stream) -> isCompetition
+      ? stream.filter(auto -> auto.getName().startsWith("2654"))
+      : stream);
+  SmartDashboard.putData("Auto Chooser", autoChooser);
   }
 
 
@@ -206,20 +215,9 @@ private final SendableChooser<Command> autoChooser;
     m_driverController.povDown().whileTrue(new ElevatorWheelsCommand(m_ElevatorWheelsSubsystem,-0.75));//wheels in
     m_driverController.povUp().whileTrue(new LifterCommand(m_LifterSubsystem, 0.4));//Lifter down
     m_driverController.povLeft().whileTrue(new LifterCommand(m_LifterSubsystem, -0.4));//Lifter up
-    // Only Shooter up and down, And Limelight auto target to be on the Driver Controller
-  }{
-
-  // Build an auto chooser. This will use Commands.none() as the default option.
-  boolean isCompetition = true;
-
-  autoChooser = AutoBuilder.buildAutoChooserWithOptionsModifier(
-    (stream) -> isCompetition
-      ? stream.filter(auto -> auto.getName().startsWith("2654"))
-      : stream);
-  SmartDashboard.putData("Auto Chooser", autoChooser);
   }
-
-  public Command getAutonomousCommand() {
+  
+    public Command getAutonomousCommand() {
     return autoChooser.getSelected();
   }
 

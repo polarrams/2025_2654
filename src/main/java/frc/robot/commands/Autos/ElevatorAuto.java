@@ -2,6 +2,7 @@ package frc.robot.commands.Autos;
 
 import java.util.function.DoubleSupplier;
 
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.subsystems.Elevator.ElevatorArmSubsystem;
 import frc.robot.subsystems.Elevator.ElevatorSubsystem;
@@ -66,9 +67,13 @@ m_ElevatorArmSubsystem.drive_to_pos(posA, speedA);
     public boolean isFinished() {
         double current = m_ElevatorArmSubsystem.getPos();
         if (Math.abs(current - pos) < 0.5){
+            SmartDashboard.putBoolean("elevator_auto_completed", true);
             return true;
         }
-        else return false;
+        else {
+        SmartDashboard.putBoolean("elevator_auto_completed", false);
+            return false;
+        }
     }
 }   
 
