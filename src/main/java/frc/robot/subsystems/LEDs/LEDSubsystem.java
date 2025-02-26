@@ -133,10 +133,10 @@ public class LEDSubsystem extends SubsystemBase {
     }
     public void blinkled() {
         if(SmartDashboard.getNumber("Elevator Speed", 0)<0) {
-            
+            LEDPattern purple = LEDPattern.solid(Color.kPurple);
         }
         else {
-
+            LEDPattern yellow = LEDPattern.solid(Color.kYellow);
         }
     }
 }
