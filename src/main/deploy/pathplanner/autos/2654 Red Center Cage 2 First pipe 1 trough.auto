@@ -11,35 +11,22 @@
               {
                 "type": "path",
                 "data": {
-                  "pathName": "Score on Reef Blue Left"
+                  "pathName": "Red Left Start First"
                 }
               },
               {
                 "type": "named",
                 "data": {
-                  "name": "Elevator Top Pipe"
+                  "name": "Elevator First Pipe"
                 }
               }
             ]
           }
         },
         {
-          "type": "parallel",
+          "type": "named",
           "data": {
-            "commands": [
-              {
-                "type": "named",
-                "data": {
-                  "name": "Elevator Wheels Out"
-                }
-              },
-              {
-                "type": "wait",
-                "data": {
-                  "waitTime": 1.0
-                }
-              }
-            ]
+            "name": "Elevator Wheels Out"
           }
         },
         {
@@ -49,101 +36,7 @@
               {
                 "type": "path",
                 "data": {
-                  "pathName": "To Algae Blue Left"
-                }
-              },
-              {
-                "type": "named",
-                "data": {
-                  "name": "Shooter Arm Pickup Point"
-                }
-              }
-            ]
-          }
-        },
-        {
-          "type": "parallel",
-          "data": {
-            "commands": [
-              {
-                "type": "path",
-                "data": {
-                  "pathName": "Grab Algae Blue Left"
-                }
-              },
-              {
-                "type": "named",
-                "data": {
-                  "name": "Shooter Inner Intake"
-                }
-              },
-              {
-                "type": "named",
-                "data": {
-                  "name": "Shooter Outer Intake"
-                }
-              }
-            ]
-          }
-        },
-        {
-          "type": "parallel",
-          "data": {
-            "commands": [
-              {
-                "type": "path",
-                "data": {
-                  "pathName": "To Barge Blue Left"
-                }
-              },
-              {
-                "type": "named",
-                "data": {
-                  "name": "Shooter Inner Intake"
-                }
-              },
-              {
-                "type": "named",
-                "data": {
-                  "name": "Auto Target Barge"
-                }
-              }
-            ]
-          }
-        },
-        {
-          "type": "parallel",
-          "data": {
-            "commands": [
-              {
-                "type": "named",
-                "data": {
-                  "name": "Auto Target Barge"
-                }
-              },
-              {
-                "type": "named",
-                "data": {
-                  "name": "Shooter GiverBud"
-                }
-              },
-              {
-                "type": "wait",
-                "data": {
-                  "waitTime": 2.0
-                }
-              }
-            ]
-          }
-        },
-        {
-          "type": "parallel",
-          "data": {
-            "commands": [
-              {
-                "type": "path",
-                "data": {
-                  "pathName": "End At Coral Station Blue Left"
+                  "pathName": "Red Left to Coral Station"
                 }
               },
               {
@@ -154,11 +47,92 @@
               }
             ]
           }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "Elevator Wheels In"
+          }
+        },
+        {
+          "type": "parallel",
+          "data": {
+            "commands": [
+              {
+                "type": "path",
+                "data": {
+                  "pathName": "Red Left Station to Reef"
+                }
+              },
+              {
+                "type": "named",
+                "data": {
+                  "name": "Elevator First Pipe"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "Elevator Wheels Out"
+          }
+        },
+        {
+          "type": "parallel",
+          "data": {
+            "commands": [
+              {
+                "type": "path",
+                "data": {
+                  "pathName": "Red Left to Coral Station II"
+                }
+              },
+              {
+                "type": "named",
+                "data": {
+                  "name": "Elevator Coral Station"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "Elevator Wheels In"
+          }
+        },
+        {
+          "type": "parallel",
+          "data": {
+            "commands": [
+              {
+                "type": "path",
+                "data": {
+                  "pathName": "Red Left Coral Station To Reef III"
+                }
+              },
+              {
+                "type": "named",
+                "data": {
+                  "name": "Elevator Trough"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "Elevator Wheels Out"
+          }
         }
       ]
     }
   },
   "resetOdom": true,
-  "folder": "Blue Side",
+  "folder": "Red Side",
   "choreoAuto": false
 }

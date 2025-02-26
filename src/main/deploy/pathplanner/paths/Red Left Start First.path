@@ -3,29 +3,29 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 1.7210858585858588,
-        "y": 5.811061946902655
+        "x": 10.454203539823009,
+        "y": 1.8929203539823005
       },
       "prevControl": null,
       "nextControl": {
-        "x": 2.6810633161446553,
-        "y": 5.762419975991817
+        "x": 10.70599068421498,
+        "y": 2.230607175837366
       },
       "isLocked": false,
-      "linkedName": "To Barge"
+      "linkedName": null
     },
     {
       "anchor": {
-        "x": 5.552967171717172,
-        "y": 6.261111111111111
+        "x": 12.560840707964603,
+        "y": 2.819026548672566
       },
       "prevControl": {
-        "x": 4.50788813019498,
-        "y": 6.234085938610912
+        "x": 11.591759911177535,
+        "y": 1.6690578006512777
       },
       "nextControl": null,
       "isLocked": false,
-      "linkedName": "To Coral Station"
+      "linkedName": "Red Left Start First"
     }
   ],
   "rotationTargets": [],
@@ -42,10 +42,10 @@
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": 0.0
+    "rotation": -120.34324888423959
   },
   "reversed": false,
-  "folder": "miselaneous",
+  "folder": "Red 2 First Pipe 1 trough",
   "idealStartingState": {
     "velocity": 0,
     "rotation": 180.0

@@ -3,9 +3,15 @@
   "robotLength": 0.9,
   "holonomicMode": true,
   "pathFolders": [
-    "Blue Side Red Middle Climber Auto"
+    "Blue Side Red Middle Climber Auto",
+    "Red 1 Score Trough",
+    "Red 2 First Pipe 1 trough",
+    "miselaneous"
   ],
-  "autoFolders": [],
+  "autoFolders": [
+    "Blue Side",
+    "Red Side"
+  ],
   "defaultMaxVel": 4.1,
   "defaultMaxAccel": 3.0,
   "defaultMaxAngVel": 542.0,

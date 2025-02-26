@@ -24,7 +24,6 @@ public class AprilTagCmd extends Command {
     private final double speed;
     private final boolean reset;
     private final LimeLightSubsystem m_LimeLight;
-    private final ShooterSubsystem m_ShooterSubsystem;
     private String armColor;
 
     public AprilTagCmd(
@@ -33,7 +32,6 @@ public class AprilTagCmd extends Command {
     double speed,
     boolean reset,
     LimeLightSubsystem c_LimeLight,
-    ShooterSubsystem c_ShooterSubsystem,
     String armColor
     ) {
     this.armColor = armColor;
@@ -42,8 +40,8 @@ public class AprilTagCmd extends Command {
     this.speed = speed;
     this.reset = reset;   
     this.m_LimeLight = c_LimeLight;
-    this.m_ShooterSubsystem = c_ShooterSubsystem;
-    addRequirements(m_ShooterRotation,m_LimeLight,m_ShooterSubsystem);
+
+    addRequirements(m_ShooterRotation,m_LimeLight);
     }
   
    // set zero when robot starts 
@@ -76,25 +74,19 @@ public void initialize(){
                   if (y >= (16+AngleOffset)){double angle = (Math.abs(20 - Math.asin((  y  -20 )/20)*12.8)) + AngleOffset;//Added AngleOffset to the angle becasue the starting position was rotated AngleOffset degrees clockwise
                     m_ShooterRotation.drive_to_pos(angle,speed, armColor);
                     SmartDashboard.putNumber("Shooter Arm Angle Equation", angle);
-                    m_ShooterSubsystem.run(0.63);
-                    if(Math.abs(angle - m_ShooterRotation.getPos()) < 2){
-                      m_ShooterSubsystem.run(0.0);
+
 
                     }
                   }
                   else if (y < (16+AngleOffset) && y > (20+AngleOffset)){double angle = (Math.abs(18.5 - Math.asin((  y  -18.5 )/18.5)*12)) + AngleOffset;
                     m_ShooterRotation.drive_to_pos(angle,speed,armColor);
                    
-                    m_ShooterSubsystem.run(0.67);
-                    if(Math.abs(angle - m_ShooterRotation.getPos()) < 2){
-                      m_ShooterSubsystem.run(0.0);}}
+                    
+                  }
                   else if (y < (20+AngleOffset)){double angle = (Math.abs(16 - Math.asin((  y  -16 )/16)*10.2));
                     m_ShooterRotation.drive_to_pos(angle,speed,armColor);
-                   
-                    m_ShooterSubsystem.run(0.73);
-                    if(Math.abs(angle - m_ShooterRotation.getPos()) < 2){
-                      m_ShooterSubsystem.run(0.0);}
+                  }
         }  
-     }
-  }
-}
+      }
+    
+  

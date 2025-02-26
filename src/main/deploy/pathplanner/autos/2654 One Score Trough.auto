@@ -11,22 +11,28 @@
               {
                 "type": "path",
                 "data": {
-                  "pathName": "KNOCK DOWN RED"
+                  "pathName": "One Score"
                 }
               },
               {
                 "type": "named",
                 "data": {
-                  "name": "Elevator First Pipe"
+                  "name": "Elevator Trough"
                 }
               }
             ]
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "Elevator Wheels Out"
           }
         }
       ]
     }
   },
   "resetOdom": true,
-  "folder": "Red Side",
+  "folder": "Blue Side",
   "choreoAuto": false
 }

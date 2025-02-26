@@ -24,12 +24,6 @@
           }
         },
         {
-          "type": "wait",
-          "data": {
-            "waitTime": 0.6
-          }
-        },
-        {
           "type": "named",
           "data": {
             "name": "Elevator Wheels Out"
@@ -77,12 +71,6 @@
                 }
               }
             ]
-          }
-        },
-        {
-          "type": "wait",
-          "data": {
-            "waitTime": 0.6
           }
         },
         {
@@ -145,6 +133,6 @@
     }
   },
   "resetOdom": true,
-  "folder": null,
+  "folder": "Blue Side",
   "choreoAuto": false
 }

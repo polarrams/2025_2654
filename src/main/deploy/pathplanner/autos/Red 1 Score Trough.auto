@@ -11,16 +11,22 @@
               {
                 "type": "path",
                 "data": {
-                  "pathName": "KNOCK DOWN RED"
+                  "pathName": "Red 1 Trough Reef"
                 }
               },
               {
                 "type": "named",
                 "data": {
-                  "name": "Elevator First Pipe"
+                  "name": "Elevator Trough"
                 }
               }
             ]
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "Elevator Wheels Out"
           }
         }
       ]
