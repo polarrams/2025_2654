@@ -8,8 +8,12 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import edu.wpi.first.wpilibj.AddressableLED;
 import edu.wpi.first.wpilibj.AddressableLEDBuffer;
 import edu.wpi.first.wpilibj.DriverStation;
+import edu.wpi.first.wpilibj.LEDPattern;
 import edu.wpi.first.wpilibj.DriverStation.Alliance;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import edu.wpi.first.wpilibj.util.Color;
+import frc.robot.commands.Elevator.ElevatorDTP;
+import frc.robot.subsystems.Elevator.ElevatorSubsystem;
 
 public class LEDSubsystem extends SubsystemBase {
     AddressableLED m_leds = new AddressableLED(1);
@@ -126,5 +130,13 @@ public class LEDSubsystem extends SubsystemBase {
             }
         }
         m_leds.setData(m_ledBuffer);
+    }
+    public void blinkled() {
+        if(SmartDashboard.getNumber("Elevator Speed", 0)<0) {
+            
+        }
+        else {
+
+        }
     }
 }
