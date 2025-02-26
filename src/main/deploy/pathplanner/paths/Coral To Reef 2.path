@@ -8,20 +8,20 @@
       },
       "prevControl": null,
       "nextControl": {
-        "x": 2.1497787610619477,
-        "y": 0.46814159292035357
+        "x": 1.8399839800511475,
+        "y": 0.5552410177863267
       },
       "isLocked": false,
       "linkedName": "Reef to Coral 1"
     },
     {
       "anchor": {
-        "x": 5.793141592920355,
-        "y": 3.8570796460176986
+        "x": 3.9188352272727274,
+        "y": 2.6888068181818174
       },
       "prevControl": {
-        "x": 7.238274336283187,
-        "y": 2.7274336283185834
+        "x": 3.8304327275075227,
+        "y": 2.4549585809952545
       },
       "nextControl": null,
       "isLocked": false,
@@ -42,7 +42,7 @@
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": 1.3322198538696537
+    "rotation": -142.00126755749537
   },
   "reversed": false,
   "folder": "Blue Side Red Middle Climber Auto",

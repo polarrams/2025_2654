@@ -104,11 +104,11 @@ private final SendableChooser<Command> autoChooser;
   public RobotContainer() {
     NamedCommands.registerCommand("Elevator Wheels Out", new ElevatorWheelsAuto(m_ElevatorWheelsSubsystem, 1).withTimeout(1.5));
     NamedCommands.registerCommand("Elevator Wheels In", new ElevatorWheelsAuto(m_ElevatorWheelsSubsystem, -1).withTimeout(1.5));
-    NamedCommands.registerCommand("Elevator Trough", new ElevatorAuto(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -15, 0.5, 14, 0.3, "Yellow").withTimeout(3));
-    NamedCommands.registerCommand("Elevator Coral Station", new ElevatorAuto(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -49.190144, 0.5, 3, 0.5, "Purple").withTimeout(3));
-    NamedCommands.registerCommand("Elevator First Pipe", new ElevatorAuto(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -102, 0.5, 29, 0.3, "Teal").withTimeout(3));
-    NamedCommands.registerCommand("Elevator 2nd Pipe", new ElevatorAuto(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -170, 0.5, 27, 0.3, "Pink").withTimeout(3));
-    NamedCommands.registerCommand("Elevator Top Pipe", new ElevatorAuto(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -255, 0.6, 22, 0.5, "White").withTimeout(3));
+    NamedCommands.registerCommand("Elevator Trough", new ElevatorAuto(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -15, 0.5, 14, 0.3, "Yellow"));
+    NamedCommands.registerCommand("Elevator Coral Station", new ElevatorAuto(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -49.190144, 0.5, 3, 0.5, "Purple"));
+    NamedCommands.registerCommand("Elevator First Pipe", new ElevatorAuto(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -102, 0.5, 29, 0.3, "Teal"));
+    NamedCommands.registerCommand("Elevator 2nd Pipe", new ElevatorAuto(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -170, 0.5, 27, 0.3, "Pink"));
+    NamedCommands.registerCommand("Elevator Top Pipe", new ElevatorAuto(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -255, 0.6, 22, 0.5, "White").withTimeout(5));
     NamedCommands.registerCommand("Shooter Inner Intake", new ShooterIntakeCommand(m_ShooterIntakeSubsystem, 0.4).withTimeout(0.5));
     NamedCommands.registerCommand("Shooter Outer Intake", new ShooterCommand(m_ShooterSubsystem, -0.7));
     NamedCommands.registerCommand("Shooter GiverBud", new ShooterIntakeCommand(m_ShooterIntakeSubsystem, 0.9).withTimeout(0.5));
@@ -139,7 +139,7 @@ private final SendableChooser<Command> autoChooser;
 //Shooter Default Commands
     m_ShooterIntakeSubsystem.setDefaultCommand(new ShooterIntakeCommand(m_ShooterIntakeSubsystem,0));
     m_ShooterSubsystem.setDefaultCommand(new ShooterCommand(m_ShooterSubsystem,0));
-    m_ShooterRotation.setDefaultCommand(new ShooterRotationCommand(m_ShooterRotation,0, "White"));
+    m_ShooterRotation.setDefaultCommand(new ShooterRotationCommand(m_ShooterRotation,0, "White",true));
     m_LimeLight.setDefaultCommand(new LimeLightCommand(m_LimeLight));
 //Elevator Default Commands
     m_ElevatorSubsystem.setDefaultCommand(new ElevatorCommand(m_ElevatorSubsystem,0,0));
@@ -186,8 +186,8 @@ private final SendableChooser<Command> autoChooser;
   private void configureBindings() {
 
     //Driver Button Commands Go Here
-    c_driverController.button(1).whileTrue(new ShooterRotationCommand(m_ShooterRotation, 0.3, "white"));
-    c_driverController.button(2).whileTrue(new ShooterRotationCommand(m_ShooterRotation, -0.3, "Lime"));
+    c_driverController.button(1).whileTrue(new ShooterRotationCommand(m_ShooterRotation, 0.3, "white",true));
+    c_driverController.button(2).whileTrue(new ShooterRotationCommand(m_ShooterRotation, -0.3, "Lime",true));
     c_driverController.button(6).whileTrue(new AprilTagCmd(m_ShooterRotation, 0, 0.3, false, m_LimeLight, m_ShooterSubsystem, "Lime"));
     c_driverController.button(5).whileTrue(new LockPoseCommand(drivebase));
     c_driverController.button(4).whileTrue(new ElevatorArmCommand(m_ElevatorArmSubsystem, -0.10));//Elevator Arm Up
