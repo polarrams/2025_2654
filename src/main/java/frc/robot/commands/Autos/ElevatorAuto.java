@@ -29,6 +29,7 @@ public class ElevatorAuto extends Command{
             double posA,
             double speedA,
             String color
+
     
         )
          {

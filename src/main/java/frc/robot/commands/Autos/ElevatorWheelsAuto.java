@@ -33,6 +33,9 @@ public class ElevatorWheelsAuto extends Command{
   
     @Override
     public boolean isFinished() {
+        //if (m_ElevatorWheelsSubsystem.run = 0){
+           // return true;
+       // }
         return false;
     }
 
