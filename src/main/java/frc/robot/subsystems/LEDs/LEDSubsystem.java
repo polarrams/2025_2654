@@ -79,17 +79,12 @@ public class LEDSubsystem extends SubsystemBase {
                     SmartDashboard.putNumber("reefdebug", 2);
                 break;
                 case "Yellow":
-                    for (var i = 0; i < m_ledBuffer.getLength(); i++) {
-                        //Sets LED rgb values for red
-                        m_ledBuffer.setRGB(i, 255, 255, 0);
-                    }
-                    SmartDashboard.putNumber("reefdebug", 3);
+                    LEDPattern yellow = LEDPattern.solid(Color.kYellow);
+                    yellow.applyTo(m_ledBuffer);
                 break;
                 case "purple":
-                    for (var i = 0; i < m_ledBuffer.getLength(); i++) {
-                        //Sets LED rgb values for red
-                        m_ledBuffer.setRGB(i, 255, 0, 255);
-                    }
+                    LEDPattern purple = LEDPattern.solid(Color.kPurple);
+                    purple.applyTo(m_ledBuffer);
                 break;
                 case "pink":
                 for (var i = 0; i < m_ledBuffer.getLength(); i++) {
