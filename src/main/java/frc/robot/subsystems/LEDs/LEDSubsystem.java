@@ -8,8 +8,12 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import edu.wpi.first.wpilibj.AddressableLED;
 import edu.wpi.first.wpilibj.AddressableLEDBuffer;
 import edu.wpi.first.wpilibj.DriverStation;
+import edu.wpi.first.wpilibj.LEDPattern;
 import edu.wpi.first.wpilibj.DriverStation.Alliance;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import edu.wpi.first.wpilibj.util.Color;
+import frc.robot.commands.Elevator.ElevatorDTP;
+import frc.robot.subsystems.Elevator.ElevatorSubsystem;
 
 public class LEDSubsystem extends SubsystemBase {
     AddressableLED m_leds = new AddressableLED(1);
@@ -75,17 +79,12 @@ public class LEDSubsystem extends SubsystemBase {
                     SmartDashboard.putNumber("reefdebug", 2);
                 break;
                 case "Yellow":
-                    for (var i = 0; i < m_ledBuffer.getLength(); i++) {
-                        //Sets LED rgb values for red
-                        m_ledBuffer.setRGB(i, 255, 255, 0);
-                    }
-                    SmartDashboard.putNumber("reefdebug", 3);
+                    LEDPattern yellow = LEDPattern.solid(Color.kYellow);
+                    yellow.applyTo(m_ledBuffer);
                 break;
                 case "purple":
-                    for (var i = 0; i < m_ledBuffer.getLength(); i++) {
-                        //Sets LED rgb values for red
-                        m_ledBuffer.setRGB(i, 255, 0, 255);
-                    }
+                    LEDPattern purple = LEDPattern.solid(Color.kPurple);
+                    purple.applyTo(m_ledBuffer);
                 break;
                 case "pink":
                 for (var i = 0; i < m_ledBuffer.getLength(); i++) {
@@ -126,5 +125,13 @@ public class LEDSubsystem extends SubsystemBase {
             }
         }
         m_leds.setData(m_ledBuffer);
+    }
+    public void blinkled() {
+        if(SmartDashboard.getNumber("Elevator Speed", 0)<0) {
+            LEDPattern purple = LEDPattern.solid(Color.kPurple);
+        }
+        else {
+            LEDPattern yellow = LEDPattern.solid(Color.kYellow);
+        }
     }
 }
