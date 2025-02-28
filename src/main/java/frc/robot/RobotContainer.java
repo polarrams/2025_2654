@@ -16,6 +16,7 @@ import frc.robot.commands.ShooterArm.ShooterCommand;
 import frc.robot.commands.ShooterArm.ShooterIntakeCommand;
 import frc.robot.commands.ShooterArm.ShooterRotationCommand;
 import frc.robot.commands.ShooterArm.ShooterRotationCommand2;
+import frc.robot.commands.ShooterArm.Shootersetangle;
 import frc.robot.commands.Autos.ElevatorAuto;
 import frc.robot.commands.Autos.ElevatorWheelsAuto;
 import frc.robot.commands.Elevator.ElevatorArmCommand;
@@ -104,7 +105,7 @@ private final SendableChooser<Command> autoChooser;
 
 //Set Default Commands
   public RobotContainer() {
-    NamedCommands.registerCommand("Elevator Wheels Out", new ElevatorWheelsAuto(m_ElevatorWheelsSubsystem, .85,true));
+    NamedCommands.registerCommand("Elevator Wheels Out", new ElevatorWheelsAuto(m_ElevatorWheelsSubsystem, .65,true));
     NamedCommands.registerCommand("Elevator Wheels In", new ElevatorWheelsAuto(m_ElevatorWheelsSubsystem, -0.75, false));
     NamedCommands.registerCommand("Elevator Trough", new ElevatorAuto(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -15, 0.5, 14, 0.3, "Yellow"));
     NamedCommands.registerCommand("Elevator Coral Station", new ElevatorAuto(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -81, 0.5, 7, 0.3, "Purple"));
@@ -177,7 +178,8 @@ private final SendableChooser<Command> autoChooser;
     //Driver Button Commands Go Here
     c_driverController.button(1).whileTrue(new ShooterRotationCommand(m_ShooterRotation, 0.3, "white",true));
     c_driverController.button(2).whileTrue(new ShooterRotationCommand(m_ShooterRotation, -0.3, "Lime",true));
-    c_driverController.button(5).whileTrue(new AprilTagCmd(m_ShooterSubsystem, m_ShooterRotation, 0, 0.3, false, m_LimeLight,  "Lime"));
+    //c_driverController.button(5).whileTrue(new AprilTagCmd(m_ShooterSubsystem, m_ShooterRotation, 0, 0.3, false, m_LimeLight,  "Lime"));
+    c_driverController.button(5).whileTrue(new Shootersetangle(m_ShooterRotation,null, -20,0.3,"white"));
     c_driverController.button(9).whileTrue(new LockPoseCommand(drivebase));
     c_driverController.button(4).whileTrue(new ElevatorArmCommand(m_ElevatorArmSubsystem, -0.10));//Elevator Arm Up
     c_driverController.button(3).whileTrue(new ElevatorArmCommand(m_ElevatorArmSubsystem, 0.10));//Elevator Arm Down

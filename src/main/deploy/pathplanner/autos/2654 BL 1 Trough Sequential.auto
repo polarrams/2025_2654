@@ -5,6 +5,12 @@
     "data": {
       "commands": [
         {
+          "type": "path",
+          "data": {
+            "pathName": "BL One Trough Sequential"
+          }
+        },
+        {
           "type": "named",
           "data": {
             "name": "Elevator Trough"
@@ -13,13 +19,7 @@
         {
           "type": "wait",
           "data": {
-            "waitTime": 3.5
-          }
-        },
-        {
-          "type": "path",
-          "data": {
-            "pathName": "BL One Trough Sequential"
+            "waitTime": 1.0
           }
         },
         {
