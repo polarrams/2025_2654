@@ -1,0 +1,54 @@
+{
+  "version": "2025.0",
+  "waypoints": [
+    {
+      "anchor": {
+        "x": 1.545596590909091,
+        "y": 7.305653409090909
+      },
+      "prevControl": null,
+      "nextControl": {
+        "x": 1.787688210630659,
+        "y": 7.243270337183639
+      },
+      "isLocked": false,
+      "linkedName": "Blue Left Trough Coral I"
+    },
+    {
+      "anchor": {
+        "x": 3.6196875,
+        "y": 5.111903409090909
+      },
+      "prevControl": {
+        "x": 2.755905228107231,
+        "y": 5.525182175720224
+      },
+      "nextControl": null,
+      "isLocked": false,
+      "linkedName": "Blue Left Trough II"
+    }
+  ],
+  "rotationTargets": [],
+  "constraintZones": [],
+  "pointTowardsZones": [],
+  "eventMarkers": [],
+  "globalConstraints": {
+    "maxVelocity": 4.1,
+    "maxAcceleration": 3.0,
+    "maxAngularVelocity": 542.0,
+    "maxAngularAcceleration": 720.0,
+    "nominalVoltage": 12.0,
+    "unlimited": false
+  },
+  "goalEndState": {
+    "velocity": 0,
+    "rotation": 103.67130713219588
+  },
+  "reversed": false,
+  "folder": "Blue Left 3 Trough",
+  "idealStartingState": {
+    "velocity": 0,
+    "rotation": -53.39292518739249
+  },
+  "useDefaultConstraints": true
+}

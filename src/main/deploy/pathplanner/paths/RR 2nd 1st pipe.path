@@ -3,49 +3,37 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 1.234733606557377,
-        "y": 4.048975409836066
+        "x": 16.09318181818182,
+        "y": 7.236868686868687
       },
       "prevControl": null,
       "nextControl": {
-        "x": 2.9969262295081966,
-        "y": 4.048975409836066
+        "x": 15.208901515151515,
+        "y": 6.677840909090909
       },
       "isLocked": false,
-      "linkedName": null
+      "linkedName": "RR Station"
     },
     {
       "anchor": {
-        "x": 2.9609631147540982,
-        "y": 4.048975409836066
+        "x": 12.556060606060607,
+        "y": 5.2853535353535355
       },
       "prevControl": {
-        "x": 2.0246934302447968,
-        "y": 4.048975409836066
+        "x": 13.602967171717172,
+        "y": 6.5761994949494955
       },
       "nextControl": null,
       "isLocked": false,
-      "linkedName": null
+      "linkedName": "RR 1st Pipe II"
     }
   ],
   "rotationTargets": [],
   "constraintZones": [],
   "pointTowardsZones": [],
-  "eventMarkers": [
-    {
-      "name": "Elevator Trough",
-      "waypointRelativePos": 1.0,
-      "endWaypointRelativePos": null,
-      "command": {
-        "type": "named",
-        "data": {
-          "name": "Elevator Trough"
-        }
-      }
-    }
-  ],
+  "eventMarkers": [],
   "globalConstraints": {
-    "maxVelocity": 4.0,
+    "maxVelocity": 4.1,
     "maxAcceleration": 3.0,
     "maxAngularVelocity": 542.0,
     "maxAngularAcceleration": 720.0,
@@ -54,13 +42,13 @@
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": 180.0
+    "rotation": 119.54798935887034
   },
   "reversed": false,
-  "folder": null,
+  "folder": "RR 2 First Pipes 1 Trough",
   "idealStartingState": {
     "velocity": 0,
-    "rotation": 0.0
+    "rotation": -125.36246188706912
   },
   "useDefaultConstraints": true
 }

@@ -3,9 +3,13 @@
   "robotLength": 0.9,
   "holonomicMode": true,
   "pathFolders": [
+    "Blue Left 3 Trough",
     "Blue Side Red Middle Climber Auto",
+    "RR 2 First Pipes 1 Trough",
+    "New New Folder",
     "Red 1 Score Trough",
     "Red 2 First Pipe 1 trough",
+    "Red Left 3 Trough",
     "miselaneous"
   ],
   "autoFolders": [

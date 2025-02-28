@@ -7,7 +7,7 @@
         {
           "type": "path",
           "data": {
-            "pathName": "Base Auto Path"
+            "pathName": "New Path"
           }
         },
         {
@@ -15,11 +15,23 @@
           "data": {
             "name": "Elevator Trough"
           }
+        },
+        {
+          "type": "wait",
+          "data": {
+            "waitTime": 3.5
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "Elevator Wheels Out"
+          }
         }
       ]
     }
   },
   "resetOdom": true,
-  "folder": null,
+  "folder": "Blue Side",
   "choreoAuto": false
 }

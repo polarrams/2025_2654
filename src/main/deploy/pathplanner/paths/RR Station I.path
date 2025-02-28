@@ -1,0 +1,54 @@
+{
+  "version": "2025.0",
+  "waypoints": [
+    {
+      "anchor": {
+        "x": 12.281628787878788,
+        "y": 5.122727272727272
+      },
+      "prevControl": null,
+      "nextControl": {
+        "x": 13.135416666666668,
+        "y": 6.047664141414141
+      },
+      "isLocked": false,
+      "linkedName": "RR 1st pipe start"
+    },
+    {
+      "anchor": {
+        "x": 16.09318181818182,
+        "y": 7.236868686868687
+      },
+      "prevControl": {
+        "x": 15.076767676767677,
+        "y": 6.881123737373738
+      },
+      "nextControl": null,
+      "isLocked": false,
+      "linkedName": "RR Station"
+    }
+  ],
+  "rotationTargets": [],
+  "constraintZones": [],
+  "pointTowardsZones": [],
+  "eventMarkers": [],
+  "globalConstraints": {
+    "maxVelocity": 4.1,
+    "maxAcceleration": 3.0,
+    "maxAngularVelocity": 542.0,
+    "maxAngularAcceleration": 720.0,
+    "nominalVoltage": 12.0,
+    "unlimited": false
+  },
+  "goalEndState": {
+    "velocity": 0,
+    "rotation": -125.36246188706912
+  },
+  "reversed": false,
+  "folder": "RR 2 First Pipes 1 Trough",
+  "idealStartingState": {
+    "velocity": 0,
+    "rotation": 118.0091767080138
+  },
+  "useDefaultConstraints": true
+}
