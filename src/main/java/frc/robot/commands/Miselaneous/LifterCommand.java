@@ -1,7 +1,7 @@
 package frc.robot.commands.Miselaneous;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
-import frc.robot.subsystems.LifterSubsystem;
+import frc.robot.subsystems.Miselaneous.LifterSubsystem;
 
 public class LifterCommand extends Command{
     private final LifterSubsystem m_LifterSubsystem;

@@ -1,0 +1,54 @@
+{
+  "version": "2025.0",
+  "waypoints": [
+    {
+      "anchor": {
+        "x": 1.2332070707070708,
+        "y": 0.9554292929292921
+      },
+      "prevControl": null,
+      "nextControl": {
+        "x": 2.2332070707070706,
+        "y": 0.955429292929292
+      },
+      "isLocked": false,
+      "linkedName": "BR Coral 1"
+    },
+    {
+      "anchor": {
+        "x": 4.953282828282828,
+        "y": 2.7341540404040403
+      },
+      "prevControl": {
+        "x": 4.211300505050505,
+        "y": 2.053156565656566
+      },
+      "nextControl": null,
+      "isLocked": false,
+      "linkedName": null
+    }
+  ],
+  "rotationTargets": [],
+  "constraintZones": [],
+  "pointTowardsZones": [],
+  "eventMarkers": [],
+  "globalConstraints": {
+    "maxVelocity": 4.1,
+    "maxAcceleration": 3.0,
+    "maxAngularVelocity": 542.0,
+    "maxAngularAcceleration": 720.0,
+    "nominalVoltage": 12.0,
+    "unlimited": false
+  },
+  "goalEndState": {
+    "velocity": 0,
+    "rotation": -49.39870535499544
+  },
+  "reversed": false,
+  "folder": null,
+  "idealStartingState": {
+    "velocity": 0,
+    "rotation": 53.36588612403259
+  },
+  "useDefaultConstraints": true
+}

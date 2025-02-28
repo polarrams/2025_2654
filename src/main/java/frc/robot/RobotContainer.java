@@ -25,6 +25,8 @@ import frc.robot.commands.Elevator.ElevatorCommand;
 import frc.robot.commands.Elevator.ElevatorWheelsCommand;
 import frc.robot.commands.Limelight.AprilTagCmd;
 import frc.robot.subsystems.LimeLight.LimeLightSubsystem;
+import frc.robot.subsystems.Miselaneous.InvertedControllerSubsystem;
+import frc.robot.subsystems.Miselaneous.LifterSubsystem;
 import frc.robot.commands.Elevator.ElevatorDTP;
 import frc.robot.commands.LEDs.LEDCommand;
 import frc.robot.commands.LEDs.ReefLEDCommand;
@@ -37,9 +39,9 @@ import frc.robot.subsystems.ShooterArm.ShooterIntakeSubsystem;
 import frc.robot.subsystems.ShooterArm.ShooterRotation;
 import frc.robot.subsystems.ShooterArm.ShooterSubsystem;
 import frc.robot.commands.Limelight.LimeLightCommand;
+import frc.robot.commands.Miselaneous.InvertedControllerCommand;
 import frc.robot.commands.Miselaneous.LifterCommand;
 import frc.robot.commands.Miselaneous.LockPoseCommand;
-import frc.robot.subsystems.LifterSubsystem;
 import frc.robot.subsystems.LEDs.LEDSubsystem;
 
 import com.pathplanner.lib.commands.PathPlannerAuto;
@@ -92,7 +94,7 @@ public class RobotContainer {
 private final LEDSubsystem m_leds = new LEDSubsystem();
 
 //Shooter defined here
-
+private final InvertedControllerSubsystem m_InvertedControllerSubsystem = new InvertedControllerSubsystem();
 // Autonomous chooser
 private final SendableChooser<Command> autoChooser;
   
@@ -151,11 +153,11 @@ private final SendableChooser<Command> autoChooser;
 
 
 
-
+  
   SwerveInputStream driveAngularVelocity = SwerveInputStream.of(drivebase.getSwerveDrive(),
-  ()-> m_XboxController.getLeftY() * -1,
-  ()-> m_XboxController.getLeftX() * -1)
-    .withControllerRotationAxis(()-> m_XboxController.getRightX() * -1)
+  ()-> m_InvertedControllerSubsystem.getY(m_XboxController.getLeftY()) * -1,
+  ()-> m_InvertedControllerSubsystem.getX(m_XboxController.getLeftX()) * -1)
+    .withControllerRotationAxis(()-> m_InvertedControllerSubsystem.getRightX(m_XboxController.getRightX()) * -1)
     .deadband(OperatorConstants.DEADBAND)
     .scaleTranslation(0.8)
     .allianceRelativeControl(true);
@@ -181,6 +183,7 @@ private final SendableChooser<Command> autoChooser;
     c_driverController.button(3).whileTrue(new ElevatorArmCommand(m_ElevatorArmSubsystem, 0.10));//Elevator Arm Down
     c_driverController.povDown().whileTrue(new ShooterCommand(m_ShooterSubsystem, 0.3)); // Processor shoot
     c_driverController.button(6).whileTrue(new ShooterCommand(m_ShooterSubsystem, 0.8)); // Processor intake
+    c_driverController.povRight().whileTrue(new InvertedControllerCommand(m_InvertedControllerSubsystem));
     //Button Box buttons go here
     m_driverController.button(1).whileTrue(new ShooterIntakeCommand(m_ShooterIntakeSubsystem, -0.4));//Shooter Intake
     m_driverController.button(2).whileTrue(new ShooterCommand(m_ShooterSubsystem, -.7));//Intake in
