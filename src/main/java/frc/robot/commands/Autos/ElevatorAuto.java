@@ -61,6 +61,8 @@ m_ElevatorArmSubsystem.drive_to_pos(posA, speedA);
         double current = m_ElevatorSubsystem.getPos();
         if (Math.abs(current - pos) < 0.5){
             SmartDashboard.putBoolean("elevator_auto_completed", true);
+            m_ElevatorSubsystem.drive_to_pos(pos, 0, color);
+            m_ElevatorArmSubsystem.drive_to_pos(posA, 0);
             return true;
         }
         else {

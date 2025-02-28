@@ -108,7 +108,7 @@ private final SendableChooser<Command> autoChooser;
     NamedCommands.registerCommand("Elevator Wheels Out", new ElevatorWheelsAuto(m_ElevatorWheelsSubsystem, .65,true));
     NamedCommands.registerCommand("Elevator Wheels In", new ElevatorWheelsAuto(m_ElevatorWheelsSubsystem, -0.75, false));
     NamedCommands.registerCommand("Elevator Trough", new ElevatorAuto(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -15, 0.5, 14, 0.3, "Yellow"));
-    NamedCommands.registerCommand("Elevator Coral Station", new ElevatorAuto(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -81, 0.5, 7, 0.3, "Purple"));
+    NamedCommands.registerCommand("Elevator Coral Station", new ElevatorAuto(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -81, 0.35, 7, 0.3, "Purple"));
     NamedCommands.registerCommand("Elevator First Pipe", new ElevatorAuto(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -102, 0.5, 29, 0.2, "Teal"));
     NamedCommands.registerCommand("Elevator 2nd Pipe", new ElevatorAuto(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -170, 0.5, 27, 0.2, "Pink"));
     NamedCommands.registerCommand("Elevator Top Pipe", new ElevatorAuto(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -255, 0.5, 22, 0.2, "White"));
@@ -179,7 +179,7 @@ private final SendableChooser<Command> autoChooser;
     c_driverController.button(1).whileTrue(new ShooterRotationCommand(m_ShooterRotation, 0.3, "white",true));
     c_driverController.button(2).whileTrue(new ShooterRotationCommand(m_ShooterRotation, -0.3, "Lime",true));
     //c_driverController.button(5).whileTrue(new AprilTagCmd(m_ShooterSubsystem, m_ShooterRotation, 0, 0.3, false, m_LimeLight,  "Lime"));
-    c_driverController.button(5).whileTrue(new Shootersetangle(m_ShooterRotation,null, -20,0.3,"white"));
+    c_driverController.button(5).whileTrue(new Shootersetangle(m_ShooterRotation,null, -35,0.3,"white"));
     c_driverController.button(9).whileTrue(new LockPoseCommand(drivebase));
     c_driverController.button(4).whileTrue(new ElevatorArmCommand(m_ElevatorArmSubsystem, -0.10));//Elevator Arm Up
     c_driverController.button(3).whileTrue(new ElevatorArmCommand(m_ElevatorArmSubsystem, 0.10));//Elevator Arm Down
@@ -206,8 +206,8 @@ private final SendableChooser<Command> autoChooser;
     m_driverController.button(2).whileTrue(new ReefLEDCommand(m_leds));
     m_driverController.povRight().whileTrue(new ElevatorWheelsCommand(m_ElevatorWheelsSubsystem,1));//Wheels out 
     m_driverController.povDown().whileTrue(new ElevatorWheelsCommand(m_ElevatorWheelsSubsystem,-0.75));//wheels in
-    m_driverController.povUp().whileTrue(new LifterCommand(m_LifterSubsystem, 0.4));//Lifter down
-    m_driverController.povLeft().whileTrue(new LifterCommand(m_LifterSubsystem, -0.4));//Lifter up
+    m_driverController.povUp().whileTrue(new LifterCommand(m_LifterSubsystem, 0.8));//Lifter down
+    m_driverController.povLeft().whileTrue(new LifterCommand(m_LifterSubsystem, -0.8));//Lifter up
   }
   
     public Command getAutonomousCommand() {
