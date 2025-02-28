@@ -52,7 +52,7 @@ public class ElevatorDTP extends Command{
 @Override
     public void execute() {
     
-m_ElevatorSubsystem.drive_to_pos(pos, speed, color);
+m_ElevatorSubsystem.drive_to_pos_fast(pos, speed, color);
 m_ElevatorArmSubsystem.drive_to_pos(posA, speedA);
     }
 }   //End of class ElevatorDTP
