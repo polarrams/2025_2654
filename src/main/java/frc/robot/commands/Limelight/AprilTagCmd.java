@@ -58,7 +58,7 @@ public void initialize(){
 @Override
   public void execute() {
     SmartDashboard.putNumber("truepos", m_ShooterRotation.getPos());
-    m_ShooterRotation.drive_to_pos(pos, speed, armColor);
+    //m_ShooterRotation.drive_to_pos(pos, speed, armColor);
    
    
     double[] SpeakerAprilTag = m_LimeLight.limelight();
@@ -111,7 +111,7 @@ public void initialize(){
                     double h = goalHeightInches; // height we want ball to hit
                     double d = x + 19.5; // distance we want ball to hit: x distance with half the trough depth added
                     double theta = Math.atan(((v0*v0)+ Math.sqrt((v0*v0*v0*v0)-g*(g*(x*x)+2*h*(v0*v0)))/(g*d)));
-                    double angle = theta / (-3); // conversion to motor rotations with shooter straight forward as zero
+                    double angle = theta / (+3); // conversion to motor rotations with shooter straight forward as zero
     v0 = v0 / 1181; // convert in/sec to motor speed
  
                 // 3. SHOOT 

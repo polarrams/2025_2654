@@ -181,18 +181,18 @@ private final SendableChooser<Command> autoChooser;
     c_driverController.button(9).whileTrue(new LockPoseCommand(drivebase));
     c_driverController.button(4).whileTrue(new ElevatorArmCommand(m_ElevatorArmSubsystem, -0.10));//Elevator Arm Up
     c_driverController.button(3).whileTrue(new ElevatorArmCommand(m_ElevatorArmSubsystem, 0.10));//Elevator Arm Down
-    c_driverController.povDown().whileTrue(new ShooterCommand(m_ShooterSubsystem, 0.3)); // Processor shoot
+    c_driverController.povDown().whileTrue(new ShooterCommand(m_ShooterSubsystem, 0.2)); // Processor shoot
     c_driverController.button(6).whileTrue(new ShooterCommand(m_ShooterSubsystem, 0.8)); // Processor intake
     c_driverController.povRight().whileTrue(new InvertedControllerCommand(m_InvertedControllerSubsystem));
     //Button Box buttons go here
     m_driverController.button(1).whileTrue(new ShooterIntakeCommand(m_ShooterIntakeSubsystem, -0.4));//Shooter Intake
-    m_driverController.button(2).whileTrue(new ShooterCommand(m_ShooterSubsystem, -.7));//Intake in
+    m_driverController.button(2).whileTrue(new ShooterCommand(m_ShooterSubsystem, -.4));//Intake in
     m_driverController.button(3).whileTrue(new ShooterIntakeCommand(m_ShooterIntakeSubsystem, 0.9));//Intake Shoot
     m_driverController.button(4).whileTrue(new ElevatorDTP(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -81, 0.5,7,0.3, "Purple"));//Coral Station setpoint
     m_driverController.button(5).whileTrue(new ElevatorDTP(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -15, 0.5,14,0.3, "Yellow"));//Bottom Trough Coral
     m_driverController.button(6).whileTrue(new ElevatorDTP(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -105, 0.5,27,0.3, "Orange"));//First Pipe Coral
     m_driverController.button(9).whileTrue(new ElevatorDTP(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null,-170,0.5, 27, 0.3, "Pink"));//Second Pipe Coral
-    m_driverController.button(10).whileTrue(new ElevatorDTP(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -270,0.5, 25, 0.3, "White"));//Top Pipe COral
+    m_driverController.button(10).whileTrue(new ElevatorDTP(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -265,0.5, 25, 0.3, "White"));//Top Pipe COral
     m_driverController.button(4).whileTrue(new ReefLEDCommand(m_leds));
     m_driverController.button(5).whileTrue(new ReefLEDCommand(m_leds));
     m_driverController.button(6).whileTrue(new ReefLEDCommand(m_leds));
