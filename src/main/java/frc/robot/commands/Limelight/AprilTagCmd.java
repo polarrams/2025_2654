@@ -58,6 +58,46 @@ public void initialize(){
 @Override
   public void execute() {
     SmartDashboard.putNumber("truepos", m_ShooterRotation.getPos());
+    m_ShooterRotation.drive_to_pos(pos, speed, armColor);
+   
+   
+    double[] SpeakerAprilTag = m_LimeLight.limelight();
+    //double x = SpeakerAprilTag[0];
+    double y = SpeakerAprilTag[1];
+    double Area = SpeakerAprilTag[2];
+    double Tid = SpeakerAprilTag[3];
+    double DPOS = 0;
+    double AngleOffset =30;
+    // Optional<Alliance> ally = DriverStation.getAlliance();
+    // if (ally.isPresent()){
+            // if(ally.get() == Alliance.Red){
+                SmartDashboard.putNumber("TID", Tid);
+                if(Tid == 5 ||Tid == 15 || Tid == 4||Tid == 14){
+                  if (y >= (16)){double angle = (Math.abs(-14 - Math.asin((  y  -14 )/14)*-9));//Added AngleOffset to the angle becasue the starting position was rotated AngleOffset degrees clockwise
+                    m_ShooterRotation.drive_to_pos(angle,speed, armColor);
+                    SmartDashboard.putNumber("Shooter Arm Angle Equation", angle);
+                    m_ShooterSubsystem.run(0.66);
+                    if(Math.abs(angle - m_ShooterRotation.getPos()) < 2){
+                      m_ShooterSubsystem.run(0.0);
+
+                    }
+                  }
+                  else if (y < (16) && y > (20)){double angle = (Math.abs(-13 - Math.asin((  y  -13 )/13)*-8.3));
+                    m_ShooterRotation.drive_to_pos(angle,speed,armColor);
+                   
+                    m_ShooterSubsystem.run(0.72);
+                    if(Math.abs(angle - m_ShooterRotation.getPos()) < 2){
+                      m_ShooterSubsystem.run(0.0);}}
+                  else if (y < (20)){double angle = (Math.abs(-12 - Math.asin((  y  -12 )/12)*-7.7));
+                    m_ShooterRotation.drive_to_pos(angle,speed,armColor);
+                   
+                    m_ShooterSubsystem.run(0.85);
+                    if(Math.abs(angle - m_ShooterRotation.getPos()) < 2){
+                      m_ShooterSubsystem.run(0.0);}
+        }  
+     }
+  }
+    /*SmartDashboard.putNumber("truepos", m_ShooterRotation.getPos());
     //m_ShooterRotation.drive_to_pos(pos, speed, armColor);
    
    
@@ -119,6 +159,6 @@ public void initialize(){
                     m_ShooterSubsystem.run(v0);
  
         }  
-     }
+     }*/
     }    
-  
+

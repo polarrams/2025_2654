@@ -26,6 +26,8 @@ import com.pathplanner.lib.auto.AutoBuilder;
 import com.pathplanner.lib.commands.PathPlannerAuto;
 
 import edu.wpi.first.wpilibj.DriverStation;
+import edu.wpi.first.wpilibj.DriverStation.Alliance;
+
 import com.pathplanner.lib.controllers.PPHolonomicDriveController;
 import com.pathplanner.lib.path.PathPlannerPath;
 import com.pathplanner.lib.config.PIDConstants;
@@ -207,10 +209,14 @@ public class SwerveSubsystem extends SubsystemBase {
             // THE ORIGIN WILL REMAIN ON THE BLUE SIDE
 
             var alliance = DriverStation.getAlliance();
-            if (alliance.isPresent())
-            {
-              return alliance.get() == DriverStation.Alliance.Red;
+            var invert = 1;
+            if (alliance.isPresent() && alliance.get() == Alliance.Red){
+              invert = -1;
             }
+    //        if (alliance.isPresent())
+    //        {
+    //          return alliance.get() == DriverStation.Alliance.Red;
+    //        }
             return false;
           },
           this
