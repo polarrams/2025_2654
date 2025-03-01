@@ -13,7 +13,7 @@ import edu.wpi.first.math.controller.PIDController;
 
 public class ElevatorSubsystem extends SubsystemBase{
     private SparkMax motor1 = new SparkMax(19,MotorType.kBrushless);
-    private PIDController m_pid = new PIDController(0.1, 0.01, 0.1);
+    private PIDController m_pid = new PIDController(0.2, 0., 0.83);
     private RelativeEncoder c_up = motor1.getEncoder();
     
 public void run(double speed){
@@ -39,10 +39,11 @@ public void run1(double speed) {
 
 public void drive_to_pos_fast(double pos, double speed, String color) {
     //pos is ending position, speed is max speed
-    
+    double current = getPos();
     m_pid.setSetpoint(pos);
-    double truespeed = MathUtil.clamp(m_pid.calculate(getPos(),pos), -.1, .1);
-    if ((pos <0 && truespeed <0) || (pos > -270 && truespeed > 0)) {
+    m_pid.setIntegratorRange(-.098, .098);
+    double truespeed = MathUtil.clamp(m_pid.calculate(getPos(),pos), -.2, .2);
+    if ((current <=0 && truespeed <0) || (current >= -260 && truespeed > 0)) {
         motor1.set(truespeed);
     }
     else {
