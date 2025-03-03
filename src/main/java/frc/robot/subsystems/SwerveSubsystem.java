@@ -31,6 +31,8 @@ import com.pathplanner.lib.commands.PathPlannerAuto;
 import frc.robot.LimelightHelpers;
 
 import edu.wpi.first.wpilibj.DriverStation;
+import edu.wpi.first.wpilibj.DriverStation.Alliance;
+
 import com.pathplanner.lib.controllers.PPHolonomicDriveController;
 import com.pathplanner.lib.path.PathPlannerPath;
 import com.pathplanner.lib.config.PIDConstants;
@@ -220,10 +222,14 @@ public class SwerveSubsystem extends SubsystemBase {
             // THE ORIGIN WILL REMAIN ON THE BLUE SIDE
 
             var alliance = DriverStation.getAlliance();
-            if (alliance.isPresent())
-            {
-              return alliance.get() == DriverStation.Alliance.Red;
+            var invert = 1;
+            if (alliance.isPresent() && alliance.get() == Alliance.Red){
+              invert = -1;
             }
+    //        if (alliance.isPresent())
+    //        {
+    //          return alliance.get() == DriverStation.Alliance.Red;
+    //        }
             return false;
           },
           this
@@ -246,5 +252,44 @@ public class SwerveSubsystem extends SubsystemBase {
     // Create a path following command using AutoBuilder. This will also trigger event markers.
     return new PathPlannerAuto(pathName);
   }
+
+
+
+public void zeroGyro()
+  {
+    swerveDrive.zeroGyro();
+  }
+
+  /**
+   * Checks if the alliance is red, defaults to false if alliance isn't available.
+   *
+   * @return true if the red alliance, false if blue. Defaults to false if none is available.
+   */
+  private boolean isRedAlliance()
+  {
+    var alliance = DriverStation.getAlliance();
+    return alliance.isPresent() ? alliance.get() == DriverStation.Alliance.Red : false;
+  }
+
+  /**
+   * This will zero (calibrate) the robot to assume the current position is facing forward
+   * <p>
+   * If red alliance rotate the robot 180 after the drviebase zero command
+   */
+  public void zeroGyroWithAlliance()
+  {
+    if (isRedAlliance())
+    {
+      zeroGyro();
+      //Set the pose 180 degrees
+      resetPose(new Pose2d(getPose().getTranslation(), Rotation2d.fromDegrees(180)));
+    } else
+    {
+      zeroGyro();
+    }
+  }
+
+
+
 
 }

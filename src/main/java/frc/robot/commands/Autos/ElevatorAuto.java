@@ -2,6 +2,7 @@ package frc.robot.commands.Autos;
 
 import java.util.function.DoubleSupplier;
 
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.subsystems.Elevator.ElevatorArmSubsystem;
 import frc.robot.subsystems.Elevator.ElevatorSubsystem;
@@ -28,6 +29,7 @@ public class ElevatorAuto extends Command{
             double posA,
             double speedA,
             String color
+
     
         )
          {
@@ -45,16 +47,28 @@ public class ElevatorAuto extends Command{
 
 
 //Elevator movement command.
+
 @Override
     public void execute() {
     
 m_ElevatorSubsystem.drive_to_pos(pos, speed, color);
 m_ElevatorArmSubsystem.drive_to_pos(posA, speedA);
-    }
+}
+
 
 @Override
     public boolean isFinished() {
-        return false;
+        double current = m_ElevatorSubsystem.getPos();
+        if (Math.abs(current - pos) < 0.5){
+            SmartDashboard.putBoolean("elevator_auto_completed", true);
+            m_ElevatorSubsystem.drive_to_pos(pos, 0, color);
+            m_ElevatorArmSubsystem.drive_to_pos(posA, 0);
+            return true;
+        }
+        else {
+        SmartDashboard.putBoolean("elevator_auto_completed", false);
+            return false;
+        }
     }
 }   
 

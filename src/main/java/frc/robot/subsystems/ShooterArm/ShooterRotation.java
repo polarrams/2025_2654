@@ -32,6 +32,12 @@ public void run(double speed){
         double truespeed = speed*difference*.5;
         SmartDashboard.putNumber("truespeed", truespeed);
         SmartDashboard.putString("ReefColor", armColor);
+        if (desired_pos < 0) {
+            desired_pos = 0;
+        }
+        if (desired_pos > 30) {
+            desired_pos = 30;
+        }
         if (Math.abs(desired_pos - current) < 5) {
             SmartDashboard.putBoolean("ReefReached", true);
         }
@@ -68,7 +74,7 @@ public void run(double speed){
     
     }
 
-    public void mbrake(){
+    public void mbrake(boolean brake){
         config.idleMode(IdleMode.kBrake);
        
     }

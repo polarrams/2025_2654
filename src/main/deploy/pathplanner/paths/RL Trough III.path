@@ -1,0 +1,54 @@
+{
+  "version": "2025.0",
+  "waypoints": [
+    {
+      "anchor": {
+        "x": 16.11409090909091,
+        "y": 0.8041761363636374
+      },
+      "prevControl": null,
+      "nextControl": {
+        "x": 16.862146241003977,
+        "y": 0.3885821470327227
+      },
+      "isLocked": false,
+      "linkedName": "Red Left Trough Coral I"
+    },
+    {
+      "anchor": {
+        "x": 13.960227272727273,
+        "y": 2.9281249999999988
+      },
+      "prevControl": {
+        "x": 14.53338748394647,
+        "y": 2.309886386481753
+      },
+      "nextControl": null,
+      "isLocked": false,
+      "linkedName": null
+    }
+  ],
+  "rotationTargets": [],
+  "constraintZones": [],
+  "pointTowardsZones": [],
+  "eventMarkers": [],
+  "globalConstraints": {
+    "maxVelocity": 4.1,
+    "maxAcceleration": 3.0,
+    "maxAngularVelocity": 542.0,
+    "maxAngularAcceleration": 720.0,
+    "nominalVoltage": 12.0,
+    "unlimited": false
+  },
+  "goalEndState": {
+    "velocity": 0,
+    "rotation": -75.1413855520754
+  },
+  "reversed": false,
+  "folder": "Red Left 3 Trough",
+  "idealStartingState": {
+    "velocity": 0,
+    "rotation": 126.2122437124372
+  },
+  "useDefaultConstraints": true
+}

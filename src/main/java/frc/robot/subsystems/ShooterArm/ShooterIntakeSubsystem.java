@@ -13,7 +13,8 @@ public class ShooterIntakeSubsystem extends SubsystemBase {
     private DigitalInput DIO = new DigitalInput(0);
     public void run(Double speed) {
        SmartDashboard.getString("ReefColor", "Teal");
-        if(DIO.get() || speed < 0) {
+       SmartDashboard.putBoolean("trigger_pressed", DIO.get());
+        if(DIO.get() || speed > 0) {
             motor1.set(speed);
             motor2.set(-speed);
             

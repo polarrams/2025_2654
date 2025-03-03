@@ -1,0 +1,54 @@
+{
+  "version": "2025.0",
+  "waypoints": [
+    {
+      "anchor": {
+        "x": 7.08561946902655,
+        "y": 5.047787610619468
+      },
+      "prevControl": null,
+      "nextControl": {
+        "x": 6.03308239541563,
+        "y": 5.057408678995857
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 5.0095132743362845,
+        "y": 5.220796460176992
+      },
+      "prevControl": {
+        "x": 5.782964601769914,
+        "y": 5.068141592920354
+      },
+      "nextControl": null,
+      "isLocked": false,
+      "linkedName": "Blue Climber 3 Start"
+    }
+  ],
+  "rotationTargets": [],
+  "constraintZones": [],
+  "pointTowardsZones": [],
+  "eventMarkers": [],
+  "globalConstraints": {
+    "maxVelocity": 4.1,
+    "maxAcceleration": 3.0,
+    "maxAngularVelocity": 542.0,
+    "maxAngularAcceleration": 720.0,
+    "nominalVoltage": 12.0,
+    "unlimited": false
+  },
+  "goalEndState": {
+    "velocity": 0,
+    "rotation": 59.53445508053997
+  },
+  "reversed": false,
+  "folder": "miselaneous",
+  "idealStartingState": {
+    "velocity": 0,
+    "rotation": 0.0
+  },
+  "useDefaultConstraints": true
+}

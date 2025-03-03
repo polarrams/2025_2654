@@ -1,0 +1,54 @@
+{
+  "version": "2025.0",
+  "waypoints": [
+    {
+      "anchor": {
+        "x": 16.031194690265487,
+        "y": 0.753097345132743
+      },
+      "prevControl": null,
+      "nextControl": {
+        "x": 16.56105054114295,
+        "y": 1.028092204705919
+      },
+      "isLocked": false,
+      "linkedName": "Red Left to Coral Station"
+    },
+    {
+      "anchor": {
+        "x": 12.2962389380531,
+        "y": 2.9615044247787607
+      },
+      "prevControl": {
+        "x": 13.079867256637169,
+        "y": 1.9132743362831854
+      },
+      "nextControl": null,
+      "isLocked": false,
+      "linkedName": "Red Station To Reef"
+    }
+  ],
+  "rotationTargets": [],
+  "constraintZones": [],
+  "pointTowardsZones": [],
+  "eventMarkers": [],
+  "globalConstraints": {
+    "maxVelocity": 4.1,
+    "maxAcceleration": 3.0,
+    "maxAngularVelocity": 542.0,
+    "maxAngularAcceleration": 720.0,
+    "nominalVoltage": 12.0,
+    "unlimited": false
+  },
+  "goalEndState": {
+    "velocity": 0,
+    "rotation": -119.19748604606464
+  },
+  "reversed": false,
+  "folder": "Red 2 First Pipe 1 trough",
+  "idealStartingState": {
+    "velocity": 0,
+    "rotation": 126.19320730556451
+  },
+  "useDefaultConstraints": true
+}

@@ -1,0 +1,138 @@
+{
+  "version": "2025.0",
+  "command": {
+    "type": "sequential",
+    "data": {
+      "commands": [
+        {
+          "type": "parallel",
+          "data": {
+            "commands": [
+              {
+                "type": "path",
+                "data": {
+                  "pathName": "Red Left Start First"
+                }
+              },
+              {
+                "type": "named",
+                "data": {
+                  "name": "Elevator First Pipe"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "Elevator Wheels Out"
+          }
+        },
+        {
+          "type": "parallel",
+          "data": {
+            "commands": [
+              {
+                "type": "path",
+                "data": {
+                  "pathName": "Red Left to Coral Station"
+                }
+              },
+              {
+                "type": "named",
+                "data": {
+                  "name": "Elevator Coral Station"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "Elevator Wheels In"
+          }
+        },
+        {
+          "type": "parallel",
+          "data": {
+            "commands": [
+              {
+                "type": "path",
+                "data": {
+                  "pathName": "Red Left Station to Reef"
+                }
+              },
+              {
+                "type": "named",
+                "data": {
+                  "name": "Elevator First Pipe"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "Elevator Wheels Out"
+          }
+        },
+        {
+          "type": "parallel",
+          "data": {
+            "commands": [
+              {
+                "type": "path",
+                "data": {
+                  "pathName": "Red Left to Coral Station II"
+                }
+              },
+              {
+                "type": "named",
+                "data": {
+                  "name": "Elevator Coral Station"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "Elevator Wheels In"
+          }
+        },
+        {
+          "type": "parallel",
+          "data": {
+            "commands": [
+              {
+                "type": "path",
+                "data": {
+                  "pathName": "Red Left Coral Station To Reef III"
+                }
+              },
+              {
+                "type": "named",
+                "data": {
+                  "name": "Elevator Trough"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "Elevator Wheels Out"
+          }
+        }
+      ]
+    }
+  },
+  "resetOdom": true,
+  "folder": "Red Side",
+  "choreoAuto": false
+}

@@ -1,0 +1,54 @@
+{
+  "version": "2025.0",
+  "waypoints": [
+    {
+      "anchor": {
+        "x": 16.69244318181818,
+        "y": 6.7971022727272725
+      },
+      "prevControl": null,
+      "nextControl": {
+        "x": 17.18965411744301,
+        "y": 6.5345460559024735
+      },
+      "isLocked": false,
+      "linkedName": "RR TroughCoral"
+    },
+    {
+      "anchor": {
+        "x": 13.94028409090909,
+        "y": 5.0819886363636355
+      },
+      "prevControl": {
+        "x": 14.083649677000952,
+        "y": 5.2867966164926745
+      },
+      "nextControl": null,
+      "isLocked": false,
+      "linkedName": null
+    }
+  ],
+  "rotationTargets": [],
+  "constraintZones": [],
+  "pointTowardsZones": [],
+  "eventMarkers": [],
+  "globalConstraints": {
+    "maxVelocity": 2.0,
+    "maxAcceleration": 3.0,
+    "maxAngularVelocity": 542.0,
+    "maxAngularAcceleration": 720.0,
+    "nominalVoltage": 12.0,
+    "unlimited": false
+  },
+  "goalEndState": {
+    "velocity": 0,
+    "rotation": 75.67728002179629
+  },
+  "reversed": false,
+  "folder": "RR 2 First Pipes 1 Trough",
+  "idealStartingState": {
+    "velocity": 0,
+    "rotation": -126.02737338510352
+  },
+  "useDefaultConstraints": false
+}

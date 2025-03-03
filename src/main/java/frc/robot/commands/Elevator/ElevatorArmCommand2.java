@@ -7,24 +7,24 @@ import frc.robot.subsystems.Elevator.ElevatorArmSubsystem;
 public class ElevatorArmCommand2 extends Command{
     private final ElevatorArmSubsystem m_ElevatorArmSubsystem2;
     private final double speed;
+    private final double pos;
   
 
     public ElevatorArmCommand2(
     ElevatorArmSubsystem c_ElevatorArmSubsystem2,
-    double speed
+    double speed,
+    double pos
     ){
         this.speed = speed;
         this.m_ElevatorArmSubsystem2 = c_ElevatorArmSubsystem2;
+        this.pos = pos;
         addRequirements(m_ElevatorArmSubsystem2);
     }
 
-@Override
-public void initialize(){
- 
- SmartDashboard.putNumber("Elevator Arm Value",m_ElevatorArmSubsystem2.getPos());
-}
-@Override
-  public void execute() {
-    m_ElevatorArmSubsystem2.drive_to_pos(SmartDashboard.getNumber("Elevator Arm Value",-60)*1.4976, speed);
-} 
+
+
+    @Override
+    public void execute() {
+        m_ElevatorArmSubsystem2.drive_to_pos(pos,speed);
+    } 
 }

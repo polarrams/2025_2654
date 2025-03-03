@@ -1,0 +1,67 @@
+{
+  "version": "2025.0",
+  "waypoints": [
+    {
+      "anchor": {
+        "x": 5.040044247787612,
+        "y": 2.8292035398230087
+      },
+      "prevControl": null,
+      "nextControl": {
+        "x": 4.793130486393601,
+        "y": 2.868364674054047
+      },
+      "isLocked": false,
+      "linkedName": "Blue Red Middle Climber Start"
+    },
+    {
+      "anchor": {
+        "x": 5.040044247787612,
+        "y": 2.8292035398230087
+      },
+      "prevControl": {
+        "x": 5.316952695443206,
+        "y": 2.7853736332590233
+      },
+      "nextControl": null,
+      "isLocked": false,
+      "linkedName": "Blue Red Middle Climber Start"
+    }
+  ],
+  "rotationTargets": [],
+  "constraintZones": [],
+  "pointTowardsZones": [],
+  "eventMarkers": [
+    {
+      "name": "Elevator Wheels Out",
+      "waypointRelativePos": 0,
+      "endWaypointRelativePos": null,
+      "command": null
+    },
+    {
+      "name": "Elevator Arm Up",
+      "waypointRelativePos": 0,
+      "endWaypointRelativePos": null,
+      "command": null
+    }
+  ],
+  "globalConstraints": {
+    "maxVelocity": 0.1,
+    "maxAcceleration": 3.0,
+    "maxAngularVelocity": 0.1,
+    "maxAngularAcceleration": 720.0,
+    "nominalVoltage": 12.0,
+    "unlimited": false
+  },
+  "goalEndState": {
+    "velocity": 0,
+    "rotation": -59.93141717813764
+  },
+  "reversed": false,
+  "folder": "Blue Side Red Middle Climber Auto",
+  "idealStartingState": {
+    "velocity": 0,
+    "rotation": -59.93141717813764
+  },
+  "useDefaultConstraints": false
+}

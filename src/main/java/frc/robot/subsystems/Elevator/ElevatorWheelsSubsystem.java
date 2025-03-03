@@ -12,6 +12,7 @@ public class ElevatorWheelsSubsystem extends SubsystemBase{
 
     public void run(Double speed) {
        SmartDashboard.getString("ReefColor", "White");
+       SmartDashboard.putBoolean("dioelevator", DIO.get());
         if(DIO.get()|| speed > 0) {
             motor1.set(speed);
             SmartDashboard.putBoolean("ReefReached", false);
