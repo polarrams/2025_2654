@@ -72,12 +72,15 @@ public void drive_to_pos(double desired_pos,double speed, String color){  //desi
     if (truespeed < -speed){
         truespeed = -speed;
     }
-    if (difference<0){
+    if (Math.abs(difference)>10){
         motor1.set(truespeed);
+    }else if (Math.abs(difference)<10){
+        motor1.set(truespeed/5);
     }
-    else if (difference>0){
-        motor1.set(truespeed);
-    }
+    
+    //else if (difference>0){
+    //    motor1.set(truespeed);
+    //}
     else{
         motor1.set(0);
     }

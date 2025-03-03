@@ -107,11 +107,11 @@ private final SendableChooser<Command> autoChooser;
   public RobotContainer() {
     NamedCommands.registerCommand("Elevator Wheels Out", new ElevatorWheelsAuto(m_ElevatorWheelsSubsystem, .65,true));
     NamedCommands.registerCommand("Elevator Wheels In", new ElevatorWheelsAuto(m_ElevatorWheelsSubsystem, -0.75, false));
-    NamedCommands.registerCommand("Elevator Trough", new ElevatorAuto(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -15, 0.5, 14, 0.3, "Yellow"));
-    NamedCommands.registerCommand("Elevator Coral Station", new ElevatorAuto(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -77, 0.35, 7, 0.3, "Purple"));
-    NamedCommands.registerCommand("Elevator First Pipe", new ElevatorAuto(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -102, 0.5, 29, 0.2, "Teal"));
-    NamedCommands.registerCommand("Elevator 2nd Pipe", new ElevatorAuto(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -170, 0.5, 27, 0.2, "Pink"));
-    NamedCommands.registerCommand("Elevator Top Pipe", new ElevatorAuto(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -255, 0.5, 22, 0.2, "White"));
+    NamedCommands.registerCommand("Elevator Trough", new ElevatorAuto(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -15, 1, 14, 0.3, "Yellow"));
+    NamedCommands.registerCommand("Elevator Coral Station", new ElevatorAuto(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -77, 1, 7, 0.3, "Purple"));
+    NamedCommands.registerCommand("Elevator First Pipe", new ElevatorAuto(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -102, 1, 29, 0.3, "Teal"));
+    NamedCommands.registerCommand("Elevator 2nd Pipe", new ElevatorAuto(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -170, 1, 27, 0.3, "Pink"));
+    NamedCommands.registerCommand("Elevator Top Pipe", new ElevatorAuto(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -255, 1, 22, 0.3, "White"));
     NamedCommands.registerCommand("Shooter Inner Intake", new ShooterIntakeCommand(m_ShooterIntakeSubsystem, 0.4).withTimeout(0.5));
     NamedCommands.registerCommand("Shooter Outer Intake", new ShooterCommand(m_ShooterSubsystem, -0.7));
     NamedCommands.registerCommand("Shooter GiverBud", new ShooterIntakeCommand(m_ShooterIntakeSubsystem, 0.9).withTimeout(0.5));
@@ -179,22 +179,22 @@ private final SendableChooser<Command> autoChooser;
     c_driverController.button(1).whileTrue(new ShooterRotationCommand(m_ShooterRotation, 0.3, "white",true));
     c_driverController.button(2).whileTrue(new ShooterRotationCommand(m_ShooterRotation, -0.3, "Lime",true));
     //c_driverController.button(5).whileTrue(new AprilTagCmd(m_ShooterSubsystem, m_ShooterRotation, 0, 0.3, false, m_LimeLight,  "Lime"));
-    c_driverController.button(5).whileTrue(new Shootersetangle(m_ShooterRotation,null, -38.5,0.3,"white"));
+    c_driverController.button(5).whileTrue(new Shootersetangle(m_ShooterRotation,null, -39,0.3,"white"));
     c_driverController.button(9).whileTrue(new LockPoseCommand(drivebase));
     c_driverController.button(4).whileTrue(new ElevatorArmCommand(m_ElevatorArmSubsystem, -0.10));//Elevator Arm Up
     c_driverController.button(3).whileTrue(new ElevatorArmCommand(m_ElevatorArmSubsystem, 0.10));//Elevator Arm Down
     c_driverController.povDown().whileTrue(new ShooterCommand(m_ShooterSubsystem, 0.2)); // Processor shoot
-    c_driverController.button(6).whileTrue(new ShooterCommand(m_ShooterSubsystem, 0.83)); // Processor intake
+    c_driverController.button(6).whileTrue(new ShooterCommand(m_ShooterSubsystem, 0.81)); // Processor intake
     c_driverController.povRight().whileTrue(new InvertedControllerCommand(m_InvertedControllerSubsystem));
     //Button Box buttons go here
     m_driverController.button(1).whileTrue(new ShooterIntakeCommand(m_ShooterIntakeSubsystem, -0.4));//Shooter Intake
-    m_driverController.button(2).whileTrue(new ShooterCommand(m_ShooterSubsystem, -.4));//Intake in
+    m_driverController.button(2).whileTrue(new ShooterCommand(m_ShooterSubsystem, -.65));//Intake in
     m_driverController.button(3).whileTrue(new ShooterIntakeCommand(m_ShooterIntakeSubsystem, 0.9));//Intake Shoot
-    m_driverController.button(4).whileTrue(new ElevatorDTP(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -81.5, 0.5,8.5,0.3, "Purple"));//Coral Station setpoint
-    m_driverController.button(5).whileTrue(new ElevatorDTP(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -15, 0.5,14,0.3, "Yellow"));//Bottom Trough Coral
-    m_driverController.button(6).whileTrue(new ElevatorDTP(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -105, 0.5,27,0.3, "Orange"));//First Pipe Coral
-    m_driverController.button(9).whileTrue(new ElevatorDTP(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null,-170,0.5, 27, 0.3, "Pink"));//Second Pipe Coral
-    m_driverController.button(10).whileTrue(new ElevatorDTP(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -269,0.5, 25, 0.3, "White"));//Top Pipe COral
+    m_driverController.button(4).whileTrue(new ElevatorDTP(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -81.5, 1,8.5,0.3, "Purple"));//Coral Station setpoint
+    m_driverController.button(5).whileTrue(new ElevatorDTP(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -15, 1,14,0.3, "Yellow"));//Bottom Trough Coral
+    m_driverController.button(6).whileTrue(new ElevatorDTP(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -105, 1,27,0.3, "Orange"));//First Pipe Coral
+    m_driverController.button(9).whileTrue(new ElevatorDTP(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null,-170,1, 27, 0.3, "Pink"));//Second Pipe Coral
+    m_driverController.button(10).whileTrue(new ElevatorDTP(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -269,1, 25, 0.3, "White"));//Top Pipe COral
     m_driverController.button(4).whileTrue(new ReefLEDCommand(m_leds));
     m_driverController.button(5).whileTrue(new ReefLEDCommand(m_leds));
     m_driverController.button(6).whileTrue(new ReefLEDCommand(m_leds));
