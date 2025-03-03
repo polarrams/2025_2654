@@ -32,6 +32,7 @@ import frc.robot.LimelightHelpers;
 
 import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.DriverStation.Alliance;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import com.pathplanner.lib.controllers.PPHolonomicDriveController;
 import com.pathplanner.lib.path.PathPlannerPath;
@@ -118,6 +119,9 @@ public class SwerveSubsystem extends SubsystemBase {
 
   public void updateVisionOdometry(){
     LimelightHelpers.PoseEstimate limelightMeasurement = LimelightHelpers.getBotPoseEstimate_wpiBlue("limelight-one");
+    SmartDashboard.putNumber("limelight_x_measurement", limelightMeasurement.pose.getX());
+    SmartDashboard.putNumber("limelight_y_measurement", limelightMeasurement.pose.getY());
+    SmartDashboard.putNumber("limelight_rotation_measurement", limelightMeasurement.pose.getRotation().getDegrees());
     if(limelightMeasurement.tagCount >= 2)
     {
       swerveDrive.addVisionMeasurement(limelightMeasurement.pose, limelightMeasurement.timestampSeconds, VecBuilder.fill(.7,.7,9999999));
@@ -127,6 +131,10 @@ public class SwerveSubsystem extends SubsystemBase {
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
+    updateVisionOdometry();
+    SmartDashboard.putNumber("robotx", getPose().getX());
+    SmartDashboard.putNumber("roboty", getPose().getY());
+    SmartDashboard.putNumber("robot_rotation_degrees", getPose().getRotation().getDegrees());
   }
 
   public ChassisSpeeds getRobotRelativeSpeeds() {
