@@ -25,7 +25,7 @@
       },
       "nextControl": null,
       "isLocked": false,
-      "linkedName": null
+      "linkedName": "BL 3 First Pipe Start"
     }
   ],
   "rotationTargets": [],
@@ -45,7 +45,7 @@
     "rotation": 62.354024636261244
   },
   "reversed": false,
-  "folder": "New Folder",
+  "folder": "BL 3 First Pipe",
   "idealStartingState": {
     "velocity": 0,
     "rotation": 0.0

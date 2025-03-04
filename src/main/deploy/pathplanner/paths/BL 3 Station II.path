@@ -3,29 +3,29 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 5.294914772727273,
-        "y": 2.918153409090909
+        "x": 4.925965909090909,
+        "y": 5.091960227272727
       },
       "prevControl": null,
       "nextControl": {
-        "x": 3.898892045454545,
-        "y": 1.3526136363636363
+        "x": 6.631107954545453,
+        "y": 6.836988636363635
       },
       "isLocked": false,
-      "linkedName": null
+      "linkedName": "BL 3 2nd Pipe"
     },
     {
       "anchor": {
-        "x": 1.019760101010101,
-        "y": 0.8842803030303026
+        "x": 1.2763636363636366,
+        "y": 7.345539772727273
       },
       "prevControl": {
-        "x": 3.6722032828282822,
-        "y": 2.060928030303028
+        "x": 2.183778409090909,
+        "y": 6.22872159090909
       },
       "nextControl": null,
       "isLocked": false,
-      "linkedName": "Blue sequential coral"
+      "linkedName": "BL 3 First Station I"
     }
   ],
   "rotationTargets": [],
@@ -42,13 +42,13 @@
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": 52.975039729992886
+    "rotation": -52.733598099022835
   },
   "reversed": false,
-  "folder": "miselaneous",
+  "folder": "BL 3 First Pipe",
   "idealStartingState": {
     "velocity": 0,
-    "rotation": -76.60750224624879
+    "rotation": 59.26451229807987
   },
   "useDefaultConstraints": true
 }

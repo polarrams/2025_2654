@@ -7,13 +7,13 @@
         {
           "type": "path",
           "data": {
-            "pathName": "mexico II"
+            "pathName": "BL 3 First Pipe Start"
           }
         },
         {
           "type": "named",
           "data": {
-            "name": "Elevator Trough"
+            "name": "Elevator First Pipe"
           }
         },
         {
@@ -25,7 +25,7 @@
         {
           "type": "path",
           "data": {
-            "pathName": "Mexico III"
+            "pathName": "BL 3 First Station I"
           }
         },
         {
@@ -43,13 +43,49 @@
         {
           "type": "path",
           "data": {
-            "pathName": "Mexico IV"
+            "pathName": "BL 3 2nd Pipe"
           }
         },
         {
           "type": "named",
           "data": {
-            "name": "Elevator Trough"
+            "name": "Elevator First Pipe"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "Elevator Wheels Out"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "BL 3 Station II"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "Elevator Coral Station"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "Elevator Wheels In"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "BL 3 First Pipe III"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "Elevator First Pipe"
           }
         },
         {
