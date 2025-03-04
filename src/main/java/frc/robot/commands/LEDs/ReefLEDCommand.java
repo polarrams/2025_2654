@@ -4,6 +4,7 @@ import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.subsystems.LEDs.LEDSubsystem;
 
 public class ReefLEDCommand extends Command {
+    //calls on change_colors() from LEDSubsystem
     private final LEDSubsystem m_reefled;
     public ReefLEDCommand(
         LEDSubsystem m_reefled

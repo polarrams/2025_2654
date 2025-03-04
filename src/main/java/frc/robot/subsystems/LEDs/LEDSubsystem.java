@@ -61,6 +61,7 @@ public class LEDSubsystem extends SubsystemBase {
     }*/
     m_leds.setData(m_ledBuffer);
     }
+    //changes the color of the LEDs on the elevator based on its height and the direction it is moving in
     public void change_colors() {
         if(SmartDashboard.getBoolean("ReefReached", true)) {
             switch ((String) SmartDashboard.getString("ReefColor", "purple")) {
