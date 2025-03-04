@@ -3,29 +3,29 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 5.040044247787612,
-        "y": 2.8292035398230087
+        "x": 10.460198863636364,
+        "y": 7.574886363636363
       },
       "prevControl": null,
       "nextControl": {
-        "x": 4.826327433628319,
-        "y": 1.8013274336283178
+        "x": 11.188125,
+        "y": 6.747244318181817
       },
       "isLocked": false,
-      "linkedName": "Blue Red Middle Climber Start"
+      "linkedName": null
     },
     {
       "anchor": {
-        "x": 1.3043560606060607,
-        "y": 0.9046085858585866
+        "x": 12.230808080808082,
+        "y": 5.061742424242424
       },
       "prevControl": {
-        "x": 2.422411616161617,
-        "y": 1.5246212121212148
+        "x": 11.453023989898991,
+        "y": 5.969157196969697
       },
       "nextControl": null,
       "isLocked": false,
-      "linkedName": "Reef to Coral 1"
+      "linkedName": "start"
     }
   ],
   "rotationTargets": [],
@@ -42,13 +42,13 @@
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": 54.16234704572171
+    "rotation": 104.44403572449225
   },
   "reversed": false,
-  "folder": "Blue Side Red Middle Climber Auto",
+  "folder": "miselaneous",
   "idealStartingState": {
     "velocity": 0,
-    "rotation": -59.93141717813764
+    "rotation": 179.43273359014213
   },
   "useDefaultConstraints": true
 }

@@ -7,13 +7,13 @@
         {
           "type": "path",
           "data": {
-            "pathName": "KNOCK DOWN BLUE"
+            "pathName": "Mexico V"
           }
         }
       ]
     }
   },
   "resetOdom": true,
-  "folder": null,
+  "folder": "Red Side",
   "choreoAuto": false
 }

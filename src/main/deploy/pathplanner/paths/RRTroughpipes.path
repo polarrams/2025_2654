@@ -3,29 +3,29 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 1.7210858585858588,
-        "y": 5.811061946902655
+        "x": 16.09318181818182,
+        "y": 7.236868686868687
       },
       "prevControl": null,
       "nextControl": {
-        "x": 2.6810633161446553,
-        "y": 5.762419975991817
+        "x": 14.751515151515152,
+        "y": 6.60669191919192
       },
       "isLocked": false,
-      "linkedName": "To Barge"
+      "linkedName": "RR Station"
     },
     {
       "anchor": {
-        "x": 5.552967171717172,
-        "y": 6.261111111111111
+        "x": 12.65770202020202,
+        "y": 5.305681818181817
       },
       "prevControl": {
-        "x": 4.50788813019498,
-        "y": 6.234085938610912
+        "x": 12.850820707070708,
+        "y": 6.281439393939394
       },
       "nextControl": null,
       "isLocked": false,
-      "linkedName": "To Coral Station"
+      "linkedName": null
     }
   ],
   "rotationTargets": [],
@@ -42,13 +42,13 @@
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": 0.0
+    "rotation": 126.86989764584393
   },
   "reversed": false,
-  "folder": "miselaneous",
+  "folder": "RR 2 First Pipes 1 Trough",
   "idealStartingState": {
     "velocity": 0,
-    "rotation": 180.0
+    "rotation": -125.36246188706912
   },
   "useDefaultConstraints": true
 }

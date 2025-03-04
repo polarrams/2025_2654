@@ -3,29 +3,29 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 7.08561946902655,
-        "y": 5.047787610619468
+        "x": 12.195255681818182,
+        "y": 5.091960227272727
       },
       "prevControl": null,
       "nextControl": {
-        "x": 6.03308239541563,
-        "y": 5.057408678995857
+        "x": 12.96306818181818,
+        "y": 6.168892045454545
       },
       "isLocked": false,
-      "linkedName": null
+      "linkedName": "RR Coral I"
     },
     {
       "anchor": {
-        "x": 5.0095132743362845,
-        "y": 5.220796460176992
+        "x": 16.69244318181818,
+        "y": 6.7971022727272725
       },
       "prevControl": {
-        "x": 5.782964601769914,
-        "y": 5.068141592920354
+        "x": 15.69244318181818,
+        "y": 6.7971022727272725
       },
       "nextControl": null,
       "isLocked": false,
-      "linkedName": "Blue Climber 3 Start"
+      "linkedName": "RR TroughCoral"
     }
   ],
   "rotationTargets": [],
@@ -33,7 +33,7 @@
   "pointTowardsZones": [],
   "eventMarkers": [],
   "globalConstraints": {
-    "maxVelocity": 4.1,
+    "maxVelocity": 2.0,
     "maxAcceleration": 3.0,
     "maxAngularVelocity": 542.0,
     "maxAngularAcceleration": 720.0,
@@ -42,13 +42,13 @@
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": 59.53445508053997
+    "rotation": -126.02737338510352
   },
   "reversed": false,
-  "folder": null,
+  "folder": "RR 2 First Pipes 1 Trough",
   "idealStartingState": {
     "velocity": 0,
-    "rotation": 0.0
+    "rotation": 105.94539590092278
   },
-  "useDefaultConstraints": true
+  "useDefaultConstraints": false
 }

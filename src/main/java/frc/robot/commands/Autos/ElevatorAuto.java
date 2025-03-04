@@ -29,6 +29,7 @@ public class ElevatorAuto extends Command{
             double posA,
             double speedA,
             String color
+
     
         )
          {
@@ -57,9 +58,11 @@ m_ElevatorArmSubsystem.drive_to_pos(posA, speedA);
 
 @Override
     public boolean isFinished() {
-        double current = m_ElevatorArmSubsystem.getPos();
+        double current = m_ElevatorSubsystem.getPos();
         if (Math.abs(current - pos) < 0.5){
             SmartDashboard.putBoolean("elevator_auto_completed", true);
+            m_ElevatorSubsystem.drive_to_pos(pos, 0, color);
+            m_ElevatorArmSubsystem.drive_to_pos(posA, 0);
             return true;
         }
         else {

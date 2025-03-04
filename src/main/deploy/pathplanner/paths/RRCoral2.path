@@ -3,29 +3,29 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 7.075442477876107,
-        "y": 6.1672566371681405
+        "x": 12.556060606060607,
+        "y": 5.2853535353535355
       },
       "prevControl": null,
       "nextControl": {
-        "x": 6.067919226944498,
-        "y": 6.268742584667716
+        "x": 13.186237373737374,
+        "y": 6.139141414141413
       },
       "isLocked": false,
-      "linkedName": null
+      "linkedName": "RR 1st Pipe II"
     },
     {
       "anchor": {
-        "x": 5.263938053097346,
-        "y": 5.068141592920354
+        "x": 16.09318181818182,
+        "y": 7.236868686868687
       },
       "prevControl": {
-        "x": 5.102435974354523,
-        "y": 4.877308999892467
+        "x": 15.137752525252525,
+        "y": 6.982765151515151
       },
       "nextControl": null,
       "isLocked": false,
-      "linkedName": "Blue Middle Climb Start"
+      "linkedName": "RR Station"
     }
   ],
   "rotationTargets": [],
@@ -42,13 +42,13 @@
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": 60.101098161385345
+    "rotation": -125.36246188706912
   },
   "reversed": false,
-  "folder": null,
+  "folder": "RR 2 First Pipes 1 Trough",
   "idealStartingState": {
     "velocity": 0,
-    "rotation": 0.0
+    "rotation": 119.54798935887034
   },
   "useDefaultConstraints": true
 }

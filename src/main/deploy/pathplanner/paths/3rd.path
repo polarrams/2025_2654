@@ -3,42 +3,35 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 7.075442477876107,
-        "y": 1.882743362831858
+        "x": 16.33712121212121,
+        "y": 7.287689393939393
       },
       "prevControl": null,
       "nextControl": {
-        "x": 5.913519004520108,
-        "y": 1.8359900627059011
+        "x": 15.449649621212124,
+        "y": 6.739251893939393
       },
       "isLocked": false,
-      "linkedName": null
+      "linkedName": "2nd"
     },
     {
       "anchor": {
-        "x": 5.040044247787612,
-        "y": 2.8292035398230087
+        "x": 12.604090909090907,
+        "y": 5.301363636363635
       },
       "prevControl": {
-        "x": 5.9072052977795035,
-        "y": 2.1485167811355166
+        "x": 13.641136363636363,
+        "y": 6.368323863636363
       },
       "nextControl": null,
       "isLocked": false,
-      "linkedName": "Blue Red Middle Climber Start"
+      "linkedName": null
     }
   ],
   "rotationTargets": [],
   "constraintZones": [],
   "pointTowardsZones": [],
-  "eventMarkers": [
-    {
-      "name": "Elevator Top Pipe",
-      "waypointRelativePos": 0.0,
-      "endWaypointRelativePos": null,
-      "command": null
-    }
-  ],
+  "eventMarkers": [],
   "globalConstraints": {
     "maxVelocity": 4.1,
     "maxAcceleration": 3.0,
@@ -49,13 +42,13 @@
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": -59.93141717813764
+    "rotation": 129.4724598483435
   },
   "reversed": false,
-  "folder": "Blue Side Red Middle Climber Auto",
+  "folder": "miselaneous",
   "idealStartingState": {
     "velocity": 0,
-    "rotation": 0.0
+    "rotation": -126.32682595211993
   },
   "useDefaultConstraints": true
 }

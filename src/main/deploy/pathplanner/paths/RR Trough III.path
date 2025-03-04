@@ -3,29 +3,29 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 3.727212389380532,
-        "y": 5.068141592920354
+        "x": 16.69244318181818,
+        "y": 6.7971022727272725
       },
       "prevControl": null,
       "nextControl": {
-        "x": 3.481600369524354,
-        "y": 5.114775654529531
+        "x": 17.18965411744301,
+        "y": 6.5345460559024735
       },
       "isLocked": false,
-      "linkedName": "End of Blue Reef Score"
+      "linkedName": "RR TroughCoral"
     },
     {
       "anchor": {
-        "x": 2.5263274336283197,
-        "y": 5.811061946902655
+        "x": 13.94028409090909,
+        "y": 5.0819886363636355
       },
       "prevControl": {
-        "x": 3.656314501859634,
-        "y": 5.673992449783939
+        "x": 14.083649677000952,
+        "y": 5.2867966164926745
       },
       "nextControl": null,
       "isLocked": false,
-      "linkedName": "To Algae"
+      "linkedName": null
     }
   ],
   "rotationTargets": [],
@@ -33,7 +33,7 @@
   "pointTowardsZones": [],
   "eventMarkers": [],
   "globalConstraints": {
-    "maxVelocity": 4.1,
+    "maxVelocity": 2.0,
     "maxAcceleration": 3.0,
     "maxAngularVelocity": 542.0,
     "maxAngularAcceleration": 720.0,
@@ -42,13 +42,13 @@
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": -179.26547896574522
+    "rotation": 75.67728002179629
   },
   "reversed": false,
-  "folder": null,
+  "folder": "RR 2 First Pipes 1 Trough",
   "idealStartingState": {
     "velocity": 0,
-    "rotation": 118.11966983447617
+    "rotation": -126.02737338510352
   },
-  "useDefaultConstraints": true
+  "useDefaultConstraints": false
 }

@@ -3,25 +3,25 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 1.234733606557377,
-        "y": 4.048975409836066
+        "x": 1.019760101010101,
+        "y": 0.8842803030303026
       },
       "prevControl": null,
       "nextControl": {
-        "x": 2.9969262295081966,
-        "y": 4.048975409836066
+        "x": 2.019760101010101,
+        "y": 0.8842803030303028
       },
       "isLocked": false,
-      "linkedName": null
+      "linkedName": "Blue sequential coral"
     },
     {
       "anchor": {
-        "x": 2.9609631147540982,
-        "y": 4.048975409836066
+        "x": 3.9188352272727274,
+        "y": 2.7386647727272724
       },
       "prevControl": {
-        "x": 2.0246934302447968,
-        "y": 4.048975409836066
+        "x": 2.9188352272727274,
+        "y": 2.7386647727272724
       },
       "nextControl": null,
       "isLocked": false,
@@ -31,21 +31,9 @@
   "rotationTargets": [],
   "constraintZones": [],
   "pointTowardsZones": [],
-  "eventMarkers": [
-    {
-      "name": "Elevator Trough",
-      "waypointRelativePos": 1.0,
-      "endWaypointRelativePos": null,
-      "command": {
-        "type": "named",
-        "data": {
-          "name": "Elevator Trough"
-        }
-      }
-    }
-  ],
+  "eventMarkers": [],
   "globalConstraints": {
-    "maxVelocity": 4.0,
+    "maxVelocity": 4.1,
     "maxAcceleration": 3.0,
     "maxAngularVelocity": 542.0,
     "maxAngularAcceleration": 720.0,
@@ -54,13 +42,13 @@
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": 180.0
+    "rotation": -138.7640348649057
   },
   "reversed": false,
-  "folder": null,
+  "folder": "miselaneous",
   "idealStartingState": {
     "velocity": 0,
-    "rotation": 0.0
+    "rotation": 52.975039729992886
   },
   "useDefaultConstraints": true
 }

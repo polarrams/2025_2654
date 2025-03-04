@@ -3,29 +3,29 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 1.7210858585858588,
-        "y": 5.811061946902655
+        "x": 7.087752525252527,
+        "y": 7.5316287878787875
       },
       "prevControl": null,
       "nextControl": {
-        "x": 2.6810633161446553,
-        "y": 5.762419975991817
+        "x": 5.448158960563231,
+        "y": 5.993001969314899
       },
       "isLocked": false,
-      "linkedName": "To Barge"
+      "linkedName": null
     },
     {
       "anchor": {
-        "x": 5.552967171717172,
-        "y": 6.261111111111111
+        "x": 5.187058080808081,
+        "y": 4.949936868686869
       },
       "prevControl": {
-        "x": 4.50788813019498,
-        "y": 6.234085938610912
+        "x": 5.528712220829731,
+        "y": 5.505501061189367
       },
       "nextControl": null,
       "isLocked": false,
-      "linkedName": "To Coral Station"
+      "linkedName": null
     }
   ],
   "rotationTargets": [],
@@ -42,13 +42,13 @@
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": 0.0
+    "rotation": 62.354024636261244
   },
   "reversed": false,
-  "folder": "miselaneous",
+  "folder": "New Folder",
   "idealStartingState": {
     "velocity": 0,
-    "rotation": 180.0
+    "rotation": 0.0
   },
   "useDefaultConstraints": true
 }

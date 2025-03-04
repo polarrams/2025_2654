@@ -3,29 +3,29 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 5.284292035398231,
-        "y": 2.971681415929203
+        "x": 16.09318181818182,
+        "y": 7.236868686868687
       },
       "prevControl": null,
       "nextControl": {
-        "x": 5.355530973451328,
-        "y": 2.330530973451326
+        "x": 15.208901515151515,
+        "y": 6.677840909090909
       },
       "isLocked": false,
-      "linkedName": "Coral to Reef 1"
+      "linkedName": "RR Station"
     },
     {
       "anchor": {
-        "x": 1.3043560606060607,
-        "y": 0.9046085858585866
+        "x": 12.556060606060607,
+        "y": 5.2853535353535355
       },
       "prevControl": {
-        "x": 2.748192616856995,
-        "y": 2.1921244699685865
+        "x": 13.602967171717172,
+        "y": 6.5761994949494955
       },
       "nextControl": null,
       "isLocked": false,
-      "linkedName": "Reef to Coral 1"
+      "linkedName": "RR 1st Pipe II"
     }
   ],
   "rotationTargets": [],
@@ -42,13 +42,13 @@
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": 54.16234704572171
+    "rotation": 119.54798935887034
   },
   "reversed": false,
-  "folder": "Blue Side Red Middle Climber Auto",
+  "folder": "RR 2 First Pipes 1 Trough",
   "idealStartingState": {
     "velocity": 0,
-    "rotation": -59.470294100065935
+    "rotation": -125.36246188706912
   },
   "useDefaultConstraints": true
 }
