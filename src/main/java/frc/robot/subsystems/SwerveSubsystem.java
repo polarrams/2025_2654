@@ -119,6 +119,8 @@ public class SwerveSubsystem extends SubsystemBase {
 
   public void updateVisionOdometry(){
     LimelightHelpers.PoseEstimate limelightMeasurement = LimelightHelpers.getBotPoseEstimate_wpiBlue("limelight-one");
+    if(limelightMeasurement != null){
+      SmartDashboard.putBoolean("april_tag_null", false);
     SmartDashboard.putNumber("limelight_x_measurement", limelightMeasurement.pose.getX());
     SmartDashboard.putNumber("limelight_y_measurement", limelightMeasurement.pose.getY());
     SmartDashboard.putNumber("limelight_rotation_measurement", limelightMeasurement.pose.getRotation().getDegrees());
@@ -126,6 +128,8 @@ public class SwerveSubsystem extends SubsystemBase {
     {
       swerveDrive.addVisionMeasurement(limelightMeasurement.pose, limelightMeasurement.timestampSeconds, VecBuilder.fill(.7,.7,9999999));
     }
+    SmartDashboard.putBoolean("april_tag_null", true);
+  }
   }
 
   @Override
