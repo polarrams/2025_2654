@@ -87,39 +87,39 @@ public class LEDSubsystem extends SubsystemBase {
                     LEDPattern yellow = LEDPattern.solid(Color.kYellow);
                     yellow.applyTo(m_ledBuffer);
                 break;
-                case "purple":
+                case "Purple":
                     LEDPattern purple = LEDPattern.solid(Color.kPurple);
                     purple.applyTo(m_ledBuffer);
                 break;
-                case "pink":
+                case "Pink":
                 for (var i = 0; i < m_ledBuffer.getLength(); i++) {
                     //Sets LED rgb values for red
                     m_ledBuffer.setRGB(i, 252, 7, 236);
                     }
                 break;
-                case "orange": 
+                case "Orange": 
                 for (var i = 0; i < m_ledBuffer.getLength(); i++) {
                     //Sets LED rgb values for red
                     m_ledBuffer.setRGB(i, 239, 83, 4);
                     }
                 break;
-                case "white":
+                case "White":
                 for (var i = 0; i < m_ledBuffer.getLength(); i++) {
                     //Sets LED rgb values for red
                     m_ledBuffer.setRGB(i, 255, 255, 255);
                     }
                 break;
-                case "lime":
+                case "Lime":
                 for (var i = 0; i < m_ledBuffer.getLength(); i++) {
                     //Sets LED rgb values for red
                     m_ledBuffer.setRGB(i, 201, 237, 0);
                     }
-                case "purple_flashing":
+                case "Purple_flashing":
                 LEDPattern purple_flashing = LEDPattern.solid(Color.kPurple);
                 purple_flashing.blink(Time.ofBaseUnits(0.5, Seconds));
                 purple_flashing.applyTo(m_ledBuffer);
                 SmartDashboard.putNumber("reefdebug", 1);
-                case "yellow_flashing":
+                case "Yellow_flashing":
                 for (var i = 0; i < m_ledBuffer.getLength(); i++) {
                     //Sets LED rgb values for red
                     m_ledBuffer.setRGB(i, 201, 237, 0);
