@@ -109,7 +109,7 @@ private final SendableChooser<Command> autoChooser;
     NamedCommands.registerCommand("Elevator Wheels In", new ElevatorWheelsAuto(m_ElevatorWheelsSubsystem, -0.75, false));
     NamedCommands.registerCommand("Elevator Trough", new ElevatorAuto(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -15, 1, 14, 0.3, "Yellow"));
     NamedCommands.registerCommand("Elevator Coral Station", new ElevatorAuto(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -77, 1, 7, 0.3, "Purple"));
-    NamedCommands.registerCommand("Elevator First Pipe", new ElevatorAuto(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -102, 1, 29, 0.3, "Teal"));
+    NamedCommands.registerCommand("Elevator First Pipe", new ElevatorAuto(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -105, 1, 29, 0.3, "Teal"));
     NamedCommands.registerCommand("Elevator 2nd Pipe", new ElevatorAuto(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -170, 1, 27, 0.3, "Pink"));
     NamedCommands.registerCommand("Elevator Top Pipe", new ElevatorAuto(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -255, 1, 22, 0.3, "White"));
     NamedCommands.registerCommand("Shooter Inner Intake", new ShooterIntakeCommand(m_ShooterIntakeSubsystem, 0.4).withTimeout(0.5));
@@ -147,7 +147,7 @@ private final SendableChooser<Command> autoChooser;
 
   autoChooser = AutoBuilder.buildAutoChooserWithOptionsModifier(
     (stream) -> isCompetition
-      ? stream.filter(auto -> auto.getName().startsWith("2654"))
+      ? stream.filter(auto -> auto.getName().startsWith("Polar"))
       : stream);
   SmartDashboard.putData("Auto Chooser", autoChooser);
   }

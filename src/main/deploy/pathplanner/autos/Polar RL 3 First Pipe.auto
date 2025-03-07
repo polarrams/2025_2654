@@ -1,0 +1,103 @@
+{
+  "version": "2025.0",
+  "command": {
+    "type": "sequential",
+    "data": {
+      "commands": [
+        {
+          "type": "path",
+          "data": {
+            "pathName": "RL 3 First Pipe Start"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "Elevator First Pipe"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "Elevator Wheels Out"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "RL Coral I"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "Elevator Coral Station"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "Elevator Wheels In"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "RL 2nd First Pipe"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "Elevator First Pipe"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "Elevator Wheels Out"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "RL Coral II"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "Elevator Coral Station"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "Elevator Wheels In"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "RL 3rd First Pipe"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "Elevator First Pipe"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "Elevator Wheels Out"
+          }
+        }
+      ]
+    }
+  },
+  "resetOdom": true,
+  "folder": "Red Side",
+  "choreoAuto": false
+}

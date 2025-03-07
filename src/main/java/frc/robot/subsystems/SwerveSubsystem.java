@@ -28,7 +28,7 @@ import edu.wpi.first.math.kinematics.SwerveModulePosition;
 import edu.wpi.first.math.util.Units;
 import com.pathplanner.lib.auto.AutoBuilder;
 import com.pathplanner.lib.commands.PathPlannerAuto;
-import frc.robot.LimelightHelpers;
+//import frc.robot.LimelightHelpers;
 
 import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.DriverStation.Alliance;
@@ -117,7 +117,7 @@ public class SwerveSubsystem extends SubsystemBase {
     return false;
   }
 
-  public void updateVisionOdometry(){
+  /*public void updateVisionOdometry(){
     LimelightHelpers.PoseEstimate limelightMeasurement = LimelightHelpers.getBotPoseEstimate_wpiBlue("limelight-one");
     SmartDashboard.putNumber("limelight_x_measurement", limelightMeasurement.pose.getX());
     SmartDashboard.putNumber("limelight_y_measurement", limelightMeasurement.pose.getY());
@@ -126,12 +126,12 @@ public class SwerveSubsystem extends SubsystemBase {
     {
       swerveDrive.addVisionMeasurement(limelightMeasurement.pose, limelightMeasurement.timestampSeconds, VecBuilder.fill(.7,.7,9999999));
     }
-  }
+  }*/
 
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
-    updateVisionOdometry();
+   // updateVisionOdometry();
     SmartDashboard.putNumber("robotx", getPose().getX());
     SmartDashboard.putNumber("roboty", getPose().getY());
     SmartDashboard.putNumber("robot_rotation_degrees", getPose().getRotation().getDegrees());

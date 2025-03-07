@@ -4,8 +4,10 @@
   "holonomicMode": true,
   "pathFolders": [
     "BL 3 First Pipe",
+    "BR 3 First Pipes",
+    "RL 3 First Pipe",
     "RR 2 First Pipes 1 Trough",
-    "miselaneous"
+    "miscellaneous"
   ],
   "autoFolders": [
     "Blue Side",

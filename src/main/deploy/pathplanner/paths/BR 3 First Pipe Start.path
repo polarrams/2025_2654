@@ -3,29 +3,29 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 10.4203125,
-        "y": 6.6575
+        "x": 7.091926229508196,
+        "y": 0.4862295081967204
       },
       "prevControl": null,
       "nextControl": {
-        "x": 11.413132917822987,
-        "y": 6.66429524824892
+        "x": 5.998647540983608,
+        "y": 1.8744057377049157
       },
       "isLocked": false,
       "linkedName": null
     },
     {
       "anchor": {
-        "x": 12.454517045454544,
-        "y": 6.6575
+        "x": 5.214651639344263,
+        "y": 3.0899590163934416
       },
       "prevControl": {
-        "x": 11.735573625844001,
-        "y": 6.654794197367328
+        "x": 6.228811475409836,
+        "y": 1.5795081967213105
       },
       "nextControl": null,
       "isLocked": false,
-      "linkedName": null
+      "linkedName": "BR 3 First Pipe Start"
     }
   ],
   "rotationTargets": [],
@@ -33,7 +33,7 @@
   "pointTowardsZones": [],
   "eventMarkers": [],
   "globalConstraints": {
-    "maxVelocity": 4.0,
+    "maxVelocity": 4.1,
     "maxAcceleration": 3.0,
     "maxAngularVelocity": 542.0,
     "maxAngularAcceleration": 720.0,
@@ -42,13 +42,13 @@
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": 178.9390883097358
+    "rotation": -60.195248526819825
   },
   "reversed": false,
-  "folder": "miscellaneous",
+  "folder": "BR 3 First Pipes",
   "idealStartingState": {
     "velocity": 0,
-    "rotation": 180.0
+    "rotation": 0.0
   },
   "useDefaultConstraints": true
 }
