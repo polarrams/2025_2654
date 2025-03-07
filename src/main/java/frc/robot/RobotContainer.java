@@ -176,10 +176,10 @@ private final SendableChooser<Command> autoChooser;
   private void configureBindings() {
 
     //Driver Button Commands Go Here
-    c_driverController.button(1).whileTrue(new ShooterRotationCommand(m_ShooterRotation, 0.3, "white",true));
-    c_driverController.button(2).whileTrue(new ShooterRotationCommand(m_ShooterRotation, -0.3, "Lime",true));
+    c_driverController.button(1).whileTrue(new ShooterRotationCommand(m_ShooterRotation, 0.3, "green",true));
+    c_driverController.button(2).whileTrue(new ShooterRotationCommand(m_ShooterRotation, -0.3, "green",true));
     //c_driverController.button(5).whileTrue(new AprilTagCmd(m_ShooterSubsystem, m_ShooterRotation, 0, 0.3, false, m_LimeLight,  "Lime"));
-    c_driverController.button(5).whileTrue(new Shootersetangle(m_ShooterRotation,null, -39,0.3,"white"));
+    c_driverController.button(5).whileTrue(new Shootersetangle(m_ShooterRotation,null, -39,0.3,"green"));
     c_driverController.button(9).whileTrue(new LockPoseCommand(drivebase));
     c_driverController.button(4).whileTrue(new ElevatorArmCommand(m_ElevatorArmSubsystem, -0.10));//Elevator Arm Up
     c_driverController.button(3).whileTrue(new ElevatorArmCommand(m_ElevatorArmSubsystem, 0.10));//Elevator Arm Down
@@ -194,7 +194,7 @@ private final SendableChooser<Command> autoChooser;
     m_driverController.button(5).whileTrue(new ElevatorDTP(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -15, 1,14,0.3, "Yellow"));//Bottom Trough Coral
     m_driverController.button(6).whileTrue(new ElevatorDTP(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -105, 1,27,0.3, "Orange"));//First Pipe Coral
     m_driverController.button(9).whileTrue(new ElevatorDTP(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null,-170,1, 27, 0.3, "Pink"));//Second Pipe Coral
-    m_driverController.button(10).whileTrue(new ElevatorDTP(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -269,1, 25, 0.3, "White"));//Top Pipe COral
+    m_driverController.button(10).whileTrue(new ElevatorDTP(m_ElevatorSubsystem, m_ElevatorArmSubsystem, null, -269,1, 25, 0.3, "Purple"));//Top Pipe COral
     m_driverController.button(4).whileTrue(new ReefLEDCommand(m_leds));
     m_driverController.button(5).whileTrue(new ReefLEDCommand(m_leds));
     m_driverController.button(6).whileTrue(new ReefLEDCommand(m_leds));
