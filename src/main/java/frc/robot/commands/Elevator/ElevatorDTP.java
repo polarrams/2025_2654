@@ -45,7 +45,7 @@ public class ElevatorDTP extends Command{
         this.posA = posA;
         this.speedA = speedA;
         addRequirements(m_ElevatorSubsystem, m_ElevatorArmSubsystem);
-        SmartDashboard.putBoolean("blinked", false);
+        SmartDashboard.putBoolean("blinked", true);
      }
 
 

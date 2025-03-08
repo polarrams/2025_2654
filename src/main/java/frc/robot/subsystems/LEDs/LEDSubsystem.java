@@ -67,17 +67,17 @@ public class LEDSubsystem extends SubsystemBase {
     }
     //changes the color of the LEDs on the elevator based on its height and the direction it is moving in
     public void change_colors() {
-        if(SmartDashboard.getBoolean("blinking", false)){
+        if(SmartDashboard.getBoolean("blinking", true)){
             if(SmartDashboard.getBoolean("blinked", false)){
                 if(SmartDashboard.getBoolean("moving down", false)) {
                     LEDPattern purple_flashing = LEDPattern.solid(Color.kPurple);
-                    purple_flashing.blink(Time.ofBaseUnits(0.5, Seconds));
+                    purple_flashing.blink(Time.ofBaseUnits(0.1, Seconds));
                     purple_flashing.applyTo(m_ledBuffer);
                     SmartDashboard.putBoolean("blinked", true);
                 }
                 else {
                     LEDPattern Yellow_flashing = LEDPattern.solid(Color.kYellow);
-                    Yellow_flashing.blink(Time.ofBaseUnits(0.5, Seconds));
+                    Yellow_flashing.blink(Time.ofBaseUnits(0.1, Seconds));
                     Yellow_flashing.applyTo(m_ledBuffer);
                     SmartDashboard.putBoolean("blinked", true);
                 }

@@ -78,7 +78,7 @@ public void drive_to_pos(double desired_pos,double speed, String color){  //desi
         if(truespeed < 0){
             SmartDashboard.putBoolean("moving down", false);
         } else{
-            SmartDashboard.putBoolean("moving down", false);
+            SmartDashboard.putBoolean("moving down", true);
         }
     }
     if (Math.abs(difference)>10){
