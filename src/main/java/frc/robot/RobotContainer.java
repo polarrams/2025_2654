@@ -184,7 +184,7 @@ private final SendableChooser<Command> autoChooser;
     c_driverController.button(4).whileTrue(new ElevatorArmCommand(m_ElevatorArmSubsystem, -0.10));//Elevator Arm Up
     c_driverController.button(3).whileTrue(new ElevatorArmCommand(m_ElevatorArmSubsystem, 0.10));//Elevator Arm Down
     c_driverController.povDown().whileTrue(new ShooterCommand(m_ShooterSubsystem, 0.2)); // Processor shoot
-    c_driverController.button(6).whileTrue(new ShooterCommand(m_ShooterSubsystem, 0.81)); // Processor intake
+    c_driverController.button(6).whileTrue(new ShooterCommand(m_ShooterSubsystem, 0.78)); // Processor intake
     c_driverController.povRight().whileTrue(new InvertedControllerCommand(m_InvertedControllerSubsystem));
     //Button Box buttons go here
     m_driverController.button(1).whileTrue(new ShooterIntakeCommand(m_ShooterIntakeSubsystem, -0.4));//Shooter Intake
