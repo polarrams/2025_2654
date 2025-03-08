@@ -67,6 +67,23 @@ public class LEDSubsystem extends SubsystemBase {
     }
     //changes the color of the LEDs on the elevator based on its height and the direction it is moving in
     public void change_colors() {
+        if(SmartDashboard.getBoolean("blinking", false)){
+            if(SmartDashboard.getBoolean("blinked", false)){
+                if(SmartDashboard.getBoolean("moving down", false)) {
+                    LEDPattern purple_flashing = LEDPattern.solid(Color.kPurple);
+                    purple_flashing.blink(Time.ofBaseUnits(0.5, Seconds));
+                    purple_flashing.applyTo(m_ledBuffer);
+                    SmartDashboard.putBoolean("blinked", true);
+                }
+                else {
+                    LEDPattern Yellow_flashing = LEDPattern.solid(Color.kYellow);
+                    Yellow_flashing.blink(Time.ofBaseUnits(0.5, Seconds));
+                    Yellow_flashing.applyTo(m_ledBuffer);
+                    SmartDashboard.putBoolean("blinked", true);
+                }
+        }
+    }
+        else {
         if(SmartDashboard.getBoolean("ReefReached", true)) {
             switch ((String) SmartDashboard.getString("ReefColor", "purple-flashing")) {
                 case "Teal":
@@ -114,15 +131,6 @@ public class LEDSubsystem extends SubsystemBase {
                     //Sets LED rgb values for red
                     m_ledBuffer.setRGB(i, 201, 237, 0);
                     }
-                case "Purple_flashing":
-                LEDPattern purple_flashing = LEDPattern.solid(Color.kPurple);
-                purple_flashing.blink(Time.ofBaseUnits(0.5, Seconds));
-                purple_flashing.applyTo(m_ledBuffer);
-                SmartDashboard.putNumber("reefdebug", 1);
-                case "Yellow_flashing":
-                LEDPattern Yellow_flashing = LEDPattern.solid(Color.kYellow);
-                Yellow_flashing.blink(Time.ofBaseUnits(0.5, Seconds));
-                Yellow_flashing.applyTo(m_ledBuffer);
                 default:
                 LEDPattern default_pattern = LEDPattern.solid(Color.kPurple);
                 default_pattern.blink(Time.ofBaseUnits(0.5, Seconds));
@@ -132,20 +140,17 @@ public class LEDSubsystem extends SubsystemBase {
             }
         }
         else {
-            if (SmartDashboard.getString("ReefColor", "purple-flashing") == "Yellow_flashing"){
-                LEDPattern Yellow_flashing = LEDPattern.solid(Color.kYellow);
-                Yellow_flashing.blink(Time.ofBaseUnits(0.5, Seconds));
-                Yellow_flashing.applyTo(m_ledBuffer);
-            }
-            else {
             LEDPattern default_pattern = LEDPattern.solid(Color.kPurple);
             default_pattern.blink(Time.ofBaseUnits(0.5, Seconds));
             default_pattern.applyTo(m_ledBuffer);
             SmartDashboard.putNumber("reefdebug", 3);
-            }
+            
         }
+    }
         m_leds.setData(m_ledBuffer);
     }
+
+
     public void blinkled() {
         if(SmartDashboard.getNumber("Elevator Speed", 0)<0) {
             LEDPattern purple = LEDPattern.solid(Color.kPurple);
