@@ -73,8 +73,8 @@ public void initialize(){
             // if(ally.get() == Alliance.Red){
                 SmartDashboard.putNumber("TID", Tid);
                 if(Tid == 5 ||Tid == 15 || Tid == 4||Tid == 14){
-                  if (y >= (16)){double angle = (-14 - Math.asin((  y  + 14 )/14)*9);//Added AngleOffset to the angle becasue the starting position was rotated AngleOffset degrees clockwise
-                    m_ShooterRotation.drive_to_pos(angle,speed, armColor);
+                  if (y >= (16)){double angle = (28 - Math.asin((  y -  28 )/28)*17.9);//Added AngleOffset to the angle becasue the starting position was rotated AngleOffset degrees clockwise
+                    m_ShooterRotation.drive_to_pos(-angle,speed, armColor);
                     SmartDashboard.putNumber("Shooter Arm Angle", angle);
                     m_ShooterSubsystem.run(0.66);
                     if(Math.abs(angle - m_ShooterRotation.getPos()) < 2){
@@ -82,18 +82,18 @@ public void initialize(){
 
                     }
                   }
-                  else if (y < (16) && y > (20)){double angle = (-13 - Math.asin((  y  + 13 )/13) * 8.3);
-                    m_ShooterRotation.drive_to_pos(angle,speed,armColor);
+                  else if (y < (16) && y > (20)){double angle = (26 - Math.asin((  y  - 26 )/26) * 16.7);
+                    m_ShooterRotation.drive_to_pos(-angle,speed,armColor);
                    
                     m_ShooterSubsystem.run(0.72);
-                    if(Math.abs(angle - m_ShooterRotation.getPos()) < 2){
-                      m_ShooterSubsystem.run(0.0);}}
-                  else if (y < (20)){double angle = (-12 - Math.asin((  y  + 12 )/12) * 7.7);
-                    m_ShooterRotation.drive_to_pos(angle,speed,armColor);
+                    if(angle < -20){
+                      m_ShooterRotation.run(0.0);}}
+                  else if (y < (20)){double angle = (24 - Math.asin((  y  - 24 )/24) * 15.5);
+                    m_ShooterRotation.drive_to_pos(-angle,speed,armColor);
                    
                     m_ShooterSubsystem.run(0.85);
                     if(Math.abs(angle - m_ShooterRotation.getPos()) < 2){
-                      m_ShooterSubsystem.run(0.0);}
+                      m_ShooterRotation.run(0.0);}
         }  
      }
   }
