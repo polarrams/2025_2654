@@ -1,5 +1,6 @@
 package frc.robot.subsystems.LEDs;
 
+import static edu.wpi.first.units.Units.Second;
 import static edu.wpi.first.units.Units.Seconds;
 
 import java.time.Duration;
@@ -13,6 +14,7 @@ import edu.wpi.first.wpilibj.AddressableLED;
 import edu.wpi.first.wpilibj.AddressableLEDBuffer;
 import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.LEDPattern;
+import edu.wpi.first.wpilibj.RobotController;
 import edu.wpi.first.wpilibj.DriverStation.Alliance;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.util.Color;
@@ -70,16 +72,21 @@ public class LEDSubsystem extends SubsystemBase {
         if(SmartDashboard.getBoolean("blinking", true)){
             if(SmartDashboard.getBoolean("blinked", false)){
                 if(SmartDashboard.getBoolean("moving down", false)) {
-                    LEDPattern purple_flashing = LEDPattern.solid(Color.kPurple);
-                    purple_flashing.blink(Time.ofBaseUnits(0.1, Seconds));
+                    LEDPattern purple_flashing = LEDPattern.solid(Color.kYellow);
+                    //purple_flashing.blink(Time.ofBaseUnits(0.1, Seconds));
+                    //purple_flashing.synchronizedBlink(RobotController::getRSLState); 
                     purple_flashing.applyTo(m_ledBuffer);
+                    purple_flashing.breathe(Time.ofBaseUnits(1, Seconds));
                     SmartDashboard.putBoolean("blinked", true);
+                    
+                    m_leds.setData(m_ledBuffer);
                 }
                 else {
                     LEDPattern Yellow_flashing = LEDPattern.solid(Color.kYellow);
-                    Yellow_flashing.blink(Time.ofBaseUnits(0.1, Seconds));
+                    //Yellow_flashing.blink(Time.ofBaseUnits(0.1, Seconds));
                     Yellow_flashing.applyTo(m_ledBuffer);
                     SmartDashboard.putBoolean("blinked", true);
+                    m_leds.setData(m_ledBuffer);
                 }
         }
     }
@@ -111,7 +118,7 @@ public class LEDSubsystem extends SubsystemBase {
                 case "Pink":
                 for (var i = 0; i < m_ledBuffer.getLength(); i++) {
                     //Sets LED rgb values for red
-                    m_ledBuffer.setRGB(i, 232, 7, 216);
+                    m_ledBuffer.setRGB(i, 202, 7, 206);
                     }
                 break;
                 case "Orange": 
@@ -137,17 +144,20 @@ public class LEDSubsystem extends SubsystemBase {
                 default_pattern.applyTo(m_ledBuffer);
                 SmartDashboard.putNumber("reefdebug", 2);
                 break;
+            
             }
+            m_leds.setData(m_ledBuffer);
         }
         else {
             LEDPattern default_pattern = LEDPattern.solid(Color.kPurple);
             default_pattern.blink(Time.ofBaseUnits(0.5, Seconds));
             default_pattern.applyTo(m_ledBuffer);
             SmartDashboard.putNumber("reefdebug", 3);
+            m_leds.setData(m_ledBuffer);
             
         }
     }
-        m_leds.setData(m_ledBuffer);
+        
     }
 
 
