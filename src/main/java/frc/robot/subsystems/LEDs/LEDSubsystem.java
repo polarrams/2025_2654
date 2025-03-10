@@ -168,7 +168,7 @@ public class LEDSubsystem extends SubsystemBase {
                 case "Lime":
                 for (var i = 0; i < m_ledBuffer.getLength(); i++) {
                     //Sets LED rgb values for red
-                    m_ledBuffer.setRGB(i, 201, 237, 0);
+                    m_ledBuffer.setRGB(i, 48, 201, 75);
                     SmartDashboard.putNumber("reefdebug", 6);
                     }
                 default:
