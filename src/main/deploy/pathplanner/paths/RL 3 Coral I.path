@@ -3,32 +3,37 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 10.458073770491806,
-        "y": 0.515
-      },
-      "prevControl": null,
-      "nextControl": {
-        "x": 11.141372950819674,
-        "y": 1.550737704918033
-      },
-      "isLocked": false,
-      "linkedName": null
-    },
-    {
-      "anchor": {
         "x": 12.385696721311476,
         "y": 3.1546926229508188
       },
+      "prevControl": null,
+      "nextControl": {
+        "x": 10.839282786885246,
+        "y": 1.0112909836065556
+      },
+      "isLocked": false,
+      "linkedName": "RL 3 First Pipe Start"
+    },
+    {
+      "anchor": {
+        "x": 16.32725409835856,
+        "y": 0.7235860655720568
+      },
       "prevControl": {
-        "x": 11.60889344262295,
-        "y": 2.01825819672131
+        "x": 14.967848360653639,
+        "y": 2.219651639342547
       },
       "nextControl": null,
       "isLocked": false,
-      "linkedName": "RL 3 First Pipe Start"
+      "linkedName": "RL Coral I"
     }
   ],
-  "rotationTargets": [],
+  "rotationTargets": [
+    {
+      "waypointRelativePos": 1,
+      "rotationDegrees": 0.0
+    }
+  ],
   "constraintZones": [],
   "pointTowardsZones": [],
   "eventMarkers": [],
@@ -42,13 +47,13 @@
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": -119.69665253769898
+    "rotation": 124.85445556610337
   },
   "reversed": false,
   "folder": "RL 3 First Pipe",
   "idealStartingState": {
     "velocity": 0,
-    "rotation": 180.0
+    "rotation": -119.69665253769898
   },
   "useDefaultConstraints": true
 }

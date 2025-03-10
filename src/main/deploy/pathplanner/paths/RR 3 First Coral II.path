@@ -3,29 +3,29 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 10.458073770491806,
-        "y": 0.515
+        "x": 12.63400568181818,
+        "y": 5.0819886363636355
       },
       "prevControl": null,
       "nextControl": {
-        "x": 11.141372950819674,
-        "y": 1.550737704918033
+        "x": 11.656789772727272,
+        "y": 6.318465909090909
       },
       "isLocked": false,
-      "linkedName": null
+      "linkedName": "RR 3 First Coral II"
     },
     {
       "anchor": {
-        "x": 12.385696721311476,
-        "y": 3.1546926229508188
+        "x": 16.273636363636363,
+        "y": 7.315624999999999
       },
       "prevControl": {
-        "x": 11.60889344262295,
-        "y": 2.01825819672131
+        "x": 15.34627840909091,
+        "y": 6.428153409090908
       },
       "nextControl": null,
       "isLocked": false,
-      "linkedName": "RL 3 First Pipe Start"
+      "linkedName": "RR 3 First Coral "
     }
   ],
   "rotationTargets": [],
@@ -42,13 +42,13 @@
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": -119.69665253769898
+    "rotation": -126.6070748126074
   },
   "reversed": false,
-  "folder": "RL 3 First Pipe",
+  "folder": "RR 3 First Pipe",
   "idealStartingState": {
     "velocity": 0,
-    "rotation": 180.0
+    "rotation": 119.93151184050775
   },
   "useDefaultConstraints": true
 }
