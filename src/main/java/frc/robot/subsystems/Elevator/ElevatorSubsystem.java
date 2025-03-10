@@ -58,19 +58,28 @@ public void drive_to_pos(double desired_pos,double speed, String color){  //desi
     double difference =  desired_pos-current;   
     double truespeed = speed*difference*.5;
     SmartDashboard.getNumber("Elevator Speed", truespeed);
-    SmartDashboard.putString("ReefColor", color);
+    
     SmartDashboard.putNumber("elevator difference", Math.abs(desired_pos - current));
-    if (Math.abs(desired_pos - current) < 5) {
-        SmartDashboard.putBoolean("ReefReached", true);
-    }
-    else {
-        SmartDashboard.putBoolean("ReefReached", false);
-    }
+
     if (truespeed > speed){
         truespeed = speed;
     }
     if (truespeed < -speed){
         truespeed = -speed;
+    }
+    if (Math.abs(desired_pos - current) < 5) {
+        SmartDashboard.putString("ReefColor", color);
+        SmartDashboard.putBoolean("ReefReached", true);
+        SmartDashboard.putBoolean("blinking", false);
+    }
+    else {
+        SmartDashboard.putBoolean("ReefReached", false);
+        SmartDashboard.putBoolean("blinking", true);
+        if(truespeed < 0){
+            SmartDashboard.putBoolean("moving down", false);
+        } else{
+            SmartDashboard.putBoolean("moving down", true);
+        }
     }
     if (Math.abs(difference)>10){
         motor1.set(truespeed);

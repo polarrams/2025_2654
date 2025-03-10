@@ -176,15 +176,15 @@ private final SendableChooser<Command> autoChooser;
   private void configureBindings() {
 
     //Driver Button Commands Go Here
-    c_driverController.button(1).whileTrue(new ShooterRotationCommand(m_ShooterRotation, 0.3, "white",true));
-    c_driverController.button(2).whileTrue(new ShooterRotationCommand(m_ShooterRotation, -0.3, "Lime",true));
-    //c_driverController.button(5).whileTrue(new AprilTagCmd(m_ShooterSubsystem, m_ShooterRotation, 0, 0.3, false, m_LimeLight,  "Lime"));
-    c_driverController.button(5).whileTrue(new Shootersetangle(m_ShooterRotation,null, -39,0.3,"white"));
+    c_driverController.button(1).whileTrue(new ShooterRotationCommand(m_ShooterRotation, 0.3, "green",true));
+    c_driverController.button(2).whileTrue(new ShooterRotationCommand(m_ShooterRotation, -0.3, "green",true));
+    c_driverController.button(5).whileTrue(new AprilTagCmd(m_ShooterSubsystem, m_ShooterRotation, m_ShooterRotation.getPos(), 0.3, false, m_LimeLight,  "Lime"));
+    //c_driverController.button(5).whileTrue(new Shootersetangle(m_ShooterRotation,null, -39,0.3,"green"));
     c_driverController.button(9).whileTrue(new LockPoseCommand(drivebase));
     c_driverController.button(4).whileTrue(new ElevatorArmCommand(m_ElevatorArmSubsystem, -0.10));//Elevator Arm Up
     c_driverController.button(3).whileTrue(new ElevatorArmCommand(m_ElevatorArmSubsystem, 0.10));//Elevator Arm Down
     c_driverController.povDown().whileTrue(new ShooterCommand(m_ShooterSubsystem, 0.2)); // Processor shoot
-    c_driverController.button(6).whileTrue(new ShooterCommand(m_ShooterSubsystem, 0.81)); // Processor intake
+    c_driverController.button(6).whileTrue(new ShooterCommand(m_ShooterSubsystem, 0.78)); // Processor intake
     c_driverController.povRight().whileTrue(new InvertedControllerCommand(m_InvertedControllerSubsystem));
     //Button Box buttons go here
     m_driverController.button(1).whileTrue(new ShooterIntakeCommand(m_ShooterIntakeSubsystem, -0.4));//Shooter Intake
