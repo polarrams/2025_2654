@@ -108,12 +108,24 @@ public class LEDSubsystem extends SubsystemBase {
                     SmartDashboard.putNumber("reefdebug", 5);
                 break;
                 case "Yellow":
+                if (System.currentTimeMillis() % 1000 > 500) {
                     LEDPattern yellow = LEDPattern.solid(Color.kYellow);
                     yellow.applyTo(m_ledBuffer);
+                }
+                else {
+                    LEDPattern black = LEDPattern.solid(Color.kBlack);
+                    black.applyTo(m_ledBuffer);
+                }
                 break;
                 case "Purple":
-                    LEDPattern purple = LEDPattern.solid(Color.kPurple);
-                    purple.applyTo(m_ledBuffer);
+                    if (System.currentTimeMillis() % 1000 > 500) {
+                        LEDPattern purple = LEDPattern.solid(Color.kPurple);
+                        purple.applyTo(m_ledBuffer);
+                    }
+                    else {
+                        LEDPattern black = LEDPattern.solid(Color.kBlack);
+                        black.applyTo(m_ledBuffer);
+                    }
                 break;
                 case "Pink":
                 for (var i = 0; i < m_ledBuffer.getLength(); i++) {
