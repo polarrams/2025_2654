@@ -26,6 +26,7 @@ public class LEDSubsystem extends SubsystemBase {
     AddressableLEDBuffer m_ledBuffer = new AddressableLEDBuffer(220);
     public void led_init() {
         m_leds.setLength(220);
+        SmartDashboard.putNumber("reefdebug", 14);
         for (var i = 0; i < m_ledBuffer.getLength(); i++) {
             //Sets LED rgb values for red
             m_ledBuffer.setRGB(i, 0, 78, 151);
@@ -39,18 +40,21 @@ public class LEDSubsystem extends SubsystemBase {
         if (ally.isPresent()){
             SmartDashboard.putBoolean("ally present", true);
             if(ally.get() == Alliance.Red){
+                SmartDashboard.putNumber("reefdebug", 11);
                 for (var i = 0; i < m_ledBuffer.getLength(); i++) {
                 // Sets the specified LED to the RGB values for red
                 m_ledBuffer.setRGB(i, 255, 0, 0);
                 }
             }
             else if (ally.get() == Alliance.Blue) {
+                SmartDashboard.putNumber("reefdebug", 12);
                 for (var i = 0; i < m_ledBuffer.getLength(); i++) {
                 // Sets the specified LED to the RGB values for red
                 m_ledBuffer.setRGB(i, 0, 0, 255);
                 }
             }
             else {
+                SmartDashboard.putNumber("reefdebug", 13);
                 for (var i = 0; i < m_ledBuffer.getLength(); i++) {
                 // Sets the specified LED to the RGB values for red
                 m_ledBuffer.setRGB(i, 255, 0, 255);
@@ -69,7 +73,7 @@ public class LEDSubsystem extends SubsystemBase {
     }
     //changes the color of the LEDs on the elevator based on its height and the direction it is moving in
     public void change_colors() {
-        if(SmartDashboard.getBoolean("blinking", true)){
+        /*if(SmartDashboard.getBoolean("blinking", true)){
             if(SmartDashboard.getBoolean("blinked", false)){
                 if(SmartDashboard.getBoolean("moving down", false)) {
                     LEDPattern purple_flashing = LEDPattern.solid(Color.kYellow);
@@ -90,8 +94,9 @@ public class LEDSubsystem extends SubsystemBase {
                 }
         }
     }
-        else {
-        if(SmartDashboard.getBoolean("ReefReached", true)) {
+        else {*/
+        SmartDashboard.putBoolean("reefcheck", SmartDashboard.getBoolean("ReefReached", true));
+        if(SmartDashboard.getBoolean("ReefReached", true) == true | SmartDashboard.getBoolean("wheel_switch", false) == true) {
             switch ((String) SmartDashboard.getString("ReefColor", "purple-flashing")) {
                 case "Teal":
                     for (var i = 0; i < m_ledBuffer.getLength(); i++) {
@@ -107,8 +112,9 @@ public class LEDSubsystem extends SubsystemBase {
                     }
                     SmartDashboard.putNumber("reefdebug", 5);
                 break;
-                case "Yellow":
-                if (System.currentTimeMillis() % 1000 > 500) {
+                case "Flashing-Yellow":
+                SmartDashboard.putNumber("reefdebug", 10);
+                if (System.currentTimeMillis() % 300 > 150) {
                     LEDPattern yellow = LEDPattern.solid(Color.kYellow);
                     yellow.applyTo(m_ledBuffer);
                 }
@@ -117,8 +123,9 @@ public class LEDSubsystem extends SubsystemBase {
                     black.applyTo(m_ledBuffer);
                 }
                 break;
-                case "Purple":
-                    if (System.currentTimeMillis() % 1000 > 500) {
+                case "Flashing-Purple":
+                SmartDashboard.putNumber("reefdebug", 9);
+                    if (System.currentTimeMillis() % 300 > 150) {
                         LEDPattern purple = LEDPattern.solid(Color.kPurple);
                         purple.applyTo(m_ledBuffer);
                     }
@@ -127,32 +134,46 @@ public class LEDSubsystem extends SubsystemBase {
                         black.applyTo(m_ledBuffer);
                     }
                 break;
+                case "Purple":
+                for (var i = 0; i < m_ledBuffer.getLength(); i++) {
+                    //Sets LED rgb values for red
+                    m_ledBuffer.setRGB(i, 255, 0, 255);
+                    }
+                    SmartDashboard.putNumber("reefdebug", 15);
+                break;
                 case "Pink":
                 for (var i = 0; i < m_ledBuffer.getLength(); i++) {
                     //Sets LED rgb values for red
                     m_ledBuffer.setRGB(i, 202, 7, 206);
                     }
+                    SmartDashboard.putNumber("reefdebug", 8);
                 break;
                 case "Orange": 
                 for (var i = 0; i < m_ledBuffer.getLength(); i++) {
                     //Sets LED rgb values for red
                     m_ledBuffer.setRGB(i, 239, 83, 4);
+                    SmartDashboard.putNumber("reefdebug", 8);
                     }
                 break;
                 case "White":
-                for (var i = 0; i < m_ledBuffer.getLength(); i++) {
-                    //Sets LED rgb values for red
-                    m_ledBuffer.setRGB(i, 255, 255, 255);
-                    }
+                    SmartDashboard.putNumber("reefdebug", 1);
+                    LEDPattern white = LEDPattern.solid(Color.kWhite);
+                    white.applyTo(m_ledBuffer);
+                break;
+                case "Yellow":
+                    SmartDashboard.putNumber("reefdebug", 16);
+                    LEDPattern yellow = LEDPattern.solid(Color.kYellow);
+                    yellow.applyTo(m_ledBuffer);
                 break;
                 case "Lime":
                 for (var i = 0; i < m_ledBuffer.getLength(); i++) {
                     //Sets LED rgb values for red
                     m_ledBuffer.setRGB(i, 201, 237, 0);
+                    SmartDashboard.putNumber("reefdebug", 6);
                     }
                 default:
                 LEDPattern default_pattern = LEDPattern.solid(Color.kPurple);
-                default_pattern.blink(Time.ofBaseUnits(0.5, Seconds));
+                //default_pattern.blink(Time.ofBaseUnits(0.5, Seconds));
                 default_pattern.applyTo(m_ledBuffer);
                 SmartDashboard.putNumber("reefdebug", 2);
                 break;
@@ -162,7 +183,7 @@ public class LEDSubsystem extends SubsystemBase {
         }
         else {
             LEDPattern default_pattern = LEDPattern.solid(Color.kPurple);
-            default_pattern.blink(Time.ofBaseUnits(0.5, Seconds));
+            //default_pattern.blink(Time.ofBaseUnits(0.5, Seconds));
             default_pattern.applyTo(m_ledBuffer);
             SmartDashboard.putNumber("reefdebug", 3);
             m_leds.setData(m_ledBuffer);
@@ -170,10 +191,11 @@ public class LEDSubsystem extends SubsystemBase {
         }
     }
         
-    }
+    //}
 
 
     public void blinkled() {
+        SmartDashboard.putNumber("reefdebug", 7);
         if(SmartDashboard.getNumber("Elevator Speed", 0)<0) {
             LEDPattern purple = LEDPattern.solid(Color.kPurple);
         }

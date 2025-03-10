@@ -14,13 +14,13 @@ public class ElevatorWheelsSubsystem extends SubsystemBase{
        SmartDashboard.putBoolean("dioelevator", DIO.get());
         if(DIO.get()|| speed > 0) {
             motor1.set(speed);
-            SmartDashboard.putBoolean("ReefReached", false);
-            SmartDashboard.getString("ReefColor", "White");
+            SmartDashboard.putBoolean("wheel_switch", false);
+            SmartDashboard.putString("ReefColor", "White");
         }
         else {
             motor1.set(0);
-            SmartDashboard.putBoolean("ReefReached", true);
-            SmartDashboard.getString("ReefColor", "White");
+            SmartDashboard.putBoolean("wheel_switch", true);
+            SmartDashboard.putString("ReefColor", "White");
         }
 
     }

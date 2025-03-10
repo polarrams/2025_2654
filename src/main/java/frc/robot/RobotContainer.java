@@ -204,6 +204,7 @@ private final SendableChooser<Command> autoChooser;
     c_driverController.button(5).whileTrue(new ReefLEDCommand(m_leds));
     m_driverController.button(1).whileTrue(new ReefLEDCommand(m_leds));
     m_driverController.button(2).whileTrue(new ReefLEDCommand(m_leds));
+    m_driverController.povDown().whileTrue(new ReefLEDCommand(m_leds));
     m_driverController.povRight().whileTrue(new ElevatorWheelsCommand(m_ElevatorWheelsSubsystem,1));//Wheels out 
     m_driverController.povDown().whileTrue(new ElevatorWheelsCommand(m_ElevatorWheelsSubsystem,-0.75));//wheels in
     m_driverController.povUp().whileTrue(new LifterCommand(m_LifterSubsystem, 0.8));//Lifter down

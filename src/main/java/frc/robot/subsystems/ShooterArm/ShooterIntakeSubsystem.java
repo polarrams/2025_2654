@@ -12,7 +12,7 @@ public class ShooterIntakeSubsystem extends SubsystemBase {
     private SparkMax motor2 = new SparkMax(16,MotorType.kBrushless);
     private DigitalInput DIO = new DigitalInput(0);
     public void run(Double speed) {
-       SmartDashboard.getString("ReefColor", "Teal");
+       SmartDashboard.putString("ReefColor", "Teal");
        SmartDashboard.putBoolean("trigger_pressed", DIO.get());
         if(DIO.get() || speed > 0) {
             motor1.set(speed);

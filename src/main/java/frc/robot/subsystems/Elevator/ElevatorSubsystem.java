@@ -67,18 +67,16 @@ public void drive_to_pos(double desired_pos,double speed, String color){  //desi
     if (truespeed < -speed){
         truespeed = -speed;
     }
+    
+    SmartDashboard.putBoolean("ReefReached", true);
     if (Math.abs(desired_pos - current) < 5) {
         SmartDashboard.putString("ReefColor", color);
-        SmartDashboard.putBoolean("ReefReached", true);
-        SmartDashboard.putBoolean("blinking", false);
     }
     else {
-        SmartDashboard.putBoolean("ReefReached", false);
-        SmartDashboard.putBoolean("blinking", true);
         if(truespeed < 0){
-            SmartDashboard.putBoolean("moving down", false);
+            SmartDashboard.putString("ReefColor", "Flashing-Purple");
         } else{
-            SmartDashboard.putBoolean("moving down", true);
+            SmartDashboard.putString("ReefColor", "Flashing-Yellow");
         }
     }
     if (Math.abs(difference)>10){
