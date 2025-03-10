@@ -11,15 +11,16 @@ public class ElevatorWheelsSubsystem extends SubsystemBase{
     private DigitalInput DIO = new DigitalInput(1);
 
     public void run(Double speed) {
-       SmartDashboard.getString("ReefColor", "White");
        SmartDashboard.putBoolean("dioelevator", DIO.get());
         if(DIO.get()|| speed > 0) {
             motor1.set(speed);
-            SmartDashboard.putBoolean("ReefReached", false);
+            SmartDashboard.putBoolean("wheel_switch", false);
+            SmartDashboard.putString("ReefColor", "White");
         }
         else {
             motor1.set(0);
-            SmartDashboard.putBoolean("ReefReached", true);
+            SmartDashboard.putBoolean("wheel_switch", true);
+            SmartDashboard.putString("ReefColor", "White");
         }
 
     }
