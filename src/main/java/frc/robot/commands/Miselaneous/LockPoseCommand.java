@@ -16,7 +16,7 @@ public class LockPoseCommand extends Command {
     @Override
     public void execute() {
         swerveSubsystem.lock();
-        SmartDashboard.putString("setcolor","lime");
+        SmartDashboard.putString("ReefColor","Lime");
         SmartDashboard.putBoolean("ReefReached", true);
     
     }

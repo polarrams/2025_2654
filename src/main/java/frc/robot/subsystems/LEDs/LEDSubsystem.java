@@ -113,15 +113,15 @@ public class LEDSubsystem extends SubsystemBase {
                     SmartDashboard.putNumber("reefdebug", 5);
                 break;
                 case "Flashing-Yellow":
-                SmartDashboard.putNumber("reefdebug", 10);
-                if (System.currentTimeMillis() % 300 > 150) {
-                    LEDPattern yellow = LEDPattern.solid(Color.kYellow);
-                    yellow.applyTo(m_ledBuffer);
-                }
-                else {
-                    LEDPattern black = LEDPattern.solid(Color.kBlack);
-                    black.applyTo(m_ledBuffer);
-                }
+                    SmartDashboard.putNumber("reefdebug", 10);
+                    if (System.currentTimeMillis() % 300 > 150) {
+                        LEDPattern yellow = LEDPattern.solid(Color.kYellow);
+                        yellow.applyTo(m_ledBuffer);
+                    }
+                    else {
+                        LEDPattern black = LEDPattern.solid(Color.kBlack);
+                        black.applyTo(m_ledBuffer);
+                    }
                 break;
                 case "Flashing-Purple":
                 SmartDashboard.putNumber("reefdebug", 9);
@@ -171,6 +171,7 @@ public class LEDSubsystem extends SubsystemBase {
                     m_ledBuffer.setRGB(i,174 , 201, 48);
                     SmartDashboard.putNumber("reefdebug", 6);
                     }
+                break;
                 default:
                 LEDPattern default_pattern = LEDPattern.solid(Color.kPurple);
                 //default_pattern.blink(Time.ofBaseUnits(0.5, Seconds));
