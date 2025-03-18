@@ -8,20 +8,20 @@
       },
       "prevControl": null,
       "nextControl": {
-        "x": 14.751515151515152,
-        "y": 6.60669191919192
+        "x": 14.761679292929296,
+        "y": 6.311931818181818
       },
       "isLocked": false,
       "linkedName": "RR Station"
     },
     {
       "anchor": {
-        "x": 12.65770202020202,
-        "y": 5.305681818181817
+        "x": 13.480997474747475,
+        "y": 5.071906565656565
       },
       "prevControl": {
-        "x": 12.850820707070708,
-        "y": 6.281439393939394
+        "x": 14.45675505050505,
+        "y": 6.0375
       },
       "nextControl": null,
       "isLocked": false,
@@ -42,7 +42,7 @@
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": 126.86989764584393
+    "rotation": 34.0771952801307
   },
   "reversed": false,
   "folder": "RR 2 First Pipes 1 Trough",

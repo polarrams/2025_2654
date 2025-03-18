@@ -8,24 +8,24 @@
       },
       "prevControl": null,
       "nextControl": {
-        "x": 6.615235397373711,
-        "y": 6.627951135357805
+        "x": 6.205309734513275,
+        "y": 6.584513274336283
       },
       "isLocked": false,
       "linkedName": null
     },
     {
       "anchor": {
-        "x": 5.237878787878787,
-        "y": 4.909280303030303
+        "x": 5.0553097345132745,
+        "y": 4.915486725663717
       },
       "prevControl": {
-        "x": 5.492466837837824,
-        "y": 5.925153013059465
+        "x": 5.635398230088496,
+        "y": 6.0654867256637175
       },
       "nextControl": null,
       "isLocked": false,
-      "linkedName": null
+      "linkedName": "BL one trough"
     }
   ],
   "rotationTargets": [],
@@ -42,7 +42,7 @@
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": 73.88658176691054
+    "rotation": 87.07988086785228
   },
   "reversed": false,
   "folder": "miscellaneous",

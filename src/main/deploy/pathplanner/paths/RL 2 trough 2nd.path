@@ -3,29 +3,29 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 7.079829545454547,
-        "y": 0.50502840909091
+        "x": 12.240265486725663,
+        "y": 3.185398230088495
       },
       "prevControl": null,
       "nextControl": {
-        "x": 6.172979797979798,
-        "y": 1.7888888888888892
+        "x": 12.046902654867257,
+        "y": 1.6486725663716797
       },
       "isLocked": false,
-      "linkedName": null
+      "linkedName": "RL 2 trough coral"
     },
     {
       "anchor": {
-        "x": 5.166729797979798,
-        "y": 3.293181818181818
+        "x": 16.40265486725664,
+        "y": 0.6716814159292028
       },
       "prevControl": {
-        "x": 6.2339646464646465,
-        "y": 1.6262626262626263
+        "x": 15.374778761061949,
+        "y": 1.2823008849557513
       },
       "nextControl": null,
       "isLocked": false,
-      "linkedName": "Mexico 2.0"
+      "linkedName": "RL 2 trough coralage"
     }
   ],
   "rotationTargets": [],
@@ -42,13 +42,13 @@
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": -80.96051719664493
+    "rotation": 128.6598082540905
   },
   "reversed": false,
   "folder": "miscellaneous",
   "idealStartingState": {
     "velocity": 0,
-    "rotation": 0.0
+    "rotation": -104.34933204294721
   },
   "useDefaultConstraints": true
 }
